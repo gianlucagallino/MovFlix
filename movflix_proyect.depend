@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1698328568 source:c:\users\parra\onedrive\escritorio\movflix_proyect\main.cpp
+	<iostream>
+	<cstring>
+	<cstdlib>
+	"menu_usuarios.h"
+	"menu_peliculas.h"
+	"menu_resenias.h"
+
+1698322756 c:\users\parra\onedrive\escritorio\movflix_proyect\menuprincipal.h
+
+1698329155 c:\users\parra\onedrive\escritorio\movflix_proyect\menu_usuarios.h
+
+1698329155 c:\users\parra\onedrive\escritorio\movflix_proyect\menu_peliculas.h
+
+1698329155 c:\users\parra\onedrive\escritorio\movflix_proyect\menu_resenias.h
+
+1698328568 source:c:\users\admin\desktop\movflix_proyect\main.cpp
+	<iostream>
+	<cstring>
+	<cstdlib>
+	"menu_usuarios.h"
+	"menu_peliculas.h"
+	"menu_resenias.h"
+
+1698594727 c:\users\admin\desktop\movflix_proyect\menu_usuarios.h
+
+1698594675 c:\users\admin\desktop\movflix_proyect\menu_peliculas.h
+
+1698594675 c:\users\admin\desktop\movflix_proyect\menu_resenias.h
+
