@@ -1,10 +1,11 @@
 #ifndef MENU_RESENIAS_H_INCLUDED
 #define MENU_RESENIAS_H_INCLUDED
 
-void menuresenias(){
-int op;
+void menuresenias() {
+    int op;
+    bool correrMenu = true;
     system("cls");
-    while(true) {
+    while(correrMenu) {
         cout << "                     " << endl;
         cout << "         MENU RESEÑAS        " << endl;
         cout << "-----------------------------" << endl;
@@ -27,7 +28,7 @@ int op;
 
             break;
         case 0:
-            return;
+            correrMenu = false;
             break;
         default:
             cout << "PORFAVOR INGRESAR UNA OPCION CORRECTA" << endl;

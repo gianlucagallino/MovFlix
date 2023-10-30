@@ -8,17 +8,17 @@ using namespace std;
 #include "menu_peliculas.h"
 #include "menu_resenias.h"
 
-int main()
-{
+int main() {
+    bool correrPrograma = true;
     int op;
     system("cls");
-    while(true) {
+    while(correrPrograma) {
         cout << "                     " << endl;
         cout << "    MENU PRINCIPAL   " << endl;
         cout << "---------------------" << endl;
         cout << " 1 - USUARIOS        " << endl;
         cout << " 2 - PELICULAS       " << endl;
-        cout << " 3 - RESEÑAS         " << endl;
+        cout << " 3 - RESENIAS        " << endl;
         cout << "---------------------" << endl;
         cout << " 0 - FIN DEL PROGRAMA " << endl;
         cout << " SELECCIONE UNA DE LAS OPCIONES: ";
@@ -35,7 +35,7 @@ int main()
             menuresenias();
             break;
         case 0:
-            return 0;
+            correrPrograma = false;
             break;
         default:
             cout << "PORFAVOR INGRESAR UNA OPCION CORRECTA" << endl;
@@ -45,5 +45,8 @@ int main()
         }
 
     }
+    system("cls");
+    cout << "MUCHAS GRACIAS, VUELVA PRONTO!"<<endl;
+    system("pause");
     return 0;
 }

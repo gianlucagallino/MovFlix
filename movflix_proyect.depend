@@ -29,3 +29,17 @@
 
 1698594675 c:\users\admin\desktop\movflix_proyect\menu_resenias.h
 
+1698699664 source:c:\users\user\downloads\movflix_proyect\main.cpp
+	<iostream>
+	<cstring>
+	<cstdlib>
+	"menu_usuarios.h"
+	"menu_peliculas.h"
+	"menu_resenias.h"
+
+1698699692 c:\users\user\downloads\movflix_proyect\menu_usuarios.h
+
+1698699692 c:\users\user\downloads\movflix_proyect\menu_peliculas.h
+
+1698699692 c:\users\user\downloads\movflix_proyect\menu_resenias.h
+
