@@ -43,3 +43,35 @@
 
 1698699692 c:\users\user\downloads\movflix_proyect\menu_resenias.h
 
+1698701299 source:c:\users\user\documents\github\movflix\main.cpp
+	<iostream>
+	<cstring>
+	<cstdlib>
+	"rlutil.h"
+	"funcion_pantallaIntroductoria.h"
+	"menu_usuarios.h"
+	"menu_peliculas.h"
+	"menu_resenias.h"
+
+1698699664 c:\users\user\documents\github\movflix\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1698758658 c:\users\user\documents\github\movflix\funcion_pantallaintroductoria.h
+
+1698699812 c:\users\user\documents\github\movflix\menu_usuarios.h
+
+1698699692 c:\users\user\documents\github\movflix\menu_peliculas.h
+
+1698699692 c:\users\user\documents\github\movflix\menu_resenias.h
+

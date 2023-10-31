@@ -32,6 +32,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="funcion_pantallaIntroductoria.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="menu_peliculas.h" />
 		<Unit filename="menu_resenias.h" />
