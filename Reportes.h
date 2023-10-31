@@ -1,6 +1,13 @@
 #ifndef REPORTES_H_INCLUDED
 #define REPORTES_H_INCLUDED
 
+/*
+  AUTORES:
+  -Arias, Natalia (Virtual)
+  -Gallino, Gianluca (Virtual)
+  -Parra, Juan (Presencial)
+*/
+
 void MenuReportes() {
     int op;
     bool correrMenu = true;

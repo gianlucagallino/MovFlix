@@ -1,6 +1,13 @@
 #ifndef MENU_AUTORES_H_INCLUDED
 #define MENU_AUTORES_H_INCLUDED
 
+/*
+  AUTORES:
+  -Arias, Natalia (Virtual)
+  -Gallino, Gianluca (Virtual)
+  -Parra, Juan (Presencial)
+*/
+
 void MenuAutores() {
     int op;
     bool correrMenu = true;

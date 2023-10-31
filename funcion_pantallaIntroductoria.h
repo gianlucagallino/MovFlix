@@ -1,6 +1,13 @@
 #ifndef FUNCION_PANTALLAINTRODUCTORIA_H_INCLUDED
 #define FUNCION_PANTALLAINTRODUCTORIA_H_INCLUDED
 
+/*
+  AUTORES:
+  -Arias, Natalia (Virtual)
+  -Gallino, Gianluca (Virtual)
+  -Parra, Juan (Presencial)
+*/
+
 void PantallaIntroductoria() {
     system("cls");
     rlutil::setColor(rlutil::RED);

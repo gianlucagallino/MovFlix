@@ -1,6 +1,13 @@
 #ifndef MENU_PELICULAS_H_INCLUDED
 #define MENU_PELICULAS_H_INCLUDED
 
+/*
+  AUTORES:
+  -Arias, Natalia (Virtual)
+  -Gallino, Gianluca (Virtual)
+  -Parra, Juan (Presencial)
+*/
+
 void MenuPeliculas() {
     int op;
     bool correrMenu = true;

@@ -1,6 +1,13 @@
 #ifndef MENU_USUARIOS_H_INCLUDED
 #define MENU_USUARIOS_H_INCLUDED
 
+/*
+  AUTORES:
+  -Arias, Natalia (Virtual)
+  -Gallino, Gianluca (Virtual)
+  -Parra, Juan (Presencial)
+*/
+
 void MenuUsuarios() {
     int op;
     bool correrMenu = true;

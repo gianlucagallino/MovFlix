@@ -6,6 +6,12 @@ using namespace std;
 
 #include "rlutil.h"
 #include "funcion_pantallaIntroductoria.h"
+#include "funcion_determinarPosicionAutonumerica.h"
+#include "clase_Usuario.h"
+#include "clase_Pelicula.h"
+#include "clase_Resenia.h"
+#include "clase_Genero.h"
+#include "clase_Autor.h"
 #include "menu_usuarios.h"
 #include "menu_peliculas.h"
 #include "menu_resenias.h"
@@ -13,6 +19,13 @@ using namespace std;
 #include "menu_autores.h"
 #include "Reportes.h"
 #include "menu_administracion.h"
+
+/*
+  AUTORES:
+  -Arias, Natalia (Virtual)
+  -Gallino, Gianluca (Virtual)
+  -Parra, Juan (Presencial)
+*/
 
 /* Falta hacer:
  - Mejoras graficas. Lo mejor posible, pero si se rompe, preferible que sea estable.
@@ -42,11 +55,11 @@ int main() {
         cout << endl;
         cout << "         MENU PRINCIPAL         " << endl;
         cout << "--------------------------------" << endl;
-        cout << " 1 - ABML USUARIOS              " << endl;
-        cout << " 2 - ABML PELICULAS             " << endl;
-        cout << " 3 - ABML RESENIAS              " << endl;
-        cout << " 4 - ABML GENEROS PELICULA      " << endl;
-        cout << " 5 - ABML AUTORES               " << endl;
+        cout << " 1 - ABML GENEROS               " << endl;
+        cout << " 2 - ABML AUTORES               " << endl;
+        cout << " 3 - ABML PELICULAS             " << endl;
+        cout << " 4 - ABML USUARIOS              " << endl;
+        cout << " 5 - ABML RESENIAS              " << endl;
         cout << " 6 - REPORTES                   " << endl;
         cout << " 7 - BACKUPS Y ADMINISTRACION   " << endl;
         cout << "--------------------------------" << endl;
@@ -56,19 +69,19 @@ int main() {
         system("cls");
         switch (op) {
         case 1:
-            MenuUsuarios();
-            break;
-        case 2:
-            MenuPeliculas();
-            break;
-        case 3:
-            MenuResenias();
-            break;
-        case 4:
             MenuGeneros();
             break;
-        case 5:
+        case 2:
             MenuAutores();
+            break;
+        case 3:
+            MenuPeliculas();
+            break;
+        case 4:
+            MenuUsuarios();
+            break;
+        case 5:
+            MenuResenias();
             break;
         case 6:
             //El nombre del archivo DEBE SER "Reportes.h"
