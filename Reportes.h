@@ -1,19 +1,19 @@
-#ifndef MENU_RESENIAS_H_INCLUDED
-#define MENU_RESENIAS_H_INCLUDED
+#ifndef REPORTES_H_INCLUDED
+#define REPORTES_H_INCLUDED
 
-void MenuResenias() {
+void MenuReportes() {
     int op;
     bool correrMenu = true;
     system("cls");
     while(correrMenu) {
         cout << endl;
-        cout << "           MENU RESENIAS         " << endl;
+        cout << "           MENU REPORTES         " << endl;
         cout << "---------------------------------" << endl;
-        cout << " 1 - ALTA DE UNA RESENIA         " << endl;
-        cout << " 2 - BAJA DE UNA RESENIA         " << endl;
-        cout << " 3 - MODIFICAR RESENIA           " << endl;
-        cout << " 4 - BUSCAR UNA RESENIA          " << endl;
-        cout << " 5 - MOSTRAR TODOS LAS RESENIAS  " << endl;
+        cout << " 1 -                             " << endl;
+        cout << " 2 -                             " << endl;
+        cout << " 3 -                             " << endl;
+        cout << " 4 -                             " << endl;
+        cout << " 5 - TODOS LOS REPORTES!         " << endl;
         cout << "---------------------------------" << endl;
         cout << " 0 - VOLVER AL MENU PRINCIPAL    " << endl;
         cout << " SELECCIONE UNA DE LAS OPCIONES: ";
@@ -49,4 +49,4 @@ void MenuResenias() {
     return;
 }
 
-#endif // MENU_RESENIAS_H_INCLUDED
+#endif // REPORTES_H_INCLUDED

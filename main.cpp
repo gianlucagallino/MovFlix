@@ -9,10 +9,15 @@ using namespace std;
 #include "menu_usuarios.h"
 #include "menu_peliculas.h"
 #include "menu_resenias.h"
+#include "menu_generos.h"
+#include "menu_autores.h"
+#include "Reportes.h"
+#include "menu_administracion.h"
 
 /* Falta hacer:
  - Mejoras graficas. Lo mejor posible, pero si se rompe, preferible que sea estable.
  - Desarrollar las clases y las funciones
+ - Hacer un menu de reportes interesante.
  - HACER LAS VERIFICACIONES, es super importante que esten bien.
  - Comentar TODO el codigo, para que se note la atencion al detalle.
  - Actualizar la documentacion que hicimos para que diga bien lo que armamos.
@@ -23,6 +28,7 @@ using namespace std;
  - Las funciones se escriben asi "EstoEsUnaFuncion()" primera letra mayus
  - Las variables, asi "estoEsUnaVariable" primera letra min
  - Los while(true) son mala practica, preferible hacerlo con un booleano.
+ - Todo debe tener ABML
 */
 
 int main() {
@@ -36,11 +42,11 @@ int main() {
         cout << endl;
         cout << "         MENU PRINCIPAL         " << endl;
         cout << "--------------------------------" << endl;
-        cout << " 1 - USUARIOS                   " << endl;
-        cout << " 2 - PELICULAS                  " << endl;
-        cout << " 3 - RESENIAS                   " << endl;
-        cout << " 4 - GENEROS PELICULA           " << endl;
-        cout << " 5 - AUTORES                    " << endl;
+        cout << " 1 - ABML USUARIOS              " << endl;
+        cout << " 2 - ABML PELICULAS             " << endl;
+        cout << " 3 - ABML RESENIAS              " << endl;
+        cout << " 4 - ABML GENEROS PELICULA      " << endl;
+        cout << " 5 - ABML AUTORES               " << endl;
         cout << " 6 - REPORTES                   " << endl;
         cout << " 7 - BACKUPS Y ADMINISTRACION   " << endl;
         cout << "--------------------------------" << endl;
@@ -69,7 +75,7 @@ int main() {
             MenuReportes();
             break;
         case 7:
-             //un full wipe, un establecer todo, un backup individual, un reset individual, un recover individual, un wipe individual
+            //un full wipe, un establecer todo, un backup individual, un reset individual, un recover individual, un wipe individual
             MenuAdministracion();
             break;
         case 0:
@@ -77,7 +83,7 @@ int main() {
             break;
         default:
             cout << "POR FAVOR, INGRESAR UNA OPCION CORRECTA" << endl;
-            system("pause");
+            rlutil::msleep(2000);
             system("cls");
             break;
         }
@@ -85,6 +91,6 @@ int main() {
     }
     system("cls");
     cout << "MUCHAS GRACIAS, VUELVA PRONTO!"<<endl;
-    system("pause");
+    rlutil::msleep(2000);
     return 0;
 }

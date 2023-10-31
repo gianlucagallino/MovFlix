@@ -1,19 +1,21 @@
 #ifndef MENU_PELICULAS_H_INCLUDED
 #define MENU_PELICULAS_H_INCLUDED
 
-void menupeliculas() {
+void MenuPeliculas() {
     int op;
     bool correrMenu = true;
     system("cls");
     while(correrMenu) {
-        cout << "                     " << endl;
-        cout << "        MENU PELICULAS        " << endl;
-        cout << "------------------------------" << endl;
-        cout << " 1 -         " << endl;
-        cout << " 2 -        " << endl;
-        cout << " 3 -       " << endl;
-        cout << "------------------------------" << endl;
-        cout << " 0 - VOLVER AL MENU PRINCIPAL " << endl;
+        cout << endl;
+        cout << "          MENU PELICULAS         " << endl;
+        cout << "---------------------------------" << endl;
+        cout << " 1 - ALTA DE UNA PELICULA        " << endl;
+        cout << " 2 - BAJA DE UNA PELICULA        " << endl;
+        cout << " 3 - MODIFICAR PELICULA          " << endl;
+        cout << " 4 - BUSCAR UNA PELICULA         " << endl;
+        cout << " 5 - MOSTRAR TODOS LAS PELICULAS " << endl;
+        cout << "---------------------------------" << endl;
+        cout << " 0 - VOLVER AL MENU PRINCIPAL    " << endl;
         cout << " SELECCIONE UNA DE LAS OPCIONES: ";
         cin >> op;
         system("cls");
@@ -27,12 +29,18 @@ void menupeliculas() {
         case 3:
 
             break;
+        case 4:
+
+            break;
+        case 5:
+
+            break;
         case 0:
             correrMenu = false;
             break;
         default:
-            cout << "PORFAVOR INGRESAR UNA OPCION CORRECTA" << endl;
-            system("pause");
+            cout << "POR FAVOR, INGRESAR UNA OPCION CORRECTA" << endl;
+            rlutil::msleep(2000);
             system("cls");
             break;
         }
@@ -40,6 +48,5 @@ void menupeliculas() {
     }
     return;
 }
-
 
 #endif // MENU_PELICULAS_H_INCLUDED

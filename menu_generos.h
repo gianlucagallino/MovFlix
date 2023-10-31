@@ -1,19 +1,19 @@
-#ifndef MENU_RESENIAS_H_INCLUDED
-#define MENU_RESENIAS_H_INCLUDED
+#ifndef MENU_GENEROS_H_INCLUDED
+#define MENU_GENEROS_H_INCLUDED
 
-void MenuResenias() {
+void MenuGeneros() {
     int op;
     bool correrMenu = true;
     system("cls");
     while(correrMenu) {
         cout << endl;
-        cout << "           MENU RESENIAS         " << endl;
+        cout << "           MENU GENEROS          " << endl;
         cout << "---------------------------------" << endl;
-        cout << " 1 - ALTA DE UNA RESENIA         " << endl;
-        cout << " 2 - BAJA DE UNA RESENIA         " << endl;
-        cout << " 3 - MODIFICAR RESENIA           " << endl;
-        cout << " 4 - BUSCAR UNA RESENIA          " << endl;
-        cout << " 5 - MOSTRAR TODOS LAS RESENIAS  " << endl;
+        cout << " 1 - ALTA DE UN GENERO           " << endl;
+        cout << " 2 - BAJA DE UN GENERO           " << endl;
+        cout << " 3 - MODIFICAR GENERO            " << endl;
+        cout << " 4 - BUSCAR UN GENERO            " << endl;
+        cout << " 5 - MOSTRAR TODOS LOS GENEROS   " << endl;
         cout << "---------------------------------" << endl;
         cout << " 0 - VOLVER AL MENU PRINCIPAL    " << endl;
         cout << " SELECCIONE UNA DE LAS OPCIONES: ";
@@ -49,4 +49,5 @@ void MenuResenias() {
     return;
 }
 
-#endif // MENU_RESENIAS_H_INCLUDED
+
+#endif // MENU_GENEROS_H_INCLUDED

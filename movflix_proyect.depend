@@ -43,7 +43,7 @@
 
 1698699692 c:\users\user\downloads\movflix_proyect\menu_resenias.h
 
-1698701299 source:c:\users\user\documents\github\movflix\main.cpp
+1698767472 source:c:\users\user\documents\github\movflix\main.cpp
 	<iostream>
 	<cstring>
 	<cstdlib>
@@ -52,6 +52,10 @@
 	"menu_usuarios.h"
 	"menu_peliculas.h"
 	"menu_resenias.h"
+	"menu_generos.h"
+	"menu_autores.h"
+	"Reportes.h"
+	"menu_administracion.h"
 
 1698699664 c:\users\user\documents\github\movflix\rlutil.h
 	<iostream>
@@ -67,11 +71,19 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1698758658 c:\users\user\documents\github\movflix\funcion_pantallaintroductoria.h
+1698767781 c:\users\user\documents\github\movflix\funcion_pantallaintroductoria.h
 
-1698699812 c:\users\user\documents\github\movflix\menu_usuarios.h
+1698767472 c:\users\user\documents\github\movflix\menu_usuarios.h
 
-1698699692 c:\users\user\documents\github\movflix\menu_peliculas.h
+1698767472 c:\users\user\documents\github\movflix\menu_peliculas.h
 
-1698699692 c:\users\user\documents\github\movflix\menu_resenias.h
+1698767472 c:\users\user\documents\github\movflix\menu_resenias.h
+
+1698767472 c:\users\user\documents\github\movflix\menu_generos.h
+
+1698767472 c:\users\user\documents\github\movflix\menu_autores.h
+
+1698767472 c:\users\user\documents\github\movflix\reportes.h
+
+1698767472 c:\users\user\documents\github\movflix\menu_administracion.h
 
