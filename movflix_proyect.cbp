@@ -33,6 +33,11 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="Reportes.h" />
+		<Unit filename="clase_ArchivoDirectores.h" />
+		<Unit filename="clase_ArchivoGeneros.h" />
+		<Unit filename="clase_ArchivoPeliculas.h" />
+		<Unit filename="clase_ArchivoResenias.h" />
+		<Unit filename="clase_ArchivoUsuarios.h" />
 		<Unit filename="clase_Director.h" />
 		<Unit filename="clase_Fecha.h" />
 		<Unit filename="clase_Genero.h" />
