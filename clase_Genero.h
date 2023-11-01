@@ -51,12 +51,12 @@ class Genero {
     void Cargar() {
         char nombreTemporal[30];
 
-        _idGenero = DeterminarPosicionAutonumerica("Generos.dat", sizeof(genero));
+        _idGenero = DeterminarPosicionAutonumerica("Generos.dat", sizeof(Genero));
 
         cout<<"NOMBRE: ";
         cargarCadena(nombreTemporal, 30);
         setNombreGenero(nombreTemporal);
-        setestado(true);
+        setEstado(true);
     }
 
     void Mostrar() {

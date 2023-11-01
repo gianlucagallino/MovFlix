@@ -33,15 +33,18 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="Reportes.h" />
-		<Unit filename="clase_Autor.h" />
+		<Unit filename="clase_Director.h" />
+		<Unit filename="clase_Fecha.h" />
 		<Unit filename="clase_Genero.h" />
 		<Unit filename="clase_Pelicula.h" />
 		<Unit filename="clase_Resenia.h" />
 		<Unit filename="clase_Usuario.h" />
+		<Unit filename="funcion_cargarCadena.h" />
+		<Unit filename="funcion_determinarPosicionAutonumerica.h" />
 		<Unit filename="funcion_pantallaIntroductoria.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="menu_administracion.h" />
-		<Unit filename="menu_autores.h" />
+		<Unit filename="menu_directores.h" />
 		<Unit filename="menu_generos.h" />
 		<Unit filename="menu_peliculas.h" />
 		<Unit filename="menu_resenias.h" />

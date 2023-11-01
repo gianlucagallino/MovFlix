@@ -1,22 +1,25 @@
 #include <iostream>
-#include <cstring>
 #include <cstdlib>
+#include <cstring>
+#include <ctime>
 
 using namespace std;
 
 #include "rlutil.h"
+#include "funcion_cargarCadena.h"
 #include "funcion_pantallaIntroductoria.h"
 #include "funcion_determinarPosicionAutonumerica.h"
-#include "clase_Usuario.h"
-#include "clase_Pelicula.h"
-#include "clase_Resenia.h"
+#include "clase_Fecha.h"
 #include "clase_Genero.h"
-#include "clase_Autor.h"
+#include "clase_Director.h"
+#include "clase_Pelicula.h"
+#include "clase_Usuario.h"
+#include "clase_Resenia.h"
 #include "menu_usuarios.h"
 #include "menu_peliculas.h"
 #include "menu_resenias.h"
 #include "menu_generos.h"
-#include "menu_autores.h"
+#include "menu_directores.h"
 #include "Reportes.h"
 #include "menu_administracion.h"
 
@@ -30,7 +33,9 @@ using namespace std;
 /* Falta hacer:
  - Mejoras graficas. Lo mejor posible, pero si se rompe, preferible que sea estable.
  - Desarrollar las clases y las funciones
+ - Que cumpla con las cosas del tp tambien. por las dudas.
  - Hacer un menu de reportes interesante.
+ - usar el system copy para el backup
  - HACER LAS VERIFICACIONES, es super importante que esten bien.
  - Comentar TODO el codigo, para que se note la atencion al detalle.
  - Actualizar la documentacion que hicimos para que diga bien lo que armamos.
@@ -56,7 +61,7 @@ int main() {
         cout << "         MENU PRINCIPAL         " << endl;
         cout << "--------------------------------" << endl;
         cout << " 1 - ABML GENEROS               " << endl;
-        cout << " 2 - ABML AUTORES               " << endl;
+        cout << " 2 - ABML DIRECTORES            " << endl;
         cout << " 3 - ABML PELICULAS             " << endl;
         cout << " 4 - ABML USUARIOS              " << endl;
         cout << " 5 - ABML RESENIAS              " << endl;
@@ -72,7 +77,7 @@ int main() {
             MenuGeneros();
             break;
         case 2:
-            MenuAutores();
+            MenuDirectores();
             break;
         case 3:
             MenuPeliculas();

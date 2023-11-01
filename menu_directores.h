@@ -1,5 +1,5 @@
-#ifndef MENU_AUTORES_H_INCLUDED
-#define MENU_AUTORES_H_INCLUDED
+#ifndef MENU_DIRECTORES_H_INCLUDED
+#define MENU_DIRECTORES_H_INCLUDED
 
 /*
   AUTORES:
@@ -8,19 +8,19 @@
   -Parra, Juan (Presencial)
 */
 
-void MenuAutores() {
+void MenuDirectores() {
     int op;
     bool correrMenu = true;
     system("cls");
     while(correrMenu) {
         cout << endl;
-        cout << "           MENU GENEROS          " << endl;
+        cout << "          MENU DIRECTORES        " << endl;
         cout << "---------------------------------" << endl;
-        cout << " 1 - ALTA DE UN GENERO           " << endl;
-        cout << " 2 - BAJA DE UN GENERO           " << endl;
-        cout << " 3 - MODIFICAR GENERO            " << endl;
-        cout << " 4 - BUSCAR UN GENERO            " << endl;
-        cout << " 5 - MOSTRAR TODOS LOS GENEROS   " << endl;
+        cout << " 1 - ALTA DE UN DIRECTOR         " << endl;
+        cout << " 2 - BAJA DE UN DIRECTOR         " << endl;
+        cout << " 3 - MODIFICAR DIRECTOR          " << endl;
+        cout << " 4 - BUSCAR UN DIRECTOR          " << endl;
+        cout << " 5 - MOSTRAR TODOS LOS DIRECTORES" << endl;
         cout << "---------------------------------" << endl;
         cout << " 0 - VOLVER AL MENU PRINCIPAL    " << endl;
         cout << " SELECCIONE UNA DE LAS OPCIONES: ";
@@ -58,4 +58,4 @@ void MenuAutores() {
 
 
 
-#endif // MENU_AUTORES_H_INCLUDED
+#endif // MENU_DIRECTORES_H_INCLUDED
