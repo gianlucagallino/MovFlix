@@ -91,7 +91,7 @@ class Usuario {
             cout<<"EMAIL: ";
             cout<<_email<<endl;
             cout<<"GENERO FAVORITO: "<<endl;
-            _generoFavorito.Mostrar();
+            cout<<_generoFavorito.getNombreGenero();
             cout<<endl;
         }
     }

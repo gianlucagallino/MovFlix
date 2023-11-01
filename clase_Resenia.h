@@ -52,6 +52,10 @@ class Resenia {
 
     //gets()
 
+    int getIdResenia() {
+        return _idResenia;
+    }
+
     Usuario getAutorResenia() {
         return _autorResenia;
     }

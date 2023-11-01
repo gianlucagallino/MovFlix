@@ -41,7 +41,7 @@ using namespace std;
  - Que cumpla con las cosas del tp tambien. por las dudas.
  - Hacer un menu de reportes interesante.
  - usar el system copy para el backup
- - HACER LAS VERIFICACIONES, es super importante que esten bien.
+ - HACER LAS VERIFICACIONES, es super importante que esten bien. que las clases compuestas, sus factores compuestos existan.
  - Comentar TODO el codigo, para que se note la atencion al detalle.
  - Actualizar la documentacion que hicimos para que diga bien lo que armamos.
  - Mostrarle a maxi si esta para un 10. ver que dice.
@@ -62,6 +62,7 @@ int main() {
 
     system("cls");
     while(correrPrograma) {
+        system("cls");
         cout << endl;
         cout << "         MENU PRINCIPAL         " << endl;
         cout << "--------------------------------" << endl;

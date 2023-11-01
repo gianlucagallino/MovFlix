@@ -43,19 +43,18 @@ class ArchivoUsuarios {
         fclose(p);
         return escribio;
     }
-    /*
-    int buscarRegistro(int a) {
-        Genero reg;
+
+    int buscarRegistro(int buscado) {
+        Usuario reg;
         int cont=0;
-        FILE *p=fopen(_nombre,"ab+"); //para que funcione si es el prim.
+        FILE *p=fopen(_nombre,"ab+");
         if (p==NULL) {
             cout<<"ERROR DE ARCHIVO"<<endl;
-
             system("pause");
             return -2;
         }
         while(fread(&reg, sizeof reg, 1, p)==1) {
-            if(reg.getDNI()==a&&reg.getEstado()!=false) {
+            if(reg.getIdUsuario()==buscado&&reg.getEstado()!=false) {
                 fclose(p);
                 return cont;
             }
@@ -64,7 +63,7 @@ class ArchivoUsuarios {
         fclose(p);
         return -1;
     }
-    */ //BORRAR
+
 
     bool modificarRegistro(int pos, Usuario reg) {
         FILE *p=fopen(_nombre,"rb+");

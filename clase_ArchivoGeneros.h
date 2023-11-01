@@ -42,19 +42,18 @@ class ArchivoGeneros {
         fclose(p);
         return escribio;
     }
-    /*
-    int buscarRegistro(int a) {
+
+    int buscarRegistro(int buscado) {
         Genero reg;
         int cont=0;
-        FILE *p=fopen(_nombre,"ab+"); //para que funcione si es el prim.
+        FILE *p=fopen(_nombre,"ab+");
         if (p==NULL) {
             cout<<"ERROR DE ARCHIVO"<<endl;
-
             system("pause");
             return -2;
         }
         while(fread(&reg, sizeof reg, 1, p)==1) {
-            if(reg.getDNI()==a&&reg.getEstado()!=false) {
+            if(reg.getIdGenero()==buscado&&reg.getEstado()!=false) {
                 fclose(p);
                 return cont;
             }
@@ -63,7 +62,6 @@ class ArchivoGeneros {
         fclose(p);
         return -1;
     }
-    */ //BORRRRARRRRRRRRRRR
 
     bool modificarRegistro(int pos, Genero reg) {
         FILE *p=fopen(_nombre,"rb+");

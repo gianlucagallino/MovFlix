@@ -43,17 +43,31 @@
 
 1698699692 c:\users\user\downloads\movflix_proyect\menu_resenias.h
 
-1698767472 source:c:\users\user\documents\github\movflix\main.cpp
+1698871001 source:c:\users\user\documents\github\movflix\main.cpp
 	<iostream>
-	<cstring>
 	<cstdlib>
+	<cstring>
+	<ctime>
 	"rlutil.h"
+	"funcion_cargarCadena.h"
 	"funcion_pantallaIntroductoria.h"
+	"funcion_determinarPosicionAutonumerica.h"
+	"clase_Fecha.h"
+	"clase_Genero.h"
+	"clase_Director.h"
+	"clase_Pelicula.h"
+	"clase_Usuario.h"
+	"clase_Resenia.h"
+	"clase_ArchivoGeneros.h"
+	"clase_ArchivoDirectores.h"
+	"clase_ArchivoPeliculas.h"
+	"clase_ArchivoUsuarios.h"
+	"clase_ArchivoResenias.h"
 	"menu_usuarios.h"
 	"menu_peliculas.h"
 	"menu_resenias.h"
 	"menu_generos.h"
-	"menu_autores.h"
+	"menu_directores.h"
 	"Reportes.h"
 	"menu_administracion.h"
 
@@ -71,19 +85,47 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1698767781 c:\users\user\documents\github\movflix\funcion_pantallaintroductoria.h
+1698785456 c:\users\user\documents\github\movflix\funcion_pantallaintroductoria.h
 
-1698767472 c:\users\user\documents\github\movflix\menu_usuarios.h
+1698875027 c:\users\user\documents\github\movflix\menu_usuarios.h
 
-1698767472 c:\users\user\documents\github\movflix\menu_peliculas.h
+1698875394 c:\users\user\documents\github\movflix\menu_peliculas.h
 
-1698767472 c:\users\user\documents\github\movflix\menu_resenias.h
+1698876795 c:\users\user\documents\github\movflix\menu_resenias.h
 
-1698767472 c:\users\user\documents\github\movflix\menu_generos.h
+1698875378 c:\users\user\documents\github\movflix\menu_generos.h
 
 1698767472 c:\users\user\documents\github\movflix\menu_autores.h
 
-1698767472 c:\users\user\documents\github\movflix\reportes.h
+1698783758 c:\users\user\documents\github\movflix\reportes.h
 
-1698767472 c:\users\user\documents\github\movflix\menu_administracion.h
+1698871001 c:\users\user\documents\github\movflix\menu_administracion.h
+
+1698810452 c:\users\user\documents\github\movflix\funcion_cargarcadena.h
+
+1698785961 c:\users\user\documents\github\movflix\funcion_determinarposicionautonumerica.h
+
+1698784690 c:\users\user\documents\github\movflix\clase_fecha.h
+
+1698864691 c:\users\user\documents\github\movflix\clase_genero.h
+
+1698810681 c:\users\user\documents\github\movflix\clase_director.h
+
+1698810455 c:\users\user\documents\github\movflix\clase_pelicula.h
+
+1698870741 c:\users\user\documents\github\movflix\clase_usuario.h
+
+1698871001 c:\users\user\documents\github\movflix\clase_resenia.h
+
+1698870458 c:\users\user\documents\github\movflix\clase_archivogeneros.h
+
+1698870469 c:\users\user\documents\github\movflix\clase_archivodirectores.h
+
+1698870481 c:\users\user\documents\github\movflix\clase_archivopeliculas.h
+
+1698870494 c:\users\user\documents\github\movflix\clase_archivousuarios.h
+
+1698870528 c:\users\user\documents\github\movflix\clase_archivoresenias.h
+
+1698876827 c:\users\user\documents\github\movflix\menu_directores.h
 

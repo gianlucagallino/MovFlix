@@ -11,8 +11,8 @@
 void MenuAdministracion() {
     int op;
     bool correrMenu = true;
-    system("cls");
     while(correrMenu) {
+        system("cls");
         cout << endl;
         cout << "       MENU ADMINISTRACION       " << endl;
         cout << "---------------------------------" << endl;
