@@ -35,24 +35,18 @@ using namespace std;
   -Parra, Juan (Presencial)
 */
 
-/* Falta hacer:
- - Mejoras graficas. Lo mejor posible, pero si se rompe, preferible que sea estable.
- - Desarrollar las clases y las funciones
- - Que cumpla con las cosas del tp tambien. por las dudas.
- - Hacer un menu de reportes interesante.
- - usar el system copy para el backup
- - HACER LAS VERIFICACIONES, es super importante que esten bien. que las clases compuestas, sus factores compuestos existan.
- - Comentar TODO el codigo, para que se note la atencion al detalle.
- - Actualizar la documentacion que hicimos para que diga bien lo que armamos.
- - Mostrarle a maxi si esta para un 10. ver que dice.
+/// QUEDA PARA HACER:
+/*
+ - ANTES QUE NADA PROBAR QUE TODO ANDE!!!
+ - Hacer un menu de reportes interesante, con cosas copadas. aprovechemos que tenemos tantos archivos.
+ - HACER LAS VERIFICACIONES, no hay casi nada hecho. es importante que esten bien. que las clases compuestas, sus factores compuestos existan. TODO, minucioso, en detalle.
+ - Que cumpla con las cosas del tp tambien, por las dudas. Sacar ideas de ahi.
+ - Incorporar temas cuatrimestre 2!! Importante, asi mostramos que sabemos eso.
+ - Comentar TODO el codigo, para que se note la atencion al detalle, y sea mas facil de interpretar / estudiar.
+ - Actualizar la documentacion que hicimos en google docs, para que diga bien lo que armamos, porque cambió bastante.
+ - Mejoras graficas. Lo mejor posible, pero si se rompe, preferible que sea estable. usen rlutil. (acordarse de poner el fondo en negro, pq el de kloster es blanco si no)
 */
 
-/* Cosas para tener en cuenta:
- - Las funciones se escriben asi "EstoEsUnaFuncion()" primera letra mayus
- - Las variables, asi "estoEsUnaVariable" primera letra min
- - Los while(true) son mala practica, preferible hacerlo con un booleano.
- - Todo debe tener ABML
-*/
 
 int main() {
     bool correrPrograma = true;
@@ -95,11 +89,9 @@ int main() {
             MenuResenias();
             break;
         case 6:
-            //El nombre del archivo DEBE SER "Reportes.h"
             MenuReportes();
             break;
         case 7:
-            //un full wipe, un establecer todo, un backup individual, un reset individual, un recover individual, un wipe individual
             MenuAdministracion();
             break;
         case 0:
