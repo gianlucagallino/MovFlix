@@ -25,27 +25,17 @@ class Director {
 
     //No corresponde un setId, dado que es autonumerico.
 
-    void setNombreDirector(const char *input) {
-        strcpy(_nombreDirector,input);
-    }
+    void setNombreDirector(const char *input) {strcpy(_nombreDirector,input);}
 
-    void setEstado(bool input) {
-        _estado = input;
-    }
+    void setEstado(bool input) {_estado = input;}
 
     //gets()
 
-    int getIdDirector() {
-        return _idDirector;
-    }
+    int getIdDirector() {return _idDirector;}
 
-    const char *getNombreDirector() {
-        return _nombreDirector;
-    }
+    const char *getNombreDirector() {return _nombreDirector;}
 
-    bool getEstado() {
-        return _estado;
-    }
+    bool getEstado() {return _estado;}
 
     //Otros
 

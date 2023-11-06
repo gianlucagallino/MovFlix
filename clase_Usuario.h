@@ -73,9 +73,11 @@ class Usuario {
         _idUsuario = DeterminarPosicionAutonumerica("Usuarios.dat", sizeof(Usuario));
         cout<<"NOMBRE USUARIO: ";
         cargarCadena(nombreTemporal, 30);
+        while(nombreTemporal[0]=='\0') cargarCadena(nombreTemporal, 30);;
         setNombreUsuario(nombreTemporal);
         cout<<"EMAIL: ";
         cargarCadena(emailTemporal, 30);
+        while(emailTemporal[0]=='\0') cargarCadena(emailTemporal, 30);;
         setEmail(emailTemporal);
         cout<<"GENERO FAVORITO: "<<endl;
         _generoFavorito.Cargar();
@@ -90,8 +92,9 @@ class Usuario {
             cout<<_nombreUsuario<<endl;
             cout<<"EMAIL: ";
             cout<<_email<<endl;
-            cout<<"GENERO FAVORITO: "<<endl;
+            cout<<"GENERO FAVORITO: ";
             cout<<_generoFavorito.getNombreGenero();
+            cout<<endl;
             cout<<endl;
         }
     }

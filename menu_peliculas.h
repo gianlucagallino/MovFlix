@@ -112,7 +112,7 @@ bool ModificarPelicula() {
     Pelicula temp;
     char descripcionTemp[200];
     ArchivoPeliculas archivo("Peliculas.dat");
-    cout<<"INGRESAR ID CUYO NOMBRE MODIFICAR: ";
+    cout<<"INGRESAR ID CUYA DESCRIPCION MODIFICAR: ";
     cin>>ID;
     system("cls");
     int pos = archivo.buscarRegistro(ID);
@@ -126,6 +126,7 @@ bool ModificarPelicula() {
     }
     cout << "INGRESE NUEVA DESCRIPCION"<<endl;
     cargarCadena(descripcionTemp, 200);
+    while(descripcionTemp[0]=='\0') cargarCadena(descripcionTemp, 200);;
     temp = archivo.leerRegistro(pos);
     temp.setDescripcion(descripcionTemp);
     bool existe = archivo.modificarRegistro(pos, temp);

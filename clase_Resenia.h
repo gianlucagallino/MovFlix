@@ -106,8 +106,8 @@ class Resenia {
     void Mostrar() {
         if (getEstado()) {
             cout<<"ID RESENIA: ";
-            cout<<_idResenia;
-            cout<<"AUTOR RESENIA: "<<endl;
+            cout<<_idResenia<<endl;
+            cout<<"AUTOR RESENIA: ";
             _autorResenia.Mostrar();
             cout<<"PELICULA A RESENIAR: "<<endl;
             _peliculaResenia.Mostrar();

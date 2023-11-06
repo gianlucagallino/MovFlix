@@ -26,59 +26,33 @@ class Pelicula {
 
     //No corresponde un setId, dado que es autonumerico.
 
-    void setNombrePelicula(const char *input) {
-        strcpy(_nombrePelicula,input);
-    }
+    void setNombrePelicula(const char *input) {strcpy(_nombrePelicula,input);}
 
-    void setDescripcion(const char *input) {
-        strcpy(_descripcion,input);
-    }
+    void setDescripcion(const char *input) {strcpy(_descripcion,input);}
 
-    void setDirector(Director input) {
-        _director = input;
-    }
+    void setDirector(Director input) {_director = input;}
 
-    void setFecha(Fecha input) {
-        _fechaPublicacion = input;
-    }
+    void setFecha(Fecha input) {_fechaPublicacion = input;}
 
-    void setGenero(Genero input) {
-        _genero = input;
-    }
+    void setGenero(Genero input) {_genero = input;}
 
-    void setEstado(bool input) {
-        _estado = input;
-    }
+    void setEstado(bool input) {_estado = input;}
 
     //gets()
 
-    int getIdPelicula() {
-        return _idPelicula;
-    }
+    int getIdPelicula() {return _idPelicula;}
 
-    const char *getNombrePelicula() {
-        return _nombrePelicula;
-    }
+    const char *getNombrePelicula() {return _nombrePelicula;}
 
-    const char *getDescripcion() {
-        return _descripcion;
-    }
+    const char *getDescripcion() {return _descripcion;}
 
-    Director getDirector() {
-        return _director;
-    }
+    Director getDirector() {return _director;}
 
-    Fecha getFechaPublicacion() {
-        return _fechaPublicacion;
-    }
+    Fecha getFechaPublicacion() {return _fechaPublicacion;}
 
-    Genero getGenero() {
-        return _genero;
-    }
+    Genero getGenero() {return _genero;}
 
-    bool getEstado() {
-        return _estado;
-    }
+    bool getEstado() {return _estado;}
 
     //Otros
 
@@ -86,6 +60,7 @@ class Pelicula {
 
         char nombreTemporal[30];
         char descTemporal[200];
+        char generoTemporal[30];
 
         _idPelicula = DeterminarPosicionAutonumerica("Peliculas.dat", sizeof(Pelicula));
         cout<<"NOMBRE: ";
@@ -93,13 +68,16 @@ class Pelicula {
         setNombrePelicula(nombreTemporal);
         cout<<"DESCRIPCION: ";
         cargarCadena(descTemporal, 200);
-        setNombrePelicula(descTemporal);
+        setDescripcion(descTemporal);
         cout<<"DIRECTOR: "<<endl;
         _director.Cargar();
         cout<<"FECHA DE PUBLICACION: "<<endl;
         _fechaPublicacion.Cargar();
         cout<<"GENERO: "<<endl;
-        _genero.Cargar();
+        cargarCadena(generoTemporal, 30);
+        Pelicula pel;
+        pel.VerificarExistencia(generoTemporal);
+        //_genero.Cargar();
         setEstado(true);
     }
 
@@ -113,14 +91,32 @@ class Pelicula {
             cout<<_descripcion<<endl;
             cout<<"DIRECTOR: "<<endl;
             _director.Mostrar();
-            cout<<"FECHA PUBLICACION: "<<endl;
+            cout<<"FECHA PUBLICACION: ";
             _fechaPublicacion.Mostrar();
             cout<<"GENERO: "<<endl;
-            _genero.Mostrar();
+            //_genero.Mostrar();
             cout<<endl;
         }
     }
+    bool VerificarExistencia (const char *primgenero){
+        int flag = false;
+        while (flag != false){
+        ArchivoGeneros archgen;
+
+        int cantReg = archgen.contarregistro();
+
+        for (int i=0;i<cantReg;i++){
+            _genero = archgen.leerregistro(i);
+           if (_genero.getIdGenero() == primgenero){
+            flag = true;
+                }
+            }
+        }
+    }
+
 };
+
+
 
 
 #endif // CLASE_PELICULA_H_INCLUDED

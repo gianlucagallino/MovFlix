@@ -129,3 +129,171 @@
 
 1698876827 c:\users\user\documents\github\movflix\menu_directores.h
 
+1698886162 source:c:\users\parra\onedrive\escritorio\movflix-main\main.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<ctime>
+	"rlutil.h"
+	"funcion_cargarCadena.h"
+	"funcion_pantallaIntroductoria.h"
+	"funcion_determinarPosicionAutonumerica.h"
+	"clase_Fecha.h"
+	"clase_Genero.h"
+	"clase_Director.h"
+	"clase_Pelicula.h"
+	"clase_Usuario.h"
+	"clase_Resenia.h"
+	"clase_ArchivoGeneros.h"
+	"clase_ArchivoDirectores.h"
+	"clase_ArchivoPeliculas.h"
+	"clase_ArchivoUsuarios.h"
+	"clase_ArchivoResenias.h"
+	"menu_usuarios.h"
+	"menu_peliculas.h"
+	"menu_resenias.h"
+	"menu_generos.h"
+	"menu_directores.h"
+	"Reportes.h"
+	"menu_administracion.h"
+
+1698886162 c:\users\parra\onedrive\escritorio\movflix-main\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1698886162 c:\users\parra\onedrive\escritorio\movflix-main\funcion_cargarcadena.h
+
+1698886162 c:\users\parra\onedrive\escritorio\movflix-main\funcion_pantallaintroductoria.h
+
+1698886162 c:\users\parra\onedrive\escritorio\movflix-main\funcion_determinarposicionautonumerica.h
+
+1698886162 c:\users\parra\onedrive\escritorio\movflix-main\clase_fecha.h
+
+1698935281 c:\users\parra\onedrive\escritorio\movflix-main\clase_genero.h
+
+1698886162 c:\users\parra\onedrive\escritorio\movflix-main\clase_director.h
+
+1698935951 c:\users\parra\onedrive\escritorio\movflix-main\clase_pelicula.h
+
+1698935221 c:\users\parra\onedrive\escritorio\movflix-main\clase_usuario.h
+
+1698886162 c:\users\parra\onedrive\escritorio\movflix-main\clase_resenia.h
+
+1698931959 c:\users\parra\onedrive\escritorio\movflix-main\clase_archivogeneros.h
+
+1698886162 c:\users\parra\onedrive\escritorio\movflix-main\clase_archivodirectores.h
+
+1698886162 c:\users\parra\onedrive\escritorio\movflix-main\clase_archivopeliculas.h
+
+1698886162 c:\users\parra\onedrive\escritorio\movflix-main\clase_archivousuarios.h
+
+1698886162 c:\users\parra\onedrive\escritorio\movflix-main\clase_archivoresenias.h
+
+1698934804 c:\users\parra\onedrive\escritorio\movflix-main\menu_usuarios.h
+
+1698934253 c:\users\parra\onedrive\escritorio\movflix-main\menu_peliculas.h
+
+1698934662 c:\users\parra\onedrive\escritorio\movflix-main\menu_resenias.h
+
+1698886162 c:\users\parra\onedrive\escritorio\movflix-main\menu_generos.h
+
+1698934662 c:\users\parra\onedrive\escritorio\movflix-main\menu_directores.h
+
+1698886162 c:\users\parra\onedrive\escritorio\movflix-main\reportes.h
+
+1698886162 c:\users\parra\onedrive\escritorio\movflix-main\menu_administracion.h
+
+1698972599 source:c:\users\admin\desktop\movflix-main\main.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<ctime>
+	"rlutil.h"
+	"funcion_cargarCadena.h"
+	"funcion_pantallaIntroductoria.h"
+	"funcion_determinarPosicionAutonumerica.h"
+	"clase_Fecha.h"
+	"clase_Genero.h"
+	"clase_Director.h"
+	"clase_Pelicula.h"
+	"clase_Usuario.h"
+	"clase_Resenia.h"
+	"clase_ArchivoGeneros.h"
+	"clase_ArchivoDirectores.h"
+	"clase_ArchivoPeliculas.h"
+	"clase_ArchivoUsuarios.h"
+	"clase_ArchivoResenias.h"
+	"menu_usuarios.h"
+	"menu_peliculas.h"
+	"menu_resenias.h"
+	"menu_generos.h"
+	"menu_directores.h"
+	"Reportes.h"
+	"menu_administracion.h"
+
+1698972599 c:\users\admin\desktop\movflix-main\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1698972598 c:\users\admin\desktop\movflix-main\funcion_cargarcadena.h
+
+1698972598 c:\users\admin\desktop\movflix-main\funcion_pantallaintroductoria.h
+
+1698972598 c:\users\admin\desktop\movflix-main\funcion_determinarposicionautonumerica.h
+
+1698972598 c:\users\admin\desktop\movflix-main\clase_fecha.h
+
+1699201248 c:\users\admin\desktop\movflix-main\clase_genero.h
+
+1699015376 c:\users\admin\desktop\movflix-main\clase_director.h
+
+1699201702 c:\users\admin\desktop\movflix-main\clase_pelicula.h
+
+1698972598 c:\users\admin\desktop\movflix-main\clase_usuario.h
+
+1698976257 c:\users\admin\desktop\movflix-main\clase_resenia.h
+
+1698972598 c:\users\admin\desktop\movflix-main\clase_archivogeneros.h
+
+1698972598 c:\users\admin\desktop\movflix-main\clase_archivodirectores.h
+
+1698972598 c:\users\admin\desktop\movflix-main\clase_archivopeliculas.h
+
+1698972598 c:\users\admin\desktop\movflix-main\clase_archivousuarios.h
+
+1698972598 c:\users\admin\desktop\movflix-main\clase_archivoresenias.h
+
+1698972599 c:\users\admin\desktop\movflix-main\menu_usuarios.h
+
+1698972599 c:\users\admin\desktop\movflix-main\menu_peliculas.h
+
+1698972599 c:\users\admin\desktop\movflix-main\menu_resenias.h
+
+1698972599 c:\users\admin\desktop\movflix-main\menu_generos.h
+
+1698972599 c:\users\admin\desktop\movflix-main\menu_directores.h
+
+1698972599 c:\users\admin\desktop\movflix-main\reportes.h
+
+1698972599 c:\users\admin\desktop\movflix-main\menu_administracion.h
+

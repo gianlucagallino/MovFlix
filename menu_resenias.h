@@ -126,6 +126,7 @@ bool ModificarResenia() {
     }
     cout << "INGRESE NUEVO TEXTO"<<endl;
     cargarCadena(textoTemp, 200);
+    while(textoTemp[0]=='\0') cargarCadena(textoTemp, 200);;
     temp = archivo.leerRegistro(pos);
     temp.setOpinion(textoTemp);
     bool existe = archivo.modificarRegistro(pos, temp);

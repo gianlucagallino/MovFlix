@@ -125,6 +125,7 @@ bool ModificarDirector() {
     }
     cout << "INGRESE NUEVO NOMBRE"<<endl;
     cargarCadena(nombreTemp, 30);
+    while(nombreTemp[0]=='\0') cargarCadena(nombreTemp, 30);;
     temp = archivo.leerRegistro(pos);
     temp.setNombreDirector(nombreTemp);
     bool existe = archivo.modificarRegistro(pos, temp);

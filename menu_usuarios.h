@@ -109,38 +109,39 @@ bool BajaUsuario() {
     return true;
 }
 
-bool ModificarUsuario() {
+bool ModificarUsuario(){
     int ID;
     Usuario temp;
     char nombreTemp[30];
     ArchivoUsuarios archivo("Usuarios.dat");
     cout<<"INGRESAR ID CUYO NOMBRE MODIFICAR: ";
     cin>>ID;
-    system("cls");
-    int pos = archivo.buscarRegistro(ID);
-    if (pos == -1) {
-        cout << "NO EXISTE"<< endl;
-        system("pause");
         system("cls");
-        return false;
-    } else if (pos == -2) {
-        return false;
+        int pos = archivo.buscarRegistro(ID);
+        if (pos == -1) {
+            cout << "NO EXISTE"<< endl;
+            system("pause");
+            system("cls");
+            return false;
+        } else if (pos == -2) {
+            return false;
+        }
+        cout << "INGRESE NUEVO NOMBRE"<<endl;
+        cargarCadena(nombreTemp, 30);
+        while(nombreTemp[0]=='\0') cargarCadena(nombreTemp, 30);; /// DETECTA SI TIENE ESPACIOS EL NOMBRE, EN EL CASO QUE TENGA ESPACIOS PIDE QUE SE ESCRIBA DEVUELTA
+        temp = archivo.leerRegistro(pos);
+        temp.setNombreUsuario(nombreTemp);
+        bool existe = archivo.modificarRegistro(pos, temp);
+        if(existe==false) {
+           cout<<"PROBLEMA AL ESCRIBIR"<<endl;
+           system("pause");
+           return false;
+        } else {
+          cout<<"MODIFICADO!"<<endl;
+          system("pause");
+        }
+        return true;
     }
-    cout << "INGRESE NUEVO NOMBRE"<<endl;
-    cargarCadena(nombreTemp, 30);
-    temp = archivo.leerRegistro(pos);
-    temp.setNombreUsuario(nombreTemp);
-    bool existe = archivo.modificarRegistro(pos, temp);
-    if(existe==false) {
-        cout<<"PROBLEMA AL ESCRIBIR"<<endl;
-        system("pause");
-        return false;
-    } else {
-        cout<<"MODIFICADO!"<<endl;
-        system("pause");
-    }
-    return true;
-}
 
 bool ListarUsuario() {
     int ID;
