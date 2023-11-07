@@ -213,7 +213,7 @@
 
 1698886162 c:\users\parra\onedrive\escritorio\movflix-main\menu_administracion.h
 
-1698972599 source:c:\users\admin\desktop\movflix-main\main.cpp
+1699321328 source:c:\users\admin\desktop\movflix-main\main.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
@@ -224,14 +224,18 @@
 	"funcion_determinarPosicionAutonumerica.h"
 	"clase_Fecha.h"
 	"clase_Genero.h"
-	"clase_Director.h"
-	"clase_Pelicula.h"
-	"clase_Usuario.h"
-	"clase_Resenia.h"
 	"clase_ArchivoGeneros.h"
+	"funcion_Verificarexistencia_genero.h"
+	"clase_Director.h"
 	"clase_ArchivoDirectores.h"
+	"funcion_verificarexistencia_director.h"
+	"clase_Pelicula.h"
 	"clase_ArchivoPeliculas.h"
+	"funcion_encontrarPelicula.h"
+	"clase_Usuario.h"
 	"clase_ArchivoUsuarios.h"
+	"funcion_encontrarUsuario.h"
+	"clase_Resenia.h"
 	"clase_ArchivoResenias.h"
 	"menu_usuarios.h"
 	"menu_peliculas.h"
@@ -259,7 +263,7 @@
 
 1698972598 c:\users\admin\desktop\movflix-main\funcion_pantallaintroductoria.h
 
-1698972598 c:\users\admin\desktop\movflix-main\funcion_determinarposicionautonumerica.h
+1699235000 c:\users\admin\desktop\movflix-main\funcion_determinarposicionautonumerica.h
 
 1698972598 c:\users\admin\desktop\movflix-main\clase_fecha.h
 
@@ -267,11 +271,11 @@
 
 1699015376 c:\users\admin\desktop\movflix-main\clase_director.h
 
-1699201702 c:\users\admin\desktop\movflix-main\clase_pelicula.h
+1699273954 c:\users\admin\desktop\movflix-main\clase_pelicula.h
 
 1698972598 c:\users\admin\desktop\movflix-main\clase_usuario.h
 
-1698976257 c:\users\admin\desktop\movflix-main\clase_resenia.h
+1699322649 c:\users\admin\desktop\movflix-main\clase_resenia.h
 
 1698972598 c:\users\admin\desktop\movflix-main\clase_archivogeneros.h
 
@@ -296,4 +300,12 @@
 1698972599 c:\users\admin\desktop\movflix-main\reportes.h
 
 1698972599 c:\users\admin\desktop\movflix-main\menu_administracion.h
+
+1699235250 c:\users\admin\desktop\movflix-main\funcion_verificarexistencia_genero.h
+
+1699273517 c:\users\admin\desktop\movflix-main\funcion_verificarexistencia_director.h
+
+1699320565 c:\users\admin\desktop\movflix-main\funcion_encontrarpelicula.h
+
+1699321296 c:\users\admin\desktop\movflix-main\funcion_encontrarusuario.h
 

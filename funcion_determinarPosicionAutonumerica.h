@@ -19,7 +19,7 @@ int DeterminarPosicionAutonumerica(const char *archivo, int tamanioRegistro) {
     fseek(p,0,2);
     int cantByte=ftell(p);
     fclose(p);
-    return (cantByte / tamanioRegistro);
+    return (cantByte / tamanioRegistro)+1;
 }
 
 #endif // FUNCION_DETERMINARPOSICIONAUTONUMERICA_H_INCLUDED

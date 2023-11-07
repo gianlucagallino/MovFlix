@@ -44,9 +44,13 @@
 		<Unit filename="clase_Pelicula.h" />
 		<Unit filename="clase_Resenia.h" />
 		<Unit filename="clase_Usuario.h" />
+		<Unit filename="funcion_Verificarexistencia_genero.h" />
 		<Unit filename="funcion_cargarCadena.h" />
 		<Unit filename="funcion_determinarPosicionAutonumerica.h" />
+		<Unit filename="funcion_encontrarPelicula.h" />
+		<Unit filename="funcion_encontrarUsuario.h" />
 		<Unit filename="funcion_pantallaIntroductoria.h" />
+		<Unit filename="funcion_verificarexistencia_director.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="menu_administracion.h" />
 		<Unit filename="menu_directores.h" />

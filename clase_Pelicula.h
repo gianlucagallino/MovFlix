@@ -15,9 +15,9 @@ class Pelicula {
     int _idPelicula;
     char _nombrePelicula[30];
     char _descripcion[200];
-    Director _director;
+    char _director[30];
     Fecha _fechaPublicacion;
-    Genero _genero;
+    char _genero[30];
     bool _estado;
 
 //Metodos
@@ -30,11 +30,11 @@ class Pelicula {
 
     void setDescripcion(const char *input) {strcpy(_descripcion,input);}
 
-    void setDirector(Director input) {_director = input;}
+    void setDirector(const char *input) {strcpy(_director,input);}
 
     void setFecha(Fecha input) {_fechaPublicacion = input;}
 
-    void setGenero(Genero input) {_genero = input;}
+    void setGenero(const char *input) {strcpy(_genero,input);}
 
     void setEstado(bool input) {_estado = input;}
 
@@ -46,11 +46,11 @@ class Pelicula {
 
     const char *getDescripcion() {return _descripcion;}
 
-    Director getDirector() {return _director;}
+    const char *getDirector() {return _director;}
 
     Fecha getFechaPublicacion() {return _fechaPublicacion;}
 
-    Genero getGenero() {return _genero;}
+    const char *getGenero() {return _genero;}
 
     bool getEstado() {return _estado;}
 
@@ -61,6 +61,10 @@ class Pelicula {
         char nombreTemporal[30];
         char descTemporal[200];
         char generoTemporal[30];
+        char directorTemporal[30];
+
+        bool flag_repeticion = false;
+        bool flag_repeticion1 = false;
 
         _idPelicula = DeterminarPosicionAutonumerica("Peliculas.dat", sizeof(Pelicula));
         cout<<"NOMBRE: ";
@@ -70,14 +74,29 @@ class Pelicula {
         cargarCadena(descTemporal, 200);
         setDescripcion(descTemporal);
         cout<<"DIRECTOR: "<<endl;
-        _director.Cargar();
+        while (flag_repeticion1 != true){
+            cargarCadena(directorTemporal, 30);
+            if (VerificarExistenciaDirector(directorTemporal)== true){
+                setDirector(directorTemporal);
+                flag_repeticion1 = true;
+            }else{
+                cout << "EL DIRECTOR NO EXISTE." << endl;
+            }
+        }
+
         cout<<"FECHA DE PUBLICACION: "<<endl;
         _fechaPublicacion.Cargar();
         cout<<"GENERO: "<<endl;
-        cargarCadena(generoTemporal, 30);
-        Pelicula pel;
-        pel.VerificarExistencia(generoTemporal);
-        //_genero.Cargar();
+        while (flag_repeticion != true){
+            cargarCadena(generoTemporal, 30);
+            if (VerificarExistenciaGenero(generoTemporal)== true){
+                setGenero(generoTemporal);
+                flag_repeticion = true;
+            }else{
+                cout << "EL GENERO NO EXISTE." << endl;
+            }
+        }
+
         setEstado(true);
     }
 
@@ -87,33 +106,17 @@ class Pelicula {
             cout<<_idPelicula<<endl;
             cout<<"NOMBRE: ";
             cout<<_nombrePelicula<<endl;
-            cout<<"DESCRIPCION"<<endl;
+            cout<<"DESCRIPCION: ";
             cout<<_descripcion<<endl;
-            cout<<"DIRECTOR: "<<endl;
-            _director.Mostrar();
+            cout<<"DIRECTOR: ";
+            cout<<_director<<endl;
             cout<<"FECHA PUBLICACION: ";
             _fechaPublicacion.Mostrar();
-            cout<<"GENERO: "<<endl;
-            //_genero.Mostrar();
+            cout<<"GENERO: ";
+            cout<<_genero<<endl;
             cout<<endl;
         }
     }
-    bool VerificarExistencia (const char *primgenero){
-        int flag = false;
-        while (flag != false){
-        ArchivoGeneros archgen;
-
-        int cantReg = archgen.contarregistro();
-
-        for (int i=0;i<cantReg;i++){
-            _genero = archgen.leerregistro(i);
-           if (_genero.getIdGenero() == primgenero){
-            flag = true;
-                }
-            }
-        }
-    }
-
 };
 
 

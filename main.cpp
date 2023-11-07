@@ -11,14 +11,18 @@ using namespace std;
 #include "funcion_determinarPosicionAutonumerica.h"
 #include "clase_Fecha.h"
 #include "clase_Genero.h"
-#include "clase_Director.h"
-#include "clase_Pelicula.h"
-#include "clase_Usuario.h"
-#include "clase_Resenia.h"
 #include "clase_ArchivoGeneros.h"
+#include "funcion_Verificarexistencia_genero.h"
+#include "clase_Director.h"
 #include "clase_ArchivoDirectores.h"
+#include "funcion_verificarexistencia_director.h"
+#include "clase_Pelicula.h"
 #include "clase_ArchivoPeliculas.h"
+#include "funcion_encontrarPelicula.h"
+#include "clase_Usuario.h"
 #include "clase_ArchivoUsuarios.h"
+#include "funcion_encontrarUsuario.h"
+#include "clase_Resenia.h"
 #include "clase_ArchivoResenias.h"
 #include "menu_usuarios.h"
 #include "menu_peliculas.h"
@@ -31,22 +35,22 @@ using namespace std;
 /*
   AUTORES:
   -Arias, Natalia (Virtual)
-  -Gallino, Gianluca (Virtual)
-  -Parra, Juan (Presencial)
+  -GALLIANO, GIANLUCA (Virtual)
+  -PARRA, Juan (PRESENCIAL)
 */
 
 /// QUEDA PARA HACER:
 /*
- - ANTES QUE NADA PROBAR QUE TODO ANDE!!!
  - Hacer un menu de reportes interesante, con cosas copadas. aprovechemos que tenemos tantos archivos.
  - HACER LAS VERIFICACIONES, no hay casi nada hecho. es importante que esten bien. que las clases compuestas, sus factores compuestos existan. TODO, minucioso, en detalle.
- - Que cumpla con las cosas del tp tambien, por las dudas. Sacar ideas de ahi.
  - Incorporar temas cuatrimestre 2!! Importante, asi mostramos que sabemos eso.
  - Comentar TODO el codigo, para que se note la atencion al detalle, y sea mas facil de interpretar / estudiar.
  - Actualizar la documentacion que hicimos en google docs, para que diga bien lo que armamos, porque cambió bastante.
  - Mejoras graficas. Lo mejor posible, pero si se rompe, preferible que sea estable. usen rlutil. (acordarse de poner el fondo en negro, pq el de kloster es blanco si no)
 */
 
+/// COMENTARIO JUAN: SI PARA LO DE IDENTIFICAR EL ID DEL JUGADOR NO PODES CON LO DE LA CARGA DE OPERADORES, SE ME OCURRIÓ QUE GUARDARA EL ID EN UNA VARIABLE
+/// Y DESPUES SE LA PASE A UNA FUNCION DENTRO DE UN .H NUEVO DONDE RECORRA EL ARCHIVO DE USUARIOS Y CUANDO CONSIGUE UN MISMO ID, QUE LO MUESTRE.
 
 int main() {
     bool correrPrograma = true;
