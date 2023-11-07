@@ -15,9 +15,9 @@ class Pelicula {
     int _idPelicula;
     char _nombrePelicula[30];
     char _descripcion[200];
-    char _director[30];
+    Director _director;
     Fecha _fechaPublicacion;
-    char _genero[30];
+    Genero _genero;
     bool _estado;
 
 //Metodos
@@ -26,33 +26,59 @@ class Pelicula {
 
     //No corresponde un setId, dado que es autonumerico.
 
-    void setNombrePelicula(const char *input) {strcpy(_nombrePelicula,input);}
+    void setNombrePelicula(const char *input) {
+        strcpy(_nombrePelicula,input);
+    }
 
-    void setDescripcion(const char *input) {strcpy(_descripcion,input);}
+    void setDescripcion(const char *input) {
+        strcpy(_descripcion,input);
+    }
 
-    void setDirector(const char *input) {strcpy(_director,input);}
+    void setDirector(Director input) {
+        _director=input;
+    }
 
-    void setFecha(Fecha input) {_fechaPublicacion = input;}
+    void setFecha(Fecha input) {
+        _fechaPublicacion = input;
+    }
 
-    void setGenero(const char *input) {strcpy(_genero,input);}
+    void setGenero(Genero input) {
+        _genero=input;
+    }
 
-    void setEstado(bool input) {_estado = input;}
+    void setEstado(bool input) {
+        _estado = input;
+    }
 
     //gets()
 
-    int getIdPelicula() {return _idPelicula;}
+    int getIdPelicula() {
+        return _idPelicula;
+    }
 
-    const char *getNombrePelicula() {return _nombrePelicula;}
+    const char *getNombrePelicula() {
+        return _nombrePelicula;
+    }
 
-    const char *getDescripcion() {return _descripcion;}
+    const char *getDescripcion() {
+        return _descripcion;
+    }
 
-    const char *getDirector() {return _director;}
+    Director getDirector() {
+        return _director;
+    }
 
-    Fecha getFechaPublicacion() {return _fechaPublicacion;}
+    Fecha getFechaPublicacion() {
+        return _fechaPublicacion;
+    }
 
-    const char *getGenero() {return _genero;}
+    Genero getGenero() {
+        return _genero;
+    }
 
-    bool getEstado() {return _estado;}
+    bool getEstado() {
+        return _estado;
+    }
 
     //Otros
 
@@ -74,12 +100,13 @@ class Pelicula {
         cargarCadena(descTemporal, 200);
         setDescripcion(descTemporal);
         cout<<"DIRECTOR: "<<endl;
-        while (flag_repeticion1 != true){
+        while (flag_repeticion1 != true) {
             cargarCadena(directorTemporal, 30);
-            if (VerificarExistenciaDirector(directorTemporal)== true){
-                setDirector(directorTemporal);
-                flag_repeticion1 = true;
-            }else{
+            if (VerificarExistenciaDirector(directorTemporal)== true) {
+                cout << "DIRECTOR ENCONTRADO." << endl;
+                setDirector(DevolverDirector(directorTemporal));
+                flag_repeticion = true;
+            } else {
                 cout << "EL DIRECTOR NO EXISTE." << endl;
             }
         }
@@ -87,12 +114,13 @@ class Pelicula {
         cout<<"FECHA DE PUBLICACION: "<<endl;
         _fechaPublicacion.Cargar();
         cout<<"GENERO: "<<endl;
-        while (flag_repeticion != true){
+        while (flag_repeticion != true) {
             cargarCadena(generoTemporal, 30);
-            if (VerificarExistenciaGenero(generoTemporal)== true){
-                setGenero(generoTemporal);
+            if (VerificarExistenciaGenero(generoTemporal)== true ) {
+                cout << "GENERO ENCONTRADO." << endl;
+                setGenero(DevolverGenero(generoTemporal));
                 flag_repeticion = true;
-            }else{
+            } else {
                 cout << "EL GENERO NO EXISTE." << endl;
             }
         }
@@ -109,11 +137,15 @@ class Pelicula {
             cout<<"DESCRIPCION: ";
             cout<<_descripcion<<endl;
             cout<<"DIRECTOR: ";
-            cout<<_director<<endl;
+            char dirtemp[30];
+            strcpy(dirtemp,_director.getNombreDirector());
+            cout<<dirtemp;
             cout<<"FECHA PUBLICACION: ";
             _fechaPublicacion.Mostrar();
             cout<<"GENERO: ";
-            cout<<_genero<<endl;
+            char generotemp[30];
+            strcpy(generotemp,_genero.getNombreGenero());
+            cout<<generotemp;
             cout<<endl;
         }
     }

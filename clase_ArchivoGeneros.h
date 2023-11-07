@@ -102,17 +102,17 @@ class ArchivoGeneros {
         fclose(p);
         return (cantByte / sizeof(Genero));
     }
-    bool ValidarGenero(int idgenero){
+    bool ValidarGenero(int idgenero) {
         ArchivoGeneros archgen("Generos.dat");
         Genero gen;
         int cantgen = archgen.contarRegistros();
         int existe = true;
 
-        for (int i=0;i < cantgen;i++){
+        for (int i=0; i < cantgen; i++) {
             gen = archgen.leerRegistro(i);
-            if (gen.getIdGenero() == idgenero){
+            if (gen.getIdGenero() == idgenero) {
                 existe = true;
-            }else{
+            } else {
                 existe =  false;
             }
         }

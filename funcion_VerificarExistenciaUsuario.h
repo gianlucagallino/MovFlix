@@ -1,34 +1,31 @@
 #ifndef FUNCION_ENCONTRARUSUARIO_H_INCLUDED
 #define FUNCION_ENCONTRARUSUARIO_H_INCLUDED
 
-bool EncontrarUsuario(int idusuario){
+bool VerificarExistenciaUsuario(const char *nom) {
     ArchivoUsuarios archus("usuarios.dat");
     int cantReg = archus.contarRegistros();
     Usuario reg;
 
-    for (int i=0;i<cantReg;i++){
+    for (int i=0; i<cantReg; i++) {
         reg = archus.leerRegistro(i);
-        if (idusuario == reg.getIdUsuario()){  /// COMPARA EL GENERO RECIBIDO CON EL GENERO EN BASE A EL REGISTRO QUE ABRIÓ
+        if (strcmp(nom,reg.getNombreUsuario()) == 0) {
             return true;
         }
     }
     return false;
 }
 
-bool MostrarUsuario (int idusuario){
+Usuario DevolverUsuario(const char *nom) {
     ArchivoUsuarios archus("usuarios.dat");
     int cantReg = archus.contarRegistros();
-
     Usuario reg;
 
-    for (int i=0;i<cantReg;i++){
+    for (int i=0; i<cantReg; i++) {
         reg = archus.leerRegistro(i);
-        if(idusuario == reg.getIdUsuario()){
-            reg.Mostrar();
-            return true;
+        if (strcmp(nom,reg.getNombreUsuario()) == 0) {
+            return reg;
         }
     }
-    return false;
 }
 
 #endif // FUNCION_ENCONTRARUSUARIO_H_INCLUDED

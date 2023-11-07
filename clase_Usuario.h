@@ -69,6 +69,7 @@ class Usuario {
 
         char nombreTemporal[30];
         char emailTemporal[30];
+        char generoTemporal[30];
 
         _idUsuario = DeterminarPosicionAutonumerica("Usuarios.dat", sizeof(Usuario));
         cout<<"NOMBRE USUARIO: ";
@@ -80,7 +81,17 @@ class Usuario {
         while(emailTemporal[0]=='\0') cargarCadena(emailTemporal, 30);;
         setEmail(emailTemporal);
         cout<<"GENERO FAVORITO: "<<endl;
-        _generoFavorito.Cargar();
+        bool flag_repeticion = false;
+        while (flag_repeticion != true) {
+            cargarCadena(generoTemporal, 30);
+            if (VerificarExistenciaGenero(generoTemporal) == true) {
+                cout << "GENERO ENCONTRADO." << endl;
+                setGeneroFavorito(DevolverGenero(generoTemporal));
+                flag_repeticion = true;
+            } else {
+                cout << "EL GENERO NO EXISTE." << endl;
+            }
+        }
         setEstado(true);
     }
 
@@ -93,7 +104,9 @@ class Usuario {
             cout<<"EMAIL: ";
             cout<<_email<<endl;
             cout<<"GENERO FAVORITO: ";
-            cout<<_generoFavorito.getNombreGenero();
+            char generotemp[30];
+            strcpy(generotemp,_generoFavorito.getNombreGenero());
+            cout<<generotemp;
             cout<<endl;
             cout<<endl;
         }

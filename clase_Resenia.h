@@ -16,8 +16,6 @@ class Resenia {
     Usuario _autorResenia;
     Pelicula _peliculaResenia;
     char _opinion[200];
-    char pelicula_a_buscar[30];
-    int idusuario;
     Fecha _fechaResenia;
     int _puntuacionResenia;
     bool _estado;
@@ -86,32 +84,34 @@ class Resenia {
 
     void Cargar() {
 
-        int idTemporal_Usuario;
+        char nomtemp[30];
+        char pelitemp[30];
         char opinionTemporal[200];
         bool flag_repeticion = false;
         bool flag_repeticion1 = false;
         int puntuacionTemporal;
 
         _idResenia  = DeterminarPosicionAutonumerica("Resenias.dat", sizeof(Resenia));
-        cout<<"ID DEL AUTOR DE LA RESENIA: "<<endl;
+        cout<<"NOMBRE AUTOR DE LA RESENIA: "<<endl;
         /// REALIZAR FUNCION CON SOBRECARGA DE OPERADORES QUE COMPARE CON EL == EL ID DE AUTOR QUE SE RECIBA CON LOS ID YA GUARDADOS
-        while (flag_repeticion1 != true){
-            cin >> idTemporal_Usuario;
-            idusuario = idTemporal_Usuario;
-            if (EncontrarUsuario(idusuario) == true){
+        while (flag_repeticion1 != true) {
+            cargarCadena(nomtemp,30);
+            if (VerificarExistenciaUsuario(nomtemp) == true) {
                 cout << "Usuario ENCONTRADA." << endl;
+                setAutorResenia(DevolverUsuario(nomtemp));
                 flag_repeticion1 = true;
-            }else{
+            } else {
                 cout << "EL USUARIO INGRESADA NO EXISTE EN LA BASE DE DATOS." << endl;
             }
         }
         cout<<"PELICULA A RESENIAR: "<<endl;
-        while (flag_repeticion != true){
-            cargarCadena(pelicula_a_buscar,30);
-            if (EncontrarPelicula(pelicula_a_buscar) == true){
+        while (flag_repeticion != true) {
+            cargarCadena(pelitemp,30);
+            if (VerificarExistenciaPelicula(pelitemp) == true) {
                 cout << "PELICULA ENCONTRADA." << endl;
+                setPeliculaResenia(DevolverPelicula(pelitemp));
                 flag_repeticion = true;
-            }else{
+            } else {
                 cout << "LA PELICULA INGRESADA NO EXISTE EN LA BASE DE DATOS." << endl;
             }
         }
@@ -130,9 +130,14 @@ class Resenia {
         if (getEstado()) {
             cout<<"ID RESENIA: ";
             cout<<_idResenia<<endl;
-            MostrarUsuario(idusuario);
+            cout<<"AUTOR RESENIA: ";
+            char nombretemp[30];
+            strcpy(nombretemp,_autorResenia.getNombreUsuario());
+            cout<<nombretemp;
             cout<<"PELICULA A RESENIAR: "<<endl;
-            MostrarPelicula(pelicula_a_buscar);
+            char pelitemp[30];
+            strcpy(pelitemp,_peliculaResenia.getNombrePelicula());
+            cout<<pelitemp;
             cout<<"OPINION: ";
             cout<<_opinion << endl;
             cout<<"FECHA: ";
