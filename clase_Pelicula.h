@@ -8,6 +8,8 @@
   -Parra, Juan (Presencial)
 */
 
+bool VerificarExistenciaPelicula(const char *nompelicula);
+
 class Pelicula {
 
 //Propiedades
@@ -90,17 +92,26 @@ class Pelicula {
         char directorTemporal[30];
 
         bool flag_repeticion = false;
-        bool flag_repeticion1 = false;
 
         _idPelicula = DeterminarPosicionAutonumerica("Peliculas.dat", sizeof(Pelicula));
         cout<<"NOMBRE: ";
-        cargarCadena(nombreTemporal, 30);
+        flag_repeticion = false;
+        while (flag_repeticion != true) {
+            cargarCadena(nombreTemporal, 30);
+            if (VerificarExistenciaDirector(nombreTemporal) == true) {
+                cout << "LA PELICULA YA EXISTE." << endl;
+            } else {
+                cout << "REGISTRADO." << endl;
+                flag_repeticion = true;
+            }
+        }
         setNombrePelicula(nombreTemporal);
         cout<<"DESCRIPCION: ";
         cargarCadena(descTemporal, 200);
         setDescripcion(descTemporal);
         cout<<"DIRECTOR: "<<endl;
-        while (flag_repeticion1 != true) {
+        flag_repeticion = false;
+        while (flag_repeticion != true) {
             cargarCadena(directorTemporal, 30);
             if (VerificarExistenciaDirector(directorTemporal)== true) {
                 cout << "DIRECTOR ENCONTRADO." << endl;
@@ -114,6 +125,7 @@ class Pelicula {
         cout<<"FECHA DE PUBLICACION: "<<endl;
         _fechaPublicacion.Cargar();
         cout<<"GENERO: "<<endl;
+        flag_repeticion = false;
         while (flag_repeticion != true) {
             cargarCadena(generoTemporal, 30);
             if (VerificarExistenciaGenero(generoTemporal)== true ) {

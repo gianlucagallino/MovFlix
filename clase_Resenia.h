@@ -8,6 +8,8 @@
   -Parra, Juan (Presencial)
 */
 
+bool VerificarExistenciaReseniaDePelicula(Usuario escritor, Pelicula peli);
+
 class Resenia {
 
 //Propiedades
@@ -88,23 +90,23 @@ class Resenia {
         char pelitemp[30];
         char opinionTemporal[200];
         bool flag_repeticion = false;
-        bool flag_repeticion1 = false;
         int puntuacionTemporal;
 
         _idResenia  = DeterminarPosicionAutonumerica("Resenias.dat", sizeof(Resenia));
         cout<<"NOMBRE AUTOR DE LA RESENIA: "<<endl;
-        /// REALIZAR FUNCION CON SOBRECARGA DE OPERADORES QUE COMPARE CON EL == EL ID DE AUTOR QUE SE RECIBA CON LOS ID YA GUARDADOS
-        while (flag_repeticion1 != true) {
+       flag_repeticion = false;
+        while (flag_repeticion != true) {
             cargarCadena(nomtemp,30);
             if (VerificarExistenciaUsuario(nomtemp) == true) {
                 cout << "Usuario ENCONTRADA." << endl;
                 setAutorResenia(DevolverUsuario(nomtemp));
-                flag_repeticion1 = true;
+                flag_repeticion = true;
             } else {
                 cout << "EL USUARIO INGRESADA NO EXISTE EN LA BASE DE DATOS." << endl;
             }
         }
         cout<<"PELICULA A RESENIAR: "<<endl;
+        flag_repeticion = false;
         while (flag_repeticion != true) {
             cargarCadena(pelitemp,30);
             if (VerificarExistenciaPelicula(pelitemp) == true) {
@@ -114,6 +116,11 @@ class Resenia {
             } else {
                 cout << "LA PELICULA INGRESADA NO EXISTE EN LA BASE DE DATOS." << endl;
             }
+        }
+        if (VerificarExistenciaReseniaDePelicula(_autorResenia, _peliculaResenia)){
+            cout<<"ESTE USUARIO YA RESENIO ESTA PELICULA. "<<endl;
+            system("pause");
+            return;
         }
         cout<<"OPINION: ";
         cargarCadena(opinionTemporal, 200);

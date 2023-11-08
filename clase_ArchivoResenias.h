@@ -1,6 +1,7 @@
 #ifndef CLASE_ARCHIVORESENIAS_H_INCLUDED
 #define CLASE_ARCHIVORESENIAS_H_INCLUDED
 
+#include "clase_Resenia.h"
 
 class ArchivoResenias {
   private:

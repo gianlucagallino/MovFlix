@@ -47,6 +47,7 @@
 		<Unit filename="funcion_VerificarExistenciaDirector.h" />
 		<Unit filename="funcion_VerificarExistenciaGenero.h" />
 		<Unit filename="funcion_VerificarExistenciaPelicula.h" />
+		<Unit filename="funcion_VerificarExistenciaReseniaDePelicula.h" />
 		<Unit filename="funcion_VerificarExistenciaUsuario.h" />
 		<Unit filename="funcion_cargarCadena.h" />
 		<Unit filename="funcion_determinarPosicionAutonumerica.h" />

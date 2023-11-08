@@ -1,6 +1,8 @@
 #ifndef FUNCION_VERIFICAREXISTENCIA_GENERO_H_INCLUDED
 #define FUNCION_VERIFICAREXISTENCIA_GENERO_H_INCLUDED
 
+#include "clase_Genero.h"
+#include "clase_ArchivoGeneros.h"
 
 bool VerificarExistenciaGenero(const char *primgenero) {
     ArchivoGeneros archgen("generos.dat");

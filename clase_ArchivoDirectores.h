@@ -1,6 +1,8 @@
 #ifndef CLASE_ARCHIVODIRECTORES_H_INCLUDED
 #define CLASE_ARCHIVODIRECTORES_H_INCLUDED
 
+#include "clase_Director.h"
+
 class ArchivoDirectores {
   private:
     char _nombre[30];

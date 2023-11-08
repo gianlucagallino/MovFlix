@@ -1,6 +1,7 @@
 #ifndef CLASE_ARCHIVOUSUARIOS_H_INCLUDED
 #define CLASE_ARCHIVOUSUARIOS_H_INCLUDED
 
+#include "clase_Usuario.h"
 
 class ArchivoUsuarios {
   private:

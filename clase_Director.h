@@ -8,6 +8,7 @@
   -Parra, Juan (Presencial)
 */
 
+bool VerificarExistenciaDirector(const char *primdirector);
 
 //Los registros de Director son AUTONUMERICOS.
 
@@ -55,7 +56,17 @@ class Director {
 
         _idDirector = DeterminarPosicionAutonumerica("Directores.dat", sizeof(Director));
         cout<<"NOMBRE: ";
-        cargarCadena(nombreTemporal, 30);
+
+        bool flag_repeticion = false;
+        while (flag_repeticion != true) {
+            cargarCadena(nombreTemporal, 30);
+            if (VerificarExistenciaUsuario(nombreTemporal) == true) {
+                cout << "EL DIRECTOR YA EXISTE." << endl;
+            } else {
+                cout << "REGISTRADO." << endl;
+                flag_repeticion = true;
+            }
+        }
         setNombreDirector(nombreTemporal);
         setEstado(true);
     }

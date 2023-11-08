@@ -1,6 +1,9 @@
 #ifndef FUNCION_ENCONTRARUSUARIO_H_INCLUDED
 #define FUNCION_ENCONTRARUSUARIO_H_INCLUDED
 
+#include "clase_Usuario.h"
+#include "clase_ArchivoUsuarios.h"
+
 bool VerificarExistenciaUsuario(const char *nom) {
     ArchivoUsuarios archus("usuarios.dat");
     int cantReg = archus.contarRegistros();

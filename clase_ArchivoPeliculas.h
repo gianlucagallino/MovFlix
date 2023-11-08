@@ -1,6 +1,8 @@
 #ifndef CLASE_ARCHIVOPELICULAS_H_INCLUDED
 #define CLASE_ARCHIVOPELICULAS_H_INCLUDED
 
+#include "clase_Pelicula.h"
+
 class ArchivoPeliculas {
   private:
     char _nombre[30];

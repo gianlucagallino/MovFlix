@@ -10,9 +10,11 @@ using namespace std;
 #include "funcion_pantallaIntroductoria.h"
 #include "funcion_determinarPosicionAutonumerica.h"
 #include "clase_Fecha.h"
+
 #include "clase_Genero.h"
 #include "clase_ArchivoGeneros.h"
 #include "funcion_VerificarExistenciaGenero.h"
+#include "funcion_VerificarExistenciaUsuario.h"
 #include "clase_Director.h"
 #include "clase_ArchivoDirectores.h"
 #include "funcion_VerificarExistenciaDirector.h"
@@ -21,7 +23,7 @@ using namespace std;
 #include "funcion_VerificarExistenciaPelicula.h"
 #include "clase_Usuario.h"
 #include "clase_ArchivoUsuarios.h"
-#include "funcion_VerificarExistenciaUsuario.h"
+#include "funcion_VerificarExistenciaReseniaDePelicula.h"
 #include "clase_Resenia.h"
 #include "clase_ArchivoResenias.h"
 #include "menu_usuarios.h"
@@ -46,6 +48,8 @@ using namespace std;
  - Incorporar temas cuatrimestre 2!! Importante, asi mostramos que sabemos eso.
  - Comentar TODO el codigo, para que se note la atencion al detalle, y sea mas facil de interpretar / estudiar.
  - Actualizar la documentacion que hicimos en google docs, para que diga bien lo que armamos, porque cambió bastante.
+ - Ver el tema de que los inputs no puedan estar vacios.
+ - Cargar datos de inicio, hacer backups, etc.
  - Mejoras graficas. Lo mejor posible, pero si se rompe, preferible que sea estable. usen rlutil. (acordarse de poner el fondo en negro, pq el de kloster es blanco si no)
 */
 

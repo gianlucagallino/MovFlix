@@ -8,6 +8,7 @@
   -Parra, Juan (Presencial)
 */
 
+bool VerificarExistenciaUsuario(const char *nom);
 
 class Usuario {
 
@@ -70,10 +71,21 @@ class Usuario {
         char nombreTemporal[30];
         char emailTemporal[30];
         char generoTemporal[30];
+        bool flag_repeticion = false;
 
         _idUsuario = DeterminarPosicionAutonumerica("Usuarios.dat", sizeof(Usuario));
         cout<<"NOMBRE USUARIO: ";
-        cargarCadena(nombreTemporal, 30);
+        flag_repeticion = false;
+        while (flag_repeticion != true) {
+            cargarCadena(nombreTemporal, 30);
+            if (VerificarExistenciaUsuario(nombreTemporal) == true) {
+                cout << "EL USUARIO YA EXISTE." << endl;
+            } else {
+                cout << "REGISTRADO." << endl;
+                flag_repeticion = true;
+            }
+        }
+        setNombreUsuario(nombreTemporal);
         while(nombreTemporal[0]=='\0') cargarCadena(nombreTemporal, 30);;
         setNombreUsuario(nombreTemporal);
         cout<<"EMAIL: ";
@@ -81,7 +93,7 @@ class Usuario {
         while(emailTemporal[0]=='\0') cargarCadena(emailTemporal, 30);;
         setEmail(emailTemporal);
         cout<<"GENERO FAVORITO: "<<endl;
-        bool flag_repeticion = false;
+        flag_repeticion = false;
         while (flag_repeticion != true) {
             cargarCadena(generoTemporal, 30);
             if (VerificarExistenciaGenero(generoTemporal) == true) {

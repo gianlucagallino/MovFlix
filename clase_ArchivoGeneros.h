@@ -1,6 +1,8 @@
 #ifndef CLASE_ARCHIVOGENEROS_H_INCLUDED
 #define CLASE_ARCHIVOGENEROS_H_INCLUDED
 
+#include "clase_Genero.h"
+
 class ArchivoGeneros {
   private:
     char _nombre[30];

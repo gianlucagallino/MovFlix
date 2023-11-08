@@ -7,6 +7,7 @@
   -Gallino, Gianluca (Virtual)
   -Parra, Juan (Presencial)
 */
+bool VerificarExistenciaGenero(const char *primgenero);
 
 //Los registros de Genero son AUTONUMERICOS.
 
@@ -55,11 +56,22 @@ class Genero {
         _idGenero = DeterminarPosicionAutonumerica("Generos.dat", sizeof(Genero));
 
         cout<<"NOMBRE: ";
-        cargarCadena(nombreTemporal, 30);
-        while(nombreTemporal[0]=='\0') cargarCadena(nombreTemporal, 30);;
+        bool flag_repeticion = false;
+        while (flag_repeticion != true) {
+            cargarCadena(nombreTemporal, 30);
+            if (VerificarExistenciaGenero(nombreTemporal) == true) {
+                cout << "EL GENERO YA EXISTE." << endl;
+            } else {
+                cout << "REGISTRADO." << endl;
+                flag_repeticion = true;
+            }
+        }
         setNombreGenero(nombreTemporal);
         setEstado(true);
     }
+
+    //while(nombreTemporal[0]=='\0') PODRIA SER UNA FORMA DE VERIFICAR:
+
 
     void Mostrar() {
         if (getEstado()) {

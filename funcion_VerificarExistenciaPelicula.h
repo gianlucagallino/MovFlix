@@ -1,6 +1,9 @@
 #ifndef FUNCION_ENCONTRARPELICULA_H_INCLUDED
 #define FUNCION_ENCONTRARPELICULA_H_INCLUDED
 
+#include "clase_Pelicula.h"
+#include "clase_ArchivoPeliculas.h"
+
 bool VerificarExistenciaPelicula(const char *nompelicula) {
     ArchivoPeliculas archpel("peliculas.dat");
     int cantReg = archpel.contarRegistros();

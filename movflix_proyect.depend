@@ -43,7 +43,7 @@
 
 1698699692 c:\users\user\downloads\movflix_proyect\menu_resenias.h
 
-1698871001 source:c:\users\user\documents\github\movflix\main.cpp
+1699389889 source:c:\users\user\documents\github\movflix\main.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
@@ -54,14 +54,18 @@
 	"funcion_determinarPosicionAutonumerica.h"
 	"clase_Fecha.h"
 	"clase_Genero.h"
-	"clase_Director.h"
-	"clase_Pelicula.h"
-	"clase_Usuario.h"
-	"clase_Resenia.h"
 	"clase_ArchivoGeneros.h"
+	"funcion_VerificarExistenciaGenero.h"
+	"clase_Director.h"
 	"clase_ArchivoDirectores.h"
+	"funcion_VerificarExistenciaDirector.h"
+	"clase_Pelicula.h"
 	"clase_ArchivoPeliculas.h"
+	"funcion_VerificarExistenciaPelicula.h"
+	"clase_Usuario.h"
 	"clase_ArchivoUsuarios.h"
+	"funcion_VerificarExistenciaUsuario.h"
+	"clase_Resenia.h"
 	"clase_ArchivoResenias.h"
 	"menu_usuarios.h"
 	"menu_peliculas.h"
@@ -71,7 +75,7 @@
 	"Reportes.h"
 	"menu_administracion.h"
 
-1698699664 c:\users\user\documents\github\movflix\rlutil.h
+1699389257 c:\users\user\documents\github\movflix\rlutil.h
 	<iostream>
 	<string>
 	<cstdio>
@@ -85,49 +89,49 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1698785456 c:\users\user\documents\github\movflix\funcion_pantallaintroductoria.h
+1699389257 c:\users\user\documents\github\movflix\funcion_pantallaintroductoria.h
 
-1698875027 c:\users\user\documents\github\movflix\menu_usuarios.h
+1699389257 c:\users\user\documents\github\movflix\menu_usuarios.h
 
-1698875394 c:\users\user\documents\github\movflix\menu_peliculas.h
+1699389257 c:\users\user\documents\github\movflix\menu_peliculas.h
 
-1698876795 c:\users\user\documents\github\movflix\menu_resenias.h
+1699389257 c:\users\user\documents\github\movflix\menu_resenias.h
 
-1698875378 c:\users\user\documents\github\movflix\menu_generos.h
+1699389257 c:\users\user\documents\github\movflix\menu_generos.h
 
 1698767472 c:\users\user\documents\github\movflix\menu_autores.h
 
-1698783758 c:\users\user\documents\github\movflix\reportes.h
+1699389257 c:\users\user\documents\github\movflix\reportes.h
 
-1698871001 c:\users\user\documents\github\movflix\menu_administracion.h
+1699389257 c:\users\user\documents\github\movflix\menu_administracion.h
 
-1698810452 c:\users\user\documents\github\movflix\funcion_cargarcadena.h
+1699389258 c:\users\user\documents\github\movflix\funcion_cargarcadena.h
 
-1698785961 c:\users\user\documents\github\movflix\funcion_determinarposicionautonumerica.h
+1699389257 c:\users\user\documents\github\movflix\funcion_determinarposicionautonumerica.h
 
-1698784690 c:\users\user\documents\github\movflix\clase_fecha.h
+1699389257 c:\users\user\documents\github\movflix\clase_fecha.h
 
-1698864691 c:\users\user\documents\github\movflix\clase_genero.h
+1699389257 c:\users\user\documents\github\movflix\clase_genero.h
 
-1698810681 c:\users\user\documents\github\movflix\clase_director.h
+1699389258 c:\users\user\documents\github\movflix\clase_director.h
 
-1698810455 c:\users\user\documents\github\movflix\clase_pelicula.h
+1699392559 c:\users\user\documents\github\movflix\clase_pelicula.h
 
-1698870741 c:\users\user\documents\github\movflix\clase_usuario.h
+1699390925 c:\users\user\documents\github\movflix\clase_usuario.h
 
-1698871001 c:\users\user\documents\github\movflix\clase_resenia.h
+1699391147 c:\users\user\documents\github\movflix\clase_resenia.h
 
-1698870458 c:\users\user\documents\github\movflix\clase_archivogeneros.h
+1699389257 c:\users\user\documents\github\movflix\clase_archivogeneros.h
 
-1698870469 c:\users\user\documents\github\movflix\clase_archivodirectores.h
+1699389257 c:\users\user\documents\github\movflix\clase_archivodirectores.h
 
-1698870481 c:\users\user\documents\github\movflix\clase_archivopeliculas.h
+1699389258 c:\users\user\documents\github\movflix\clase_archivopeliculas.h
 
-1698870494 c:\users\user\documents\github\movflix\clase_archivousuarios.h
+1699389257 c:\users\user\documents\github\movflix\clase_archivousuarios.h
 
-1698870528 c:\users\user\documents\github\movflix\clase_archivoresenias.h
+1699389257 c:\users\user\documents\github\movflix\clase_archivoresenias.h
 
-1698876827 c:\users\user\documents\github\movflix\menu_directores.h
+1699389258 c:\users\user\documents\github\movflix\menu_directores.h
 
 1698886162 source:c:\users\parra\onedrive\escritorio\movflix-main\main.cpp
 	<iostream>
@@ -308,4 +312,12 @@
 1699320565 c:\users\admin\desktop\movflix-main\funcion_encontrarpelicula.h
 
 1699321296 c:\users\admin\desktop\movflix-main\funcion_encontrarusuario.h
+
+1699389258 c:\users\user\documents\github\movflix\funcion_verificarexistenciagenero.h
+
+1699389257 c:\users\user\documents\github\movflix\funcion_verificarexistenciadirector.h
+
+1699389257 c:\users\user\documents\github\movflix\funcion_verificarexistenciapelicula.h
+
+1699391171 c:\users\user\documents\github\movflix\funcion_verificarexistenciausuario.h
 

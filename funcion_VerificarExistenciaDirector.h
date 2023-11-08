@@ -1,6 +1,9 @@
 #ifndef FUNCION_VERIFICAREXISTENCIA_DIRECTOR_H_INCLUDED
 #define FUNCION_VERIFICAREXISTENCIA_DIRECTOR_H_INCLUDED
 
+#include "clase_Director.h"
+#include "clase_ArchivoDirectores.h"
+
 bool VerificarExistenciaDirector(const char *primdirector) {
     ArchivoDirectores archdir("directores.dat");
     int cantReg = archdir.contarRegistros();
