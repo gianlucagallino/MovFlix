@@ -21,7 +21,7 @@ class Resenia {
     Pelicula _peliculaResenia;      // Propiedad para la película relacionada con la reseña
     char _opinion[200];             // Propiedad para la opinión de la reseña
     Fecha _fechaResenia;            // Propiedad para la fecha de la reseña
-    int _puntuacionResenia;         // Propiedad para la puntuación de la reseña
+    float _puntuacionResenia;         // Propiedad para la puntuación de la reseña
     bool _estado;                   // Propiedad que indica el estado de la reseña
 
   public:
@@ -45,7 +45,7 @@ class Resenia {
         _fechaResenia = input;
     }
 
-    void setPuntuacionResenia(int input) {
+    void setPuntuacionResenia(float input) {
         _puntuacionResenia = input;
     }
 
@@ -74,7 +74,7 @@ class Resenia {
         return _fechaResenia;
     }
 
-    int getPuntuacionResenia() {
+    float getPuntuacionResenia() {
         return _puntuacionResenia;
     }
 
@@ -134,10 +134,18 @@ class Resenia {
         cout << "FECHA: ";
         _fechaResenia.Cargar();
 
-        cout << "PUNTUACIÓN: ";
-        cin >> puntuacionTemporal;
-        setPuntuacionResenia(puntuacionTemporal);
+        cout << "PUNTUACIÓN 0 al 10 (SE ACEPTAN FLOATS): ";
+        flag_repeticion = false;
 
+        while (flag_repeticion != true) {
+            cin >> puntuacionTemporal;
+            if (puntuacionTemporal>=0||puntuacionTemporal<=10) {
+                setPuntuacionResenia(puntuacionTemporal);
+                flag_repeticion = true;
+            } else {
+                cout << "EL PUNTAJE ES INVALIDO." << endl;
+            }
+        }
         setEstado(true);
     }
 

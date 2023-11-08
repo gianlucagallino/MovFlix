@@ -2,14 +2,64 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="menu_directores.h" open="1" top="1" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="funcion_determinarPosicionAutonumerica.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4987" topLine="127" />
+			<Cursor1 position="1004" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="menu_administracion.h" open="1" top="0" tabpos="14" split="0" active="1" splitpos="482" zoom_1="0" zoom_2="0">
+	<File name="menu_directores.h" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4987" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="funcion_VerificarExistenciaGenero.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1813" topLine="7" />
+		</Cursor>
+	</File>
+	<File name="clase_Usuario.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3302" topLine="7" />
+		</Cursor>
+	</File>
+	<File name="rlutil.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8789" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="menu_peliculas.h" open="0" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5021" topLine="129" />
+		</Cursor>
+	</File>
+	<File name="clase_ArchivoResenias.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3656" topLine="70" />
+		</Cursor>
+	</File>
+	<File name="menu_administracion.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="482" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="8133" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="funcion_pantallaIntroductoria.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="412" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="clase_ArchivoGeneros.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="133" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="menu_usuarios.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="374" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="Reportes.h" open="0" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="172" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="funcion_VerificarExistenciaReseniaDePelicula.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -17,44 +67,19 @@
 			<Cursor1 position="1707" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="clase_Usuario.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="menu_resenias.h" open="1" top="1" tabpos="7" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="235" topLine="0" />
+			<Cursor1 position="4921" topLine="132" />
 		</Cursor>
 	</File>
-	<File name="funcion_VerificarExistenciaGenero.h" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="funcion_VerificarExistenciaUsuario.h" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1813" topLine="7" />
+			<Cursor1 position="1839" topLine="1" />
 		</Cursor>
 	</File>
-	<File name="clase_ArchivoGeneros.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="clase_ArchivoDirectores.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="133" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Reportes.h" open="1" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="172" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="menu_resenias.h" open="1" top="0" tabpos="19" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4921" topLine="129" />
-		</Cursor>
-	</File>
-	<File name="clase_ArchivoUsuarios.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3652" topLine="68" />
-		</Cursor>
-	</File>
-	<File name="clase_Pelicula.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="220" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="menu_usuarios.h" open="1" top="0" tabpos="20" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4998" topLine="128" />
+			<Cursor1 position="144" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="funcion_cargarCadena.h" open="0" top="0" tabpos="25" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -62,49 +87,19 @@
 			<Cursor1 position="84" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="clase_Genero.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="214" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="funcion_VerificarExistenciaDirector.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1875" topLine="8" />
-		</Cursor>
-	</File>
-	<File name="menu_generos.h" open="1" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4824" topLine="90" />
-		</Cursor>
-	</File>
-	<File name="menu_peliculas.h" open="1" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5021" topLine="129" />
-		</Cursor>
-	</File>
-	<File name="funcion_VerificarExistenciaUsuario.h" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1839" topLine="1" />
-		</Cursor>
-	</File>
-	<File name="clase_Fecha.h" open="1" top="0" tabpos="21" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1742" topLine="84" />
-		</Cursor>
-	</File>
-	<File name="clase_ArchivoResenias.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3656" topLine="70" />
-		</Cursor>
-	</File>
-	<File name="funcion_pantallaIntroductoria.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="412" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="clase_Director.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="clase_Director.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="218" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="funcion_VerificarExistenciaPelicula.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1966" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="clase_Pelicula.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="220" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -112,34 +107,39 @@
 			<Cursor1 position="1802" topLine="3" />
 		</Cursor>
 	</File>
-	<File name="clase_ArchivoPeliculas.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="clase_Genero.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="214" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="funcion_VerificarExistenciaDirector.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1875" topLine="8" />
+		</Cursor>
+	</File>
+	<File name="clase_ArchivoUsuarios.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3654" topLine="1" />
+		</Cursor>
+	</File>
+	<File name="menu_generos.h" open="0" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4824" topLine="90" />
+		</Cursor>
+	</File>
+	<File name="clase_ArchivoPeliculas.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="145" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="funcion_determinarPosicionAutonumerica.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="clase_Resenia.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1004" topLine="0" />
+			<Cursor1 position="4498" topLine="120" />
 		</Cursor>
 	</File>
-	<File name="clase_ArchivoDirectores.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="clase_Fecha.h" open="0" top="0" tabpos="21" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="144" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="clase_Resenia.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="216" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="funcion_VerificarExistenciaPelicula.h" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1966" topLine="6" />
-		</Cursor>
-	</File>
-	<File name="rlutil.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="8789" topLine="228" />
+			<Cursor1 position="1742" topLine="84" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
