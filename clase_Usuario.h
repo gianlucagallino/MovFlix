@@ -10,6 +10,8 @@
 
 bool VerificarExistenciaUsuario(const char *nom);
 
+//Los registros son AUTONUMERICOS.
+
 class Usuario {
 
 //Propiedades

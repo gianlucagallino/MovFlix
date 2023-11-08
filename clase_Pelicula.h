@@ -8,36 +8,38 @@
   -Parra, Juan (Presencial)
 */
 
+//Los registros son AUTONUMERICOS.
+
+
+// Declaración de la función para verificar la existencia de una película
 bool VerificarExistenciaPelicula(const char *nompelicula);
 
+// Definición de la clase Pelicula
 class Pelicula {
-
-//Propiedades
   private:
-    int _idPelicula;
-    char _nombrePelicula[30];
-    char _descripcion[200];
-    Director _director;
-    Fecha _fechaPublicacion;
-    Genero _genero;
-    bool _estado;
+    int _idPelicula;                 // Propiedad para el ID de la película
+    char _nombrePelicula[30];        // Propiedad para el nombre de la película
+    char _descripcion[200];          // Propiedad para la descripción de la película
+    Director _director;             // Propiedad para el director de la película
+    Fecha _fechaPublicacion;         // Propiedad para la fecha de publicación de la película
+    Genero _genero;                  // Propiedad para el género de la película
+    bool _estado;                    // Propiedad que indica el estado de la película
 
-//Metodos
   public:
-    //sets()
+    // Métodos para establecer las propiedades de la película
 
     //No corresponde un setId, dado que es autonumerico.
 
     void setNombrePelicula(const char *input) {
-        strcpy(_nombrePelicula,input);
+        strcpy(_nombrePelicula, input);
     }
 
     void setDescripcion(const char *input) {
-        strcpy(_descripcion,input);
+        strcpy(_descripcion, input);
     }
 
     void setDirector(Director input) {
-        _director=input;
+        _director = input;
     }
 
     void setFecha(Fecha input) {
@@ -45,15 +47,14 @@ class Pelicula {
     }
 
     void setGenero(Genero input) {
-        _genero=input;
+        _genero = input;
     }
 
     void setEstado(bool input) {
         _estado = input;
     }
 
-    //gets()
-
+    // Métodos para obtener las propiedades de la película
     int getIdPelicula() {
         return _idPelicula;
     }
@@ -82,10 +83,8 @@ class Pelicula {
         return _estado;
     }
 
-    //Otros
-
+    // Método para cargar una película
     void Cargar() {
-
         char nombreTemporal[30];
         char descTemporal[200];
         char generoTemporal[30];
@@ -94,26 +93,30 @@ class Pelicula {
         bool flag_repeticion = false;
 
         _idPelicula = DeterminarPosicionAutonumerica("Peliculas.dat", sizeof(Pelicula));
-        cout<<"NOMBRE: ";
+        cout << "NOMBRE: ";
         flag_repeticion = false;
+
         while (flag_repeticion != true) {
             cargarCadena(nombreTemporal, 30);
-            if (VerificarExistenciaDirector(nombreTemporal) == true) {
-                cout << "LA PELICULA YA EXISTE." << endl;
+
+            if (VerificarExistenciaPelicula(nombreTemporal)) {
+                cout << "LA PELÍCULA YA EXISTE." << endl;
             } else {
-                cout << "REGISTRADO." << endl;
+                cout << "REGISTRADA." << endl;
                 flag_repeticion = true;
             }
         }
         setNombrePelicula(nombreTemporal);
-        cout<<"DESCRIPCION: ";
+        cout << "DESCRIPCION: ";
         cargarCadena(descTemporal, 200);
         setDescripcion(descTemporal);
-        cout<<"DIRECTOR: "<<endl;
+        cout << "DIRECTOR: " << endl;
         flag_repeticion = false;
+
         while (flag_repeticion != true) {
             cargarCadena(directorTemporal, 30);
-            if (VerificarExistenciaDirector(directorTemporal)== true) {
+
+            if (VerificarExistenciaDirector(directorTemporal) == true) {
                 cout << "DIRECTOR ENCONTRADO." << endl;
                 setDirector(DevolverDirector(directorTemporal));
                 flag_repeticion = true;
@@ -122,37 +125,37 @@ class Pelicula {
             }
         }
 
-        cout<<"FECHA DE PUBLICACION: "<<endl;
+        cout << "FECHA DE PUBLICACIÓN: " << endl;
         _fechaPublicacion.Cargar();
-        cout<<"GENERO: "<<endl;
+        cout << "GÉNERO: " << endl;
         flag_repeticion = false;
+
         while (flag_repeticion != true) {
             cargarCadena(generoTemporal, 30);
-            if (VerificarExistenciaGenero(generoTemporal)== true ) {
-                cout << "GENERO ENCONTRADO." << endl;
+
+            if (VerificarExistenciaGenero(generoTemporal) == true) {
+                cout << "GÉNERO ENCONTRADO." << endl;
                 setGenero(DevolverGenero(generoTemporal));
                 flag_repeticion = true;
             } else {
-                cout << "EL GENERO NO EXISTE." << endl;
+                cout << "EL GÉNERO NO EXISTE." << endl;
             }
         }
 
         setEstado(true);
     }
 
+    // Método para mostrar una película
     void Mostrar() {
         if (getEstado()) {
-            cout<<"ID PELICULA: ";
-            cout<<_idPelicula<<endl;
-            cout<<"NOMBRE: ";
-            cout<<_nombrePelicula<<endl;
-            cout<<"DESCRIPCION: ";
-            cout<<_descripcion<<endl;
-            cout<<"DIRECTOR: ";
+            cout << "ID PELÍCULA: " << _idPelicula << endl;
+            cout << "NOMBRE: " << _nombrePelicula << endl;
+            cout << "DESCRIPCION: " << _descripcion << endl;
+            cout << "DIRECTOR: ";
             char dirtemp[30];
-            strcpy(dirtemp,_director.getNombreDirector());
-            cout<<dirtemp;
-            cout<<"FECHA PUBLICACION: ";
+            strcpy(dirtemp, _director.getNombreDirector());
+            cout << dirtemp;
+            cout << "FECHA PUBLICACIÓN: ";
             _fechaPublicacion.Mostrar();
             cout<<"GENERO: ";
             char generotemp[30];
@@ -162,8 +165,6 @@ class Pelicula {
         }
     }
 };
-
-
 
 
 #endif // CLASE_PELICULA_H_INCLUDED

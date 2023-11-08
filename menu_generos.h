@@ -62,30 +62,33 @@ void MenuGeneros() {
     return;
 }
 
+// Agrega un nuevo registro de género al archivo "Generos.dat".
 bool AltaGenero() {
     Genero temp;
     ArchivoGeneros archivo("Generos.dat");
     temp.Cargar();
-    if(archivo.agregarRegistro(temp)) {
+    if (archivo.agregarRegistro(temp)) {
         cout << "REGISTRO AGREGADO" << endl;
         system("pause");
         return true;
     } else {
-        cout << "NO SE AGREGO" <<endl;
+        cout << "NO SE AGREGO" << endl;
         system("pause");
         return false;
     }
 }
+
+// Realiza la baja de un género por ID, cambiando su estado a inactivo en el archivo "Generos.dat".
 bool BajaGenero() {
     int ID;
     Genero temp;
     ArchivoGeneros archivo("Generos.dat");
-    cout<<"INGRESAR ID A BORRAR: ";
-    cin>>ID;
+    cout << "INGRESAR ID A BORRAR: ";
+    cin >> ID;
     system("cls");
     int pos = archivo.buscarRegistro(ID);
     if (pos == -1) {
-        cout << "NO EXISTE"<< endl;
+        cout << "NO EXISTE" << endl;
         system("pause");
         system("cls");
         return false;
@@ -95,58 +98,61 @@ bool BajaGenero() {
     temp = archivo.leerRegistro(pos);
     temp.setEstado(false);
     bool existe = archivo.modificarRegistro(pos, temp);
-    if(existe==false) {
-        cout<<"PROBLEMA AL ESCRIBIR"<<endl;
+    if (existe == false) {
+        cout << "PROBLEMA AL ESCRIBIR" << endl;
         system("pause");
         return false;
     } else {
-        cout<<"Dado de baja."<<endl;
+        cout << "Dado de baja." << endl;
         system("pause");
     }
     return true;
 }
 
+// Modifica el nombre de un género por ID en el archivo "Generos.dat".
 bool ModificarGenero() {
     int ID;
     Genero temp;
     char nombreTemp[30];
     ArchivoGeneros archivo("Generos.dat");
-    cout<<"INGRESAR ID CUYO NOMBRE MODIFICAR: ";
-    cin>>ID;
+    cout << "INGRESAR ID CUYO NOMBRE MODIFICAR: ";
+    cin >> ID;
     system("cls");
     int pos = archivo.buscarRegistro(ID);
     if (pos == -1) {
-        cout << "NO EXISTE"<< endl;
+        cout << "NO EXISTE" << endl;
         system("pause");
         system("cls");
         return false;
     } else if (pos == -2) {
         return false;
     }
-    cout << "INGRESE NUEVO NOMBRE"<<endl;
+    cout << "INGRESE NUEVO NOMBRE" << endl;
     cargarCadena(nombreTemp, 30);
     temp = archivo.leerRegistro(pos);
     temp.setNombreGenero(nombreTemp);
     bool existe = archivo.modificarRegistro(pos, temp);
-    if(existe==false) {
-        cout<<"PROBLEMA AL ESCRIBIR"<<endl;
+    if (existe == false) {
+        cout << "PROBLEMA AL ESCRIBIR" << endl;
         system("pause");
         return false;
     } else {
-        cout<<"MODIFICADO!"<<endl;
+        cout << "MODIFICADO!" << endl;
         system("pause");
     }
     return true;
 }
+
+// Muestra la información de un género por ID desde el archivo "Generos.dat".
 bool ListarGenero() {
     int ID;
     Genero temp;
     ArchivoGeneros archivo("Generos.dat");
-    cout<<"INGRESAR ID A BUSCAR ";
-    cin>>ID;
+    cout << "INGRESAR ID A BUSCAR: ";
+    cin >> ID;
     int pos = archivo.buscarRegistro(ID);
     if (pos == -1) {
-        cout << "NO EXISTE"<< endl;
+        cout << "NO EXISTE" << endl;
         system("pause");
         system("cls");
         return false;
@@ -159,6 +165,8 @@ bool ListarGenero() {
     system("cls");
     return true;
 }
+
+// Muestra la lista completa de géneros desde el archivo "Generos.dat".
 bool MostrarTodoGenero() {
     ArchivoGeneros archivo("Generos.dat");
     archivo.listarRegistros();
@@ -166,6 +174,5 @@ bool MostrarTodoGenero() {
     system("cls");
     return true;
 }
-
 
 #endif // MENU_GENEROS_H_INCLUDED

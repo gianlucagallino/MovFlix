@@ -7,46 +7,55 @@
   -Gallino, Gianluca (Virtual)
   -Parra, Juan (Presencial)
 */
-
+// Definición de la clase Fecha
 class Fecha {
   private:
-    int dia, mes, anio;
+    int dia, mes, anio; // Propiedades de la fecha: día, mes y año
+
   public:
+    // Método para cargar una fecha válida
     void Cargar() {
         bool entra;
-        entra=true;
+        entra = true;
+
         while (entra) {
-            cout<<endl<<"INGRESE EL DIA: ";
-            cin>>dia;
+            cout << endl << "INGRESE EL DIA: ";
+            cin >> dia;
+
             if (setDia(dia)) {
-                entra=false;
+                entra = false;
             } else {
-                cout<<"EL DIA INGRESADO NO ES VALIDO:"<<endl;
+                cout << "EL DIA INGRESADO NO ES VALIDO:" << endl;
             }
         }
 
-        entra=true;
-        while (entra==true) {
-            cout<<"INGRESE EL MES: ";
-            cin>>mes;
-            if (setMes(mes)) {
-                entra=false;
-            } else {
-                cout<<"EL MES INGRESADO NO ES VALIDO:"<<endl;
-            }
-        }
+        entra = true;
 
-        entra=true;
         while (entra) {
-            cout<<"INGRESE EL ANIO: ";
-            cin>>anio;
-            if (setAnio(anio)) {
-                entra=false;
+            cout << "INGRESE EL MES: ";
+            cin >> mes;
+
+            if (setMes(mes)) {
+                entra = false;
             } else {
-                cout<<"EL ANIO INGRESADO NO ES VALIDO:"<<endl;
+                cout << "EL MES INGRESADO NO ES VALIDO:" << endl;
             }
         }
 
+        entra = true;
+
+        while (entra) {
+            cout << "INGRESE EL ANIO: ";
+            cin >> anio;
+
+            if (setAnio(anio)) {
+                entra = false;
+            } else {
+                cout << "EL ANIO INGRESADO NO ES VALIDO:" << endl;
+            }
+        }
+
+        // Verifica si la fecha ingresada es válida
         if (!esFechaValida(dia, mes, anio)) {
             cout << "LA FECHA INGRESADA NO ES VALIDA. INTENTE NUEVAMENTE." << endl;
             cout << endl;
@@ -54,57 +63,69 @@ class Fecha {
         }
     };
 
+    // Método para mostrar la fecha
     void Mostrar() {
-        cout<<dia<<"/"<<mes<<"/"<<anio<<endl;
+        cout << dia << "/" << mes << "/" << anio << endl;
     }
 
-    //set
-
+    // Métodos de configuración (set)
 
     bool setDia(int d) {
-        if (dia<=31 && dia>=1) {
-            dia=d;
+        if (d <= 31 && d >= 1) {
+            dia = d;
             return true;
-        } else return false;
-    }
-    bool setMes(int m) {
-        if (mes>=1 && mes<=12) {
-            mes=m;
-            return true;
-        } else return false;
-    }
-    bool setAnio(int a) {
-        if (anio>=1000) {
-            anio=a;
-            return true;
-        } else return false;
+        } else {
+            return false;
+        }
     }
 
-    //get
+    bool setMes(int m) {
+        if (m >= 1 && m <= 12) {
+            mes = m;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    bool setAnio(int a) {
+        if (a >= 1000) {
+            anio = a;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    // Métodos de obtención (get)
 
     int getDia() {
         return dia;
     }
+
     int getMes() {
         return mes;
     }
+
     int getAnio() {
         return anio;
     }
 
-    //Constructor
-    Fecha(int d=6, int m=6, int a=6) {
+    // Constructor de la clase Fecha con valores por defecto (6/6/6)
+    Fecha(int d = 6, int m = 6, int a = 6) {
         setDia(d);
         setMes(m);
         setAnio(a);
     }
 
-    //Verificacion
-
+    // Verifica si la fecha es válida
     bool esFechaValida(int dia, int mes, int anio) {
         time_t now = time(0);
-        tm *f = localtime(&now);    //fecha actual
-        if (anio > f->tm_year + 1900 || (anio == f->tm_year + 1900 && mes > f->tm_mon + 1) || (anio == f->tm_year + 1900 && mes == f->tm_mon + 1 && dia > f->tm_mday)) {
+        tm *f = localtime(&now); // Fecha actual
+
+        // Compara la fecha ingresada con la fecha actual
+        if (anio > f->tm_year + 1900 || (anio == f->tm_year + 1900 && mes > f->tm_mon + 1) ||
+                (anio == f->tm_year + 1900 && mes == f->tm_mon + 1 && dia > f->tm_mday)) {
             cout << "LA FECHA DEBE SER - O = A LA FECHA ACTUAL." << endl;
             return false;
         }
@@ -123,6 +144,5 @@ class Fecha {
         return true;
     }
 };
-
 
 #endif // CLASE_FECHA_H_INCLUDED

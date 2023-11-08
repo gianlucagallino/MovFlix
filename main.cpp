@@ -10,7 +10,6 @@ using namespace std;
 #include "funcion_pantallaIntroductoria.h"
 #include "funcion_determinarPosicionAutonumerica.h"
 #include "clase_Fecha.h"
-
 #include "clase_Genero.h"
 #include "clase_ArchivoGeneros.h"
 #include "funcion_VerificarExistenciaGenero.h"
@@ -37,29 +36,25 @@ using namespace std;
 /*
   AUTORES:
   -Arias, Natalia (Virtual)
-  -GALLIANO, GIANLUCA (Virtual)
+  -GALLINO, GIANLUCA (Virtual)
   -PARRA, Juan (PRESENCIAL)
 */
 
 /// QUEDA PARA HACER:
 /*
  - Hacer un menu de reportes interesante, con cosas copadas. aprovechemos que tenemos tantos archivos.
- - HACER LAS VERIFICACIONES, no hay casi nada hecho. es importante que esten bien. que las clases compuestas, sus factores compuestos existan. TODO, minucioso, en detalle.
  - Incorporar temas cuatrimestre 2!! Importante, asi mostramos que sabemos eso.
- - Comentar TODO el codigo, para que se note la atencion al detalle, y sea mas facil de interpretar / estudiar.
  - Actualizar la documentacion que hicimos en google docs, para que diga bien lo que armamos, porque cambió bastante.
  - Ver el tema de que los inputs no puedan estar vacios.
  - Cargar datos de inicio, hacer backups, etc.
  - Mejoras graficas. Lo mejor posible, pero si se rompe, preferible que sea estable. usen rlutil. (acordarse de poner el fondo en negro, pq el de kloster es blanco si no)
 */
 
-/// COMENTARIO JUAN: SI PARA LO DE IDENTIFICAR EL ID DEL JUGADOR NO PODES CON LO DE LA CARGA DE OPERADORES, SE ME OCURRIÓ QUE GUARDARA EL ID EN UNA VARIABLE
-/// Y DESPUES SE LA PASE A UNA FUNCION DENTRO DE UN .H NUEVO DONDE RECORRA EL ARCHIVO DE USUARIOS Y CUANDO CONSIGUE UN MISMO ID, QUE LO MUESTRE.
-
 int main() {
     bool correrPrograma = true;
     int op;
 
+    // Función para mostrar la pantalla introductoria
     PantallaIntroductoria();
 
     system("cls");

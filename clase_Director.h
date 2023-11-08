@@ -8,75 +8,81 @@
   -Parra, Juan (Presencial)
 */
 
+//Los registros son AUTONUMERICOS.
+
+// Declaración de la función para verificar la existencia de un director por nombre
 bool VerificarExistenciaDirector(const char *primdirector);
 
-//Los registros de Director son AUTONUMERICOS.
-
+// Definición de la clase Director
 class Director {
-
-//Propiedades
+    // Propiedades
   private:
-    int _idDirector;
-    char _nombreDirector[30];
-    bool _estado;
+    int _idDirector;           // Identificador único del director (autonumérico)
+    char _nombreDirector[30];  // Nombre del director
+    bool _estado;              // Estado del director (activo/inactivo)
 
-//Metodos
+    // Métodos públicos
   public:
-    //sets()
 
     //No corresponde un setId, dado que es autonumerico.
 
+    // Establece el nombre del director
     void setNombreDirector(const char *input) {
-        strcpy(_nombreDirector,input);
+        strcpy(_nombreDirector, input);
     }
 
+    // Establece el estado del director (activo/inactivo)
     void setEstado(bool input) {
         _estado = input;
     }
 
-    //gets()
-
+    // Obtiene el ID del director
     int getIdDirector() {
         return _idDirector;
     }
 
+    // Obtiene el nombre del director
     const char *getNombreDirector() {
         return _nombreDirector;
     }
 
+    // Obtiene el estado del director (activo/inactivo)
     bool getEstado() {
         return _estado;
     }
 
-    //Otros
-
+    // Método para cargar un nuevo director
     void Cargar() {
-
         char nombreTemporal[30];
 
+        // Determina la posición autonumérica
         _idDirector = DeterminarPosicionAutonumerica("Directores.dat", sizeof(Director));
-        cout<<"NOMBRE: ";
+
+        cout << "NOMBRE: ";
 
         bool flag_repeticion = false;
+
         while (flag_repeticion != true) {
             cargarCadena(nombreTemporal, 30);
-            if (VerificarExistenciaUsuario(nombreTemporal) == true) {
+
+            // Verifica si el director ya existe
+            if (VerificarExistenciaDirector(nombreTemporal) == true) {
                 cout << "EL DIRECTOR YA EXISTE." << endl;
             } else {
                 cout << "REGISTRADO." << endl;
                 flag_repeticion = true;
             }
         }
+
         setNombreDirector(nombreTemporal);
         setEstado(true);
     }
 
+    // Método para mostrar información del director
     void Mostrar() {
         if (getEstado()) {
-            cout<<"ID DIRECTOR: ";
-            cout<<_idDirector<<endl;
-            cout<<"NOMBRE: ";
-            cout<<_nombreDirector<<endl;
+            cout << "ID DIRECTOR: " << _idDirector << endl;
+            cout << "NOMBRE: " << _nombreDirector << endl;
         }
     }
 };

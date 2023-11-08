@@ -7,60 +7,62 @@
   -Gallino, Gianluca (Virtual)
   -Parra, Juan (Presencial)
 */
+
+//Los registros son AUTONUMERICOS.
+
+// Declaración de la función para verificar la existencia de un género
 bool VerificarExistenciaGenero(const char *primgenero);
 
-//Los registros de Genero son AUTONUMERICOS.
-
+// Definición de la clase Genero
 class Genero {
-
-//Propiedades
   private:
-    int _idGenero;
-    char _nombreGenero[30];
-    bool _estado;
+    int _idGenero;               // Propiedad para el ID del género
+    char _nombreGenero[30];      // Propiedad para el nombre del género
+    bool _estado;                // Propiedad que indica el estado del género
 
-
-//Metodos
   public:
-    //sets()
 
     //No corresponde un setId, dado que es autonumerico.
 
+    // Método para establecer el nombre del género
     void setNombreGenero(const char *input) {
-        strcpy(_nombreGenero,input);
+        strcpy(_nombreGenero, input);
     }
 
+    // Método para establecer el estado del género
     void setEstado(bool input) {
-        _estado=input;
+        _estado = input;
     }
 
-    //gets()
-
+    // Método para obtener el ID del género
     int getIdGenero() {
         return _idGenero;
     }
 
+    // Método para obtener el nombre del género
     const char *getNombreGenero() {
         return _nombreGenero;
     }
 
+    // Método para obtener el estado del género
     bool getEstado() {
         return _estado;
     }
 
-    //Otros
-
+    // Método para cargar un género
     void Cargar() {
         char nombreTemporal[30];
 
         _idGenero = DeterminarPosicionAutonumerica("Generos.dat", sizeof(Genero));
 
-        cout<<"NOMBRE: ";
+        cout << "NOMBRE: ";
         bool flag_repeticion = false;
+
         while (flag_repeticion != true) {
             cargarCadena(nombreTemporal, 30);
-            if (VerificarExistenciaGenero(nombreTemporal) == true) {
-                cout << "EL GENERO YA EXISTE." << endl;
+
+            if (VerificarExistenciaGenero(nombreTemporal)) {
+                cout << "EL GÉNERO YA EXISTE." << endl;
             } else {
                 cout << "REGISTRADO." << endl;
                 flag_repeticion = true;
@@ -70,19 +72,13 @@ class Genero {
         setEstado(true);
     }
 
-    //while(nombreTemporal[0]=='\0') PODRIA SER UNA FORMA DE VERIFICAR:
-
-
+    // Método para mostrar un género
     void Mostrar() {
         if (getEstado()) {
-            cout<<"ID GENERO: ";
-            cout<<_idGenero<<endl;
-            cout<<"NOMBRE: ";
-            cout<<_nombreGenero<<endl;
+            cout << "ID GENERO: " << _idGenero << endl;
+            cout << "NOMBRE: " << _nombreGenero << endl;
         }
     }
-
 };
-
 
 #endif // CLASE_GENERO_H_INCLUDED
