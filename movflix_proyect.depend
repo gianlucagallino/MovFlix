@@ -43,7 +43,7 @@
 
 1698699692 c:\users\user\downloads\movflix_proyect\menu_resenias.h
 
-1699467766 source:c:\users\user\documents\github\movflix\main.cpp
+1699497516 source:c:\users\user\documents\github\movflix\main.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
@@ -102,7 +102,7 @@
 
 1698767472 c:\users\user\documents\github\movflix\menu_autores.h
 
-1699389257 c:\users\user\documents\github\movflix\reportes.h
+1699497883 c:\users\user\documents\github\movflix\reportes.h
 
 1699476095 c:\users\user\documents\github\movflix\menu_administracion.h
 
@@ -110,17 +110,17 @@
 
 1699476095 c:\users\user\documents\github\movflix\funcion_determinarposicionautonumerica.h
 
-1699468451 c:\users\user\documents\github\movflix\clase_fecha.h
+1699478373 c:\users\user\documents\github\movflix\clase_fecha.h
 
 1699475361 c:\users\user\documents\github\movflix\clase_genero.h
 
-1699475361 c:\users\user\documents\github\movflix\clase_director.h
+1699478373 c:\users\user\documents\github\movflix\clase_director.h
 
 1699475361 c:\users\user\documents\github\movflix\clase_pelicula.h
 
 1699475361 c:\users\user\documents\github\movflix\clase_usuario.h
 
-1699475360 c:\users\user\documents\github\movflix\clase_resenia.h
+1699484326 c:\users\user\documents\github\movflix\clase_resenia.h
 
 1699467849 c:\users\user\documents\github\movflix\clase_archivogeneros.h
 	"clase_Genero.h"
@@ -137,7 +137,7 @@
 1699468221 c:\users\user\documents\github\movflix\clase_archivoresenias.h
 	"clase_Resenia.h"
 
-1699476095 c:\users\user\documents\github\movflix\menu_directores.h
+1699478373 c:\users\user\documents\github\movflix\menu_directores.h
 
 1698886162 source:c:\users\parra\onedrive\escritorio\movflix-main\main.cpp
 	<iostream>
@@ -331,7 +331,7 @@
 	"clase_Pelicula.h"
 	"clase_ArchivoPeliculas.h"
 
-1699476095 c:\users\user\documents\github\movflix\funcion_verificarexistenciausuario.h
+1699478373 c:\users\user\documents\github\movflix\funcion_verificarexistenciausuario.h
 	"clase_Usuario.h"
 	"clase_ArchivoUsuarios.h"
 

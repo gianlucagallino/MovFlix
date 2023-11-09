@@ -45,9 +45,9 @@ using namespace std;
  - Hacer un menu de reportes interesante, con cosas copadas. aprovechemos que tenemos tantos archivos.
  - Incorporar temas cuatrimestre 2!! Importante, asi mostramos que sabemos eso.
  - Actualizar la documentacion que hicimos en google docs, para que diga bien lo que armamos, porque cambió bastante.
- - Ver el tema de que los inputs no puedan estar vacios.
  - Cargar datos de inicio, hacer backups, etc.
- - Mejoras graficas. Lo mejor posible, pero si se rompe, preferible que sea estable. usen rlutil. (acordarse de poner el fondo en negro, pq el de kloster es blanco si no)
+ - verificar que este todo bien.
+ -pasarle documento a nati.
 */
 
 int main() {

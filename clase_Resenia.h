@@ -171,6 +171,12 @@ class Resenia {
             cout << "PUNTUACIÓN: " << _puntuacionResenia << endl;
         }
     }
+    //Sobrecarga
+
+    bool operator>(float puntajeTemp){
+        if (_puntuacionResenia>puntajeTemp) return true;
+        return false;
+    }
 };
 
 #endif // CLASE_RESENIA_H_INCLUDED
