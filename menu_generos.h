@@ -15,45 +15,46 @@ bool ListarGenero();
 bool MostrarTodoGenero();
 
 void MenuGeneros() {
-    int op;
+    char op;
     bool correrMenu = true;
     while(correrMenu) {
         system("cls");
         cout << endl;
         cout << "           MENU GENEROS          " << endl;
         cout << "---------------------------------" << endl;
-        cout << " 1 - ALTA DE UN GENERO           " << endl;
-        cout << " 2 - BAJA DE UN GENERO           " << endl;
-        cout << " 3 - MODIFICAR NOMBRE GENERO     " << endl;
-        cout << " 4 - LISTAR GENERO POR ID        " << endl;
-        cout << " 5 - MOSTRAR TODOS LOS GENEROS   " << endl;
+        cout << " A - ALTA DE UN GENERO           " << endl;
+        cout << " B - BAJA DE UN GENERO           " << endl;
+        cout << " C - MODIFICAR NOMBRE GENERO     " << endl;
+        cout << " D - LISTAR GENERO POR ID        " << endl;
+        cout << " E - MOSTRAR TODOS LOS GENEROS   " << endl;
         cout << "---------------------------------" << endl;
-        cout << " 0 - VOLVER AL MENU PRINCIPAL    " << endl;
+        cout << " X - VOLVER AL MENU PRINCIPAL    " << endl;
         cout << " SELECCIONE UNA DE LAS OPCIONES: ";
         cin >> op;
+        op=toupper(op); //Funcion de cstdlib, que transforma un input minuscula en mayuscula. Es incluido por conveniencia.
         system("cls");
         switch (op) {
-        case 1:
+        case 'A':
             AltaGenero();
             break;
-        case 2:
+        case 'B':
             BajaGenero();
             break;
-        case 3:
+        case 'C':
             ModificarGenero();
             break;
-        case 4:
+        case 'D':
             ListarGenero();
             break;
-        case 5:
+        case 'E':
             MostrarTodoGenero();
             break;
-        case 0:
+        case 'X':
             correrMenu = false;
             break;
         default:
-            cout << "POR FAVOR, INGRESAR UNA OPCION CORRECTA" << endl;
-            rlutil::msleep(2000);
+            gotoxy(10,10);
+            rlutil::anykey("POR FAVOR, INGRESAR UNA OPCION CORRECTA (PRESIONE BOTON PARA CONTINUAR)");
             system("cls");
             break;
         }
@@ -76,6 +77,7 @@ bool AltaGenero() {
         system("pause");
         return false;
     }
+    return false;
 }
 
 // Realiza la baja de un género por ID, cambiando su estado a inactivo en el archivo "Generos.dat".
@@ -83,6 +85,9 @@ bool BajaGenero() {
     int ID;
     Genero temp;
     ArchivoGeneros archivo("Generos.dat");
+
+    cout << "SUS OPCIONES SON: "<<endl;
+    archivo.listarRegistros();
     cout << "INGRESAR ID A BORRAR: ";
     cin >> ID;
     system("cls");
@@ -115,7 +120,10 @@ bool ModificarGenero() {
     Genero temp;
     char nombreTemp[30];
     ArchivoGeneros archivo("Generos.dat");
-    cout << "INGRESAR ID CUYO NOMBRE MODIFICAR: ";
+
+    cout << "SUS OPCIONES SON: "<<endl;
+    archivo.listarRegistros();
+    cout << "INGRESAR ID GENERO CUYO NOMBRE MODIFICAR: ";
     cin >> ID;
     system("cls");
     int pos = archivo.buscarRegistro(ID);

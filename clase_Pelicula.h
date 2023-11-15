@@ -12,7 +12,11 @@
 
 
 // Declaración de la función para verificar la existencia de una película
-bool VerificarExistenciaPelicula(const char *nompelicula);
+bool VerificarExistenciaPelicula(int idpelicula);
+bool VerificarExistenciaNomPelicula(const char *pelicula);
+void MostraEquivalenciaGeneroPorId(int id);
+void MostraEquivalenciaDirectorPorId(int id);
+
 
 // Definición de la clase Pelicula
 class Pelicula {
@@ -20,9 +24,9 @@ class Pelicula {
     int _idPelicula;                 // Propiedad para el ID de la película
     char _nombrePelicula[30];        // Propiedad para el nombre de la película
     char _descripcion[200];          // Propiedad para la descripción de la película
-    Director _director;             // Propiedad para el director de la película
+    int _iddirector;             // Propiedad para el ID de director de la película
     Fecha _fechaPublicacion;         // Propiedad para la fecha de publicación de la película
-    Genero _genero;                  // Propiedad para el género de la película
+    int _idgenero;                  // Propiedad para el ID género de la película
     bool _estado;                    // Propiedad que indica el estado de la película
 
   public:
@@ -38,16 +42,17 @@ class Pelicula {
         strcpy(_descripcion, input);
     }
 
-    void setDirector(Director input) {
-        _director = input;
+    void setidDirector(int input) {
+
+        _iddirector=input;
     }
 
     void setFecha(Fecha input) {
         _fechaPublicacion = input;
     }
 
-    void setGenero(Genero input) {
-        _genero = input;
+    void setidGenero(int input) {
+        _idgenero=input;
     }
 
     void setEstado(bool input) {
@@ -67,16 +72,16 @@ class Pelicula {
         return _descripcion;
     }
 
-    Director getDirector() {
-        return _director;
+    int getidDirector() {
+        return _iddirector;
     }
 
     Fecha getFechaPublicacion() {
         return _fechaPublicacion;
     }
 
-    Genero getGenero() {
-        return _genero;
+    int getidGenero() {
+        return _idgenero;
     }
 
     bool getEstado() {
@@ -87,58 +92,63 @@ class Pelicula {
     void Cargar() {
         char nombreTemporal[30];
         char descTemporal[200];
-        char generoTemporal[30];
-        char directorTemporal[30];
+        int generoTemporal;
+        int directorTemporal;
+        ArchivoDirectores archDir ("Directores.dat");
+        ArchivoGeneros archGen("Generos.dat");
 
         bool flag_repeticion = false;
 
         _idPelicula = DeterminarPosicionAutonumerica("Peliculas.dat", sizeof(Pelicula));
         cout << "NOMBRE: ";
-        flag_repeticion = false;
-
-        while (flag_repeticion != true) {
+        cargarCadena(nombreTemporal, 30);
+        while(nombreTemporal[0]=='\0'||VerificarExistenciaNomPelicula(nombreTemporal)) {
+            cout<<"INPUT VACIO O REGISTRO YA EXISTENTE"<<endl;
+            system ("pause");
+            system ("cls");
+            cout << "NOMBRE: ";
             cargarCadena(nombreTemporal, 30);
-
-            if (VerificarExistenciaPelicula(nombreTemporal)) {
-                cout << "LA PELÍCULA YA EXISTE." << endl;
-            } else {
-                cout << "REGISTRADA." << endl;
-                flag_repeticion = true;
-            }
         }
         setNombrePelicula(nombreTemporal);
         cout << "DESCRIPCION: ";
         cargarCadena(descTemporal, 200);
+        while(descTemporal[0]=='\0') cargarCadena(descTemporal, 200);;
         setDescripcion(descTemporal);
-        cout << "DIRECTOR: " << endl;
+
+        cout << "SUS OPCIONES SON: "<<endl<<endl;
+        archDir.listarRegistros();
+        cout << "ID DIRECTOR (NUMERO ENTERO SOLAMENTE): " << endl;
         flag_repeticion = false;
 
         while (flag_repeticion != true) {
-            cargarCadena(directorTemporal, 30);
+            cin>>directorTemporal;
 
             if (VerificarExistenciaDirector(directorTemporal) == true) {
                 cout << "DIRECTOR ENCONTRADO." << endl;
-                setDirector(DevolverDirector(directorTemporal));
+                setidDirector(directorTemporal);
                 flag_repeticion = true;
             } else {
                 cout << "EL DIRECTOR NO EXISTE." << endl;
             }
         }
 
-        cout << "FECHA DE PUBLICACIÓN: " << endl;
+        cout << "FECHA DE PUBLICACION: " << endl;
         _fechaPublicacion.Cargar();
-        cout << "GÉNERO: " << endl;
+
+        cout << "SUS OPCIONES SON: "<<endl<<endl;
+        archGen.listarRegistros();
+        cout << "ID GENERO (NUMERO ENTERO SOLAMENTE): " << endl;
         flag_repeticion = false;
 
         while (flag_repeticion != true) {
-            cargarCadena(generoTemporal, 30);
+            cin>>generoTemporal;
 
             if (VerificarExistenciaGenero(generoTemporal) == true) {
-                cout << "GÉNERO ENCONTRADO." << endl;
-                setGenero(DevolverGenero(generoTemporal));
+                cout << "GENERO ENCONTRADO." << endl;
+                setidGenero(generoTemporal);
                 flag_repeticion = true;
             } else {
-                cout << "EL GÉNERO NO EXISTE." << endl;
+                cout << "EL GENERO NO EXISTE." << endl;
             }
         }
 
@@ -148,20 +158,18 @@ class Pelicula {
     // Método para mostrar una película
     void Mostrar() {
         if (getEstado()) {
-            cout << "ID PELÍCULA: " << _idPelicula << endl;
+            cout << "ID PELICULA: " << _idPelicula << endl;
             cout << "NOMBRE: " << _nombrePelicula << endl;
             cout << "DESCRIPCION: " << _descripcion << endl;
-            cout << "DIRECTOR: ";
-            char dirtemp[30];
-            strcpy(dirtemp, _director.getNombreDirector());
-            cout << dirtemp;
-            cout << "FECHA PUBLICACIÓN: ";
+            cout << "ID DIRECTOR: " << _iddirector<<endl;
+            cout << "NOMBRE DIRECTOR: ";
+            MostraEquivalenciaDirectorPorId(_iddirector);
+            cout << "FECHA PUBLICACION: ";
             _fechaPublicacion.Mostrar();
-            cout<<"GENERO: ";
-            char generotemp[30];
-            strcpy(generotemp,_genero.getNombreGenero());
-            cout<<generotemp;
-            cout<<endl;
+            cout<<"ID GENERO: "<<_idgenero<<endl;
+            cout << "NOMBRE GENERO: ";
+            MostraEquivalenciaGeneroPorId(_idgenero);
+            cout<<endl<<endl;
         }
     }
 };

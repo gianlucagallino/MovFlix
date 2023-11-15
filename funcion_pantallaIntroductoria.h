@@ -12,7 +12,8 @@ void PantallaIntroductoria() {
     system("cls");  // Limpia la pantalla.
 
     // Establece el color de la fuente en rojo.
-    rlutil::setColor(rlutil::RED);
+    rlutil::setColor(rlutil::YELLOW);
+
 
     // Imprime el logo de MovFlix.
     rlutil::locate(40, 12);

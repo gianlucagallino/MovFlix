@@ -32,6 +32,7 @@ using namespace std;
 #include "menu_directores.h"
 #include "Reportes.h"
 #include "menu_administracion.h"
+#include "funcion_MostrarEquivalencias.h"
 
 /*
   AUTORES:
@@ -40,19 +41,13 @@ using namespace std;
   -PARRA, Juan (PRESENCIAL)
 */
 
-/// QUEDA PARA HACER:
-/*
- - Hacer un menu de reportes interesante, con cosas copadas. aprovechemos que tenemos tantos archivos.
- - Incorporar temas cuatrimestre 2!! Importante, asi mostramos que sabemos eso.
- - Actualizar la documentacion que hicimos en google docs, para que diga bien lo que armamos, porque cambió bastante.
- - Cargar datos de inicio, hacer backups, etc.
- - verificar que este todo bien.
- -pasarle documento a nati.
-*/
 
 int main() {
     bool correrPrograma = true;
-    int op;
+    char op;
+
+    // Seteamos el color de fondo, para sobreescribir colores de consola del usuario.
+    rlutil::setBackgroundColor(rlutil::RED);
 
     // Función para mostrar la pantalla introductoria
     PantallaIntroductoria();
@@ -63,52 +58,54 @@ int main() {
         cout << endl;
         cout << "         MENU PRINCIPAL         " << endl;
         cout << "--------------------------------" << endl;
-        cout << " 1 - ABML GENEROS               " << endl;
-        cout << " 2 - ABML DIRECTORES            " << endl;
-        cout << " 3 - ABML PELICULAS             " << endl;
-        cout << " 4 - ABML USUARIOS              " << endl;
-        cout << " 5 - ABML RESENIAS              " << endl;
-        cout << " 6 - REPORTES                   " << endl;
-        cout << " 7 - BACKUPS Y ADMINISTRACION   " << endl;
+        cout << " A - ABML GENEROS               " << endl;
+        cout << " B - ABML DIRECTORES            " << endl;
+        cout << " C - ABML PELICULAS             " << endl;
+        cout << " D - ABML USUARIOS              " << endl;
+        cout << " E - ABML RESENIAS              " << endl;
+        cout << " F - REPORTES                   " << endl;
+        cout << " G - BACKUPS Y ADMINISTRACION   " << endl;
         cout << "--------------------------------" << endl;
-        cout << " 0 - FIN DEL PROGRAMA " << endl;
+        cout << " X - FIN DEL PROGRAMA " << endl;
         cout << " SELECCIONE UNA DE LAS OPCIONES: ";
         cin >> op;
+        op=toupper(op); //Funcion de cstdlib, que transforma un input minuscula en mayuscula. Es incluido por conveniencia.
         system("cls");
         switch (op) {
-        case 1:
+        case 'A':
             MenuGeneros();
             break;
-        case 2:
+        case 'B':
             MenuDirectores();
             break;
-        case 3:
+        case 'C':
             MenuPeliculas();
             break;
-        case 4:
+        case 'D':
             MenuUsuarios();
             break;
-        case 5:
+        case 'E':
             MenuResenias();
             break;
-        case 6:
+        case 'F':
             MenuReportes();
             break;
-        case 7:
+        case 'G':
             MenuAdministracion();
             break;
-        case 0:
+        case 'X':
             correrPrograma = false;
             break;
         default:
-            cout << "POR FAVOR, INGRESAR UNA OPCION CORRECTA" << endl;
-            rlutil::msleep(2000);
+            gotoxy(10,10);
+            rlutil::anykey("POR FAVOR, INGRESAR UNA OPCION CORRECTA (PRESIONE BOTON PARA CONTINUAR)");
             system("cls");
             break;
         }
 
     }
     system("cls");
+    gotoxy(10,10);
     cout << "MUCHAS GRACIAS, VUELVA PRONTO!"<<endl;
     rlutil::msleep(2000);
     return 0;

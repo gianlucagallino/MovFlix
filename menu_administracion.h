@@ -20,71 +20,84 @@ void RestaurarPeliculas();
 void RestaurarUsuarios();
 void RestaurarResenias();
 void BackupEntero();
-void EstablecerDatosDeInicio();
+void RestauracionEntera();
 
 void MenuAdministracion() {
-    int op;
+    char op;
     bool correrMenu = true;
     while(correrMenu) {
         system("cls");
         cout << endl;
         cout << "         MENU ADMINISTRACION        " << endl;
         cout << "------------------------------------" << endl;
-        cout << " 1 - BACKUP GENEROS                 " << endl;
-        cout << " 2 - BACKUP DIRECTORES              " << endl;
-        cout << " 3 - BACKUP PELICULAS               " << endl;
-        cout << " 4 - BACKUP USUARIOS                " << endl;
-        cout << " 5 - BACKUP RESENIAS                " << endl;
-        cout << " 6 - RESTAURAR ARCHIVOS GENEROS     " << endl;
-        cout << " 7 - RESTAURAR ARCHIVOS DIRECTORES  " << endl;
-        cout << " 8 - RESTAURAR ARCHIVOS PELICULAS   " << endl;
-        cout << " 9 - RESTAURAR ARCHIVOS USUARIOS    " << endl;
-        cout << " 10 - RESTAURAR ARCHIVOS RESENIAS   " << endl;
-        cout << " 11 - BACKUP ENTERO                 " << endl;
-        cout << " 12 - ESTABLECER DATOS DE INICIO    " << endl;
+        cout << " A - BACKUP GENEROS                 " << endl;
+        cout << " B - BACKUP DIRECTORES              " << endl;
+        cout << " C - BACKUP PELICULAS               " << endl;
+        cout << " D - BACKUP USUARIOS                " << endl;
+        cout << " E - BACKUP RESENIAS                " << endl;
+        cout << " F - RESTAURAR ARCHIVOS GENEROS     " << endl;
+        cout << " G - RESTAURAR ARCHIVOS DIRECTORES  " << endl;
+        cout << " H - RESTAURAR ARCHIVOS PELICULAS   " << endl;
+        cout << " I - RESTAURAR ARCHIVOS USUARIOS    " << endl;
+        cout << " J - RESTAURAR ARCHIVOS RESENIAS   " << endl;
+        cout << " K - BACKUP ENTERO                 " << endl;
+        cout << " L - RESTAURACION ENTERA           " << endl;
         cout << "------------------------------------" << endl;
-        cout << "    0 - VOLVER AL MENU PRINCIPAL    " << endl;
+        cout << "    X - VOLVER AL MENU PRINCIPAL    " << endl;
         cout << " SELECCIONE UNA DE LAS OPCIONES: ";
         cin >> op;
+        op=toupper(op); //Funcion de cstdlib, que transforma un input minuscula en mayuscula. Es incluido por conveniencia.
         system("cls");
         switch (op) {
-        case 1:
+        case 'A':
             BackupGeneros();
+            system("pause");
             break;
-        case 2:
+        case 'B':
             BackupDirectores();
+            system("pause");
             break;
-        case 3:
+        case 'C':
             BackupPeliculas();
+            system("pause");
             break;
-        case 4:
+        case 'D':
             BackupUsuarios();
+            system("pause");
             break;
-        case 5:
+        case 'E':
             BackupResenias();
+            system("pause");
             break;
-        case 6:
+        case 'F':
             RestaurarGeneros();
+            system("pause");
             break;
-        case 7:
+        case 'G':
             RestaurarDirectores();
+            system("pause");
             break;
-        case 8:
+        case 'H':
             RestaurarPeliculas();
+            system("pause");
             break;
-        case 9:
+        case 'I':
             RestaurarUsuarios();
+            system("pause");
             break;
-        case 10:
+        case 'J':
             RestaurarResenias();
+            system("pause");
             break;
-        case 11:
+        case 'K':
             BackupEntero();
+            system("pause");
             break;
-        case 12:
-            EstablecerDatosDeInicio();
+        case 'L':
+            RestauracionEntera();
+            system("pause");
             break;
-        case 0:
+        case 'X':
             correrMenu = false;
             break;
         default:
@@ -120,6 +133,7 @@ void BackupGeneros() {
             reg = arc.leerRegistro(i);
             arcBackup.agregarRegistro(reg);
         }
+        cout << "BACKUP REALIZADO." << endl;
     }
 }
 
@@ -133,6 +147,7 @@ void BackupDirectores() {
             reg = arc.leerRegistro(i);
             arcBackup.agregarRegistro(reg);
         }
+        cout << "BACKUP REALIZADO." << endl;
     }
 }
 
@@ -146,6 +161,7 @@ void BackupPeliculas() {
             reg = arc.leerRegistro(i);
             arcBackup.agregarRegistro(reg);
         }
+        cout << "BACKUP REALIZADO." << endl;
     }
 }
 
@@ -159,6 +175,7 @@ void BackupUsuarios() {
             reg = arc.leerRegistro(i);
             arcBackup.agregarRegistro(reg);
         }
+        cout << "BACKUP REALIZADO." << endl;
     }
 }
 
@@ -172,6 +189,7 @@ void BackupResenias() {
             reg = arc.leerRegistro(i);
             arcBackup.agregarRegistro(reg);
         }
+        cout << "BACKUP REALIZADO." << endl;
     }
 }
 
@@ -185,6 +203,7 @@ void RestaurarGeneros() {
             reg = arcBackup.leerRegistro(i);
             arc.agregarRegistro(reg);
         }
+        cout << "BACKUP RESTAURADO." << endl;
     }
 }
 
@@ -198,6 +217,7 @@ void RestaurarDirectores() {
             reg = arcBackup.leerRegistro(i);
             arc.agregarRegistro(reg);
         }
+        cout << "BACKUP RESTAURADO." << endl;
     }
 }
 
@@ -211,6 +231,7 @@ void RestaurarPeliculas() {
             reg = arcBackup.leerRegistro(i);
             arc.agregarRegistro(reg);
         }
+        cout << "BACKUP RESTAURADO." << endl;
     }
 }
 
@@ -224,6 +245,7 @@ void RestaurarUsuarios() {
             reg = arcBackup.leerRegistro(i);
             arc.agregarRegistro(reg);
         }
+        cout << "BACKUP RESTAURADO." << endl;
     }
 }
 
@@ -237,6 +259,7 @@ void RestaurarResenias() {
             reg = arcBackup.leerRegistro(i);
             arc.agregarRegistro(reg);
         }
+        cout << "BACKUP RESTAURADO." << endl;
     }
 }
 
@@ -249,8 +272,8 @@ void BackupEntero() {
     BackupResenias();
 }
 
-// Establece los datos de inicio restaurando los archivos desde sus copias de seguridad.
-void EstablecerDatosDeInicio() {
+// Restaura los archivos desde sus copias de seguridad.
+void RestauracionEntera() {
     RestaurarGeneros();
     RestaurarDirectores();
     RestaurarPeliculas();

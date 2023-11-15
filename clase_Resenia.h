@@ -11,14 +11,16 @@
 //Los registros son AUTONUMERICOS.
 
 // Declaración de la función para verificar la existencia de una reseña de una película
-bool VerificarExistenciaReseniaDePelicula(Usuario escritor, Pelicula peli);
+bool VerificarExistenciaReseniaDePelicula(int idescritor, int idpeli);
+void MostraEquivalenciaPeliculaPorId(int id);
+void MostraEquivalenciaUsuarioPorId(int id);
 
 // Definición de la clase Resenia
 class Resenia {
   private:
     int _idResenia;                 // Propiedad para el ID de la reseña
-    Usuario _autorResenia;         // Propiedad para el autor de la reseña
-    Pelicula _peliculaResenia;      // Propiedad para la película relacionada con la reseña
+    int _idautorResenia;         // Propiedad para el ID de autor de la reseña
+    int _idpeliculaResenia;      // Propiedad para la ID de película relacionada con la reseña
     char _opinion[200];             // Propiedad para la opinión de la reseña
     Fecha _fechaResenia;            // Propiedad para la fecha de la reseña
     float _puntuacionResenia;         // Propiedad para la puntuación de la reseña
@@ -29,12 +31,12 @@ class Resenia {
 
     //No corresponde un setId, dado que es autonumerico.
 
-    void setAutorResenia(Usuario input) {
-        _autorResenia = input;
+    void setidAutorResenia(int input) {
+        _idautorResenia = input;
     }
 
-    void setPeliculaResenia(Pelicula input) {
-        _peliculaResenia = input;
+    void setidPeliculaResenia(int input) {
+        _idpeliculaResenia = input;
     }
 
     void setOpinion(const char *input) {
@@ -58,12 +60,12 @@ class Resenia {
         return _idResenia;
     }
 
-    Usuario getAutorResenia() {
-        return _autorResenia;
+    int getidAutorResenia() {
+        return _idautorResenia;
     }
 
-    Pelicula getPeliculaResenia() {
-        return _peliculaResenia;
+    int getidPeliculaResenia() {
+        return _idpeliculaResenia;
     }
 
     const char *getOpinion() {
@@ -83,58 +85,67 @@ class Resenia {
     }
 
     // Método para cargar una reseña
-    void Cargar() {
-        char nomtemp[30];
-        char pelitemp[30];
+    bool Cargar() {
+        int idusuariotemp;
+        int idpelitemp;
         char opinionTemporal[200];
         bool flag_repeticion = false;
-        int puntuacionTemporal;
+        float puntuacionTemporal;
+        ArchivoUsuarios archUs ("Usuarios.dat");
+        ArchivoPeliculas archPel("Peliculas.dat");
 
         _idResenia  = DeterminarPosicionAutonumerica("Resenias.dat", sizeof(Resenia));
-        cout << "NOMBRE AUTOR DE LA RESEÑA: " << endl;
+
+        cout << "SUS OPCIONES SON: "<<endl<<endl;
+        archUs.listarRegistros();
+        cout << "ID USUARIO AUTOR DE LA RESENIA (NUMERO ENTERO SOLAMENTE): " << endl;
+
         flag_repeticion = false;
 
         while (flag_repeticion != true) {
-            cargarCadena(nomtemp, 30);
+            cin>>idusuariotemp;
 
-            if (VerificarExistenciaUsuario(nomtemp) == true) {
-                cout << "Usuario ENCONTRADO." << endl;
-                setAutorResenia(DevolverUsuario(nomtemp));
+            if (VerificarExistenciaUsuario(idusuariotemp) == true) {
+                cout << "USUARIO ENCONTRADO." << endl;
+                setidAutorResenia(idusuariotemp);
                 flag_repeticion = true;
             } else {
                 cout << "EL USUARIO INGRESADO NO EXISTE EN LA BASE DE DATOS." << endl;
             }
         }
 
-        cout << "PELÍCULA A RESEÑAR: " << endl;
+
+        cout << "SUS OPCIONES SON: "<<endl<<endl;
+        archPel.listarRegistros();
+        cout << "ID PELICULA A RESENIAR (NUMERO ENTERO SOLAMENTE): " << endl;
         flag_repeticion = false;
 
         while (flag_repeticion != true) {
-            cargarCadena(pelitemp, 30);
+            cin>>idpelitemp;
 
-            if (VerificarExistenciaPelicula(pelitemp) == true) {
-                cout << "PELÍCULA ENCONTRADA." << endl;
-                setPeliculaResenia(DevolverPelicula(pelitemp));
+            if (VerificarExistenciaPelicula(idpelitemp) == true) {
+                cout << "PELICULA ENCONTRADA." << endl;
+                setidPeliculaResenia(idpelitemp);
                 flag_repeticion = true;
             } else {
-                cout << "LA PELÍCULA INGRESADA NO EXISTE EN LA BASE DE DATOS." << endl;
+                cout << "LA PELICULA INGRESADA NO EXISTE EN LA BASE DE DATOS." << endl;
             }
         }
 
-        if (VerificarExistenciaReseniaDePelicula(_autorResenia, _peliculaResenia)) {
-            cout << "ESTE USUARIO YA HA REALIZADO UNA RESEÑA PARA ESTA PELÍCULA." << endl;
+        if (VerificarExistenciaReseniaDePelicula(_idautorResenia, _idpeliculaResenia)) {
+            cout << "ESTE USUARIO YA HA REALIZADO UNA RESENIA PARA ESTA PELICULA." << endl;
             system("pause");
-            return;
+            return false;
         }
 
-        cout << "OPINIÓN: ";
+        cout << "OPINION: ";
         cargarCadena(opinionTemporal, 200);
         setOpinion(opinionTemporal);
 
         cout << "FECHA: ";
         _fechaResenia.Cargar();
 
-        cout << "PUNTUACIÓN 0 al 10 (SE ACEPTAN FLOATS): ";
+        cout << "PUNTUACION 0 A 10, CON DECIMALES SEPARADOS POR PUNTO SI ES NECESARIO: ";
         flag_repeticion = false;
 
         while (flag_repeticion != true) {
@@ -147,33 +158,39 @@ class Resenia {
             }
         }
         setEstado(true);
+        return true;
     }
 
     // Método para mostrar una reseña
     void Mostrar() {
         if (getEstado()) {
-            cout << "ID RESEÑA: " << _idResenia << endl;
-            cout << "AUTOR RESEÑA: ";
-            char nombretemp[30];
-            strcpy(nombretemp, _autorResenia.getNombreUsuario());
-            cout << nombretemp;
+            cout << "ID RESENIA: " << _idResenia << endl;
+            cout << "ID AUTOR RESENIA: ";
 
-            cout << "PELÍCULA A RESEÑAR: " << endl;
-            char pelitemp[30];
-            strcpy(pelitemp, _peliculaResenia.getNombrePelicula());
-            cout << pelitemp;
+            cout << _idautorResenia<<endl;
 
-            cout << "OPINIÓN: " << _opinion << endl;
+            cout << "NOMBRE USUARIO AUTOR DE RESENIA: ";
+
+            MostraEquivalenciaUsuarioPorId(_idautorResenia);
+
+            cout << "ID PELICULA A RESENIAR: ";
+
+            cout << _idpeliculaResenia<<endl;
+
+            cout << "NOMBRE PELICULA: ";
+            MostraEquivalenciaPeliculaPorId(_idpeliculaResenia);
+
+            cout << "OPINION: " << _opinion << endl;
 
             cout << "FECHA: ";
             _fechaResenia.Mostrar();
 
-            cout << "PUNTUACIÓN: " << _puntuacionResenia << endl;
+            cout << "PUNTUACION: " << _puntuacionResenia << endl << endl;
         }
     }
     //Sobrecarga
 
-    bool operator>(float puntajeTemp){
+    bool operator>(float puntajeTemp) {
         if (_puntuacionResenia>puntajeTemp) return true;
         return false;
     }

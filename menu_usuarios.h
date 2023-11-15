@@ -17,7 +17,7 @@ bool ListarUsuario();
 bool MostrarTodoUsuario();
 
 void MenuUsuarios() {
-    int op;
+    char op;
     bool correrMenu = true;
     while(correrMenu) {
         system("cls");
@@ -33,29 +33,30 @@ void MenuUsuarios() {
         cout << " 0 - VOLVER AL MENU PRINCIPAL    " << endl;
         cout << " SELECCIONE UNA DE LAS OPCIONES: ";
         cin >> op;
+        op=toupper(op); //Funcion de cstdlib, que transforma un input minuscula en mayuscula. Es incluido por conveniencia.
         system("cls");
         switch (op) {
-        case 1:
+        case 'A':
             AltaUsuario();
             break;
-        case 2:
+        case 'B':
             BajaUsuario();
             break;
-        case 3:
+        case 'C':
             ModificarUsuario();
             break;
-        case 4:
+        case 'D':
             ListarUsuario();
             break;
-        case 5:
+        case 'E':
             MostrarTodoUsuario();
             break;
-        case 0:
+        case 'X':
             correrMenu = false;
             break;
         default:
-            cout << "POR FAVOR, INGRESAR UNA OPCION CORRECTA" << endl;
-            rlutil::msleep(2000);
+            gotoxy(10,10);
+            rlutil::anykey("POR FAVOR, INGRESAR UNA OPCION CORRECTA (PRESIONE BOTON PARA CONTINUAR)");
             system("cls");
             break;
         }
@@ -77,6 +78,7 @@ bool AltaUsuario() {
         system("pause");
         return false;
     }
+    return false;
 }
 
 // Realiza la baja de un usuario por ID, cambiando su estado a inactivo en el archivo "Usuarios.dat".
@@ -84,6 +86,8 @@ bool BajaUsuario() {
     int ID;
     Usuario temp;
     ArchivoUsuarios archivo("Usuarios.dat");
+    cout << "SUS OPCIONES SON: "<<endl;
+    archivo.listarRegistros();
     cout << "INGRESAR ID A BORRAR: ";
     cin >> ID;
     system("cls");
@@ -116,7 +120,9 @@ bool ModificarUsuario() {
     Usuario temp;
     char nombreTemp[30];
     ArchivoUsuarios archivo("Usuarios.dat");
-    cout << "INGRESAR ID CUYO NOMBRE MODIFICAR: ";
+    cout << "SUS OPCIONES SON: "<<endl;
+    archivo.listarRegistros();
+    cout << "INGRESAR ID USUARIO CUYO NOMBRE MODIFICAR: ";
     cin >> ID;
     system("cls");
     int pos = archivo.buscarRegistro(ID);

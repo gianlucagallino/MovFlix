@@ -25,6 +25,7 @@ class ArchivoResenias {
     // Lista los registros de reseñas activas en el archivo
     bool listarRegistros() {
         Resenia reg; // Objeto de la clase Resenia
+        int cont = 0;
         FILE *p = fopen(_nombre, "rb");
         if (p == NULL) {
             cout << "ERROR DE ARCHIVO" << endl;
@@ -35,6 +36,11 @@ class ArchivoResenias {
         while (fread(&reg, sizeof reg, 1, p) == 1) {
             if (reg.getEstado() == true)
                 reg.Mostrar(); // Muestra el registro de la reseña
+            cout << endl;
+            cont++;
+        }
+        if (cont == 0) {
+            cout<<"NO HAY REGISTROS EN EL ARCHIVO"<<endl;
         }
         fclose(p);
         return true;

@@ -11,7 +11,8 @@
 //Los registros son AUTONUMERICOS.
 
 // Declaración de la función para verificar la existencia de un género
-bool VerificarExistenciaGenero(const char *primgenero);
+bool VerificarExistenciaGenero(int primgenero);
+bool VerificarExistenciaNomGenero(const char *primgenero);
 
 // Definición de la clase Genero
 class Genero {
@@ -53,20 +54,16 @@ class Genero {
     void Cargar() {
         char nombreTemporal[30];
 
-        _idGenero = DeterminarPosicionAutonumerica("Generos.dat", sizeof(Genero));
+        _idGenero=DeterminarPosicionAutonumerica("Generos.dat", sizeof(Genero));
 
         cout << "NOMBRE: ";
-        bool flag_repeticion = false;
-
-        while (flag_repeticion != true) {
+        cargarCadena(nombreTemporal, 30);
+        while(nombreTemporal[0]=='\0'||VerificarExistenciaNomGenero(nombreTemporal)) {
+            cout<<"INPUT VACIO O REGISTRO YA EXISTENTE"<<endl;
+            system ("pause");
+            system ("cls");
+            cout << "NOMBRE: ";
             cargarCadena(nombreTemporal, 30);
-
-            if (VerificarExistenciaGenero(nombreTemporal)) {
-                cout << "EL GÉNERO YA EXISTE." << endl;
-            } else {
-                cout << "REGISTRADO." << endl;
-                flag_repeticion = true;
-            }
         }
         setNombreGenero(nombreTemporal);
         setEstado(true);

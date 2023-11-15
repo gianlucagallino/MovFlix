@@ -24,6 +24,7 @@ class ArchivoDirectores {
     // Lista los registros de directores activos en el archivo
     bool listarRegistros() {
         Director reg; // Objeto de la clase Director
+        int cont = 0;
         FILE *p = fopen(_nombre, "rb");
         if (p == NULL) {
             cout << "ERROR DE ARCHIVO" << endl;
@@ -34,6 +35,11 @@ class ArchivoDirectores {
         while (fread(&reg, sizeof reg, 1, p) == 1) {
             if (reg.getEstado() == true)
                 reg.Mostrar(); // Muestra el registro del director
+            cout << endl;
+            cont++;
+        }
+        if (cont == 0) {
+            cout<<"NO HAY REGISTROS EN EL ARCHIVO"<<endl;
         }
         fclose(p);
         return true;

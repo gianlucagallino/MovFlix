@@ -26,6 +26,7 @@ class ArchivoPeliculas {
     // Lista los registros de películas activas en el archivo
     bool listarRegistros() {
         Pelicula reg; // Objeto de la clase Pelicula
+        int cont = 0;
         FILE *p = fopen(_nombre, "rb");
         if (p == NULL) {
             cout << "ERROR DE ARCHIVO" << endl;
@@ -36,6 +37,11 @@ class ArchivoPeliculas {
         while (fread(&reg, sizeof reg, 1, p) == 1) {
             if (reg.getEstado() == true)
                 reg.Mostrar(); // Muestra el registro de la película
+            cout << endl;
+            cont++;
+        }
+        if (cont == 0) {
+            cout<<"NO HAY REGISTROS EN EL ARCHIVO"<<endl;
         }
         fclose(p);
         return true;

@@ -4,7 +4,7 @@
 #include "clase_Usuario.h"
 #include "clase_ArchivoUsuarios.h"
 
-bool VerificarExistenciaUsuario(const char *nom) {
+bool VerificarExistenciaUsuario(int idusuario) {
     // Crea una instancia del archivo de usuarios.
     ArchivoUsuarios archus("usuarios.dat");
 
@@ -12,14 +12,14 @@ bool VerificarExistenciaUsuario(const char *nom) {
     int cantReg = archus.contarRegistros();
     Usuario reg;
 
-    // Recorre todos los registros en busca de un usuario con el nombre especificado.
+    // Recorre todos los registros en busca de un usuario con el id especificado.
     for (int i = 0; i < cantReg; i++) {
         // Lee un registro del archivo.
         reg = archus.leerRegistro(i);
 
-        // Compara si el nombre del usuario coincide con el nombre especificado.
-        if (strcmp(nom, reg.getNombreUsuario()) == 0) {
-            // Si se encuentra un usuario con el nombre especificado, devuelve verdadero.
+        // Compara si el id del usuario coincide con el id especificado.
+        if (idusuario == reg.getIdUsuario()&&reg.getEstado()==true) {
+            // Si se encuentra un usuario con el id especificado, devuelve verdadero.
             return true;
         }
     }
@@ -27,8 +27,7 @@ bool VerificarExistenciaUsuario(const char *nom) {
     // Si no se encuentra ningún usuario con el nombre especificado, devuelve falso.
     return false;
 }
-
-Usuario DevolverUsuario(const char *nom) {
+bool VerificarExistenciaNomUsuario(const char *usuario) {
     // Crea una instancia del archivo de usuarios.
     ArchivoUsuarios archus("usuarios.dat");
 
@@ -42,14 +41,14 @@ Usuario DevolverUsuario(const char *nom) {
         reg = archus.leerRegistro(i);
 
         // Compara si el nombre del usuario coincide con el nombre especificado.
-        if (strcmp(nom, reg.getNombreUsuario()) == 0) {
-            // Si se encuentra un usuario con el nombre especificado, devuelve ese usuario.
-            return reg;
+        if (strcmp(usuario, reg.getNombreUsuario())==0&&reg.getEstado()==true) {
+            // Si se encuentra un usuario con el nombre especificado, devuelve verdadero.
+            return true;
         }
     }
 
-    // Si no se encuentra el usuario, no se devuelve nada
-    //Esto solo corre con la existencia confirmada, por lo que no es un problema.
+    // Si no se encuentra ningún usuario con el nombre especificado, devuelve falso.
+    return false;
 }
 
 #endif // FUNCION_ENCONTRARUSUARIO_H_INCLUDED

@@ -15,45 +15,46 @@ bool ListarDirector();
 bool MostrarTodoDirector();
 
 void MenuDirectores() {
-    int op;
+    char op;
     bool correrMenu = true;
     while(correrMenu) {
         system("cls");
         cout << endl;
         cout << "          MENU DIRECTORES        " << endl;
         cout << "---------------------------------" << endl;
-        cout << " 1 - ALTA DE UN DIRECTOR         " << endl;
-        cout << " 2 - BAJA DE UN DIRECTOR         " << endl;
-        cout << " 3 - MODIFICAR NOMBRE DIRECTOR   " << endl;
-        cout << " 4 - MOSTRAR DIRECTOR POR ID     " << endl;
-        cout << " 5 - MOSTRAR TODOS LOS DIRECTORES" << endl;
+        cout << " A - ALTA DE UN DIRECTOR         " << endl;
+        cout << " B - BAJA DE UN DIRECTOR         " << endl;
+        cout << " C - MODIFICAR NOMBRE DIRECTOR   " << endl;
+        cout << " D - MOSTRAR DIRECTOR POR ID     " << endl;
+        cout << " E - MOSTRAR TODOS LOS DIRECTORES" << endl;
         cout << "---------------------------------" << endl;
-        cout << " 0 - VOLVER AL MENU PRINCIPAL    " << endl;
+        cout << " X - VOLVER AL MENU PRINCIPAL    " << endl;
         cout << " SELECCIONE UNA DE LAS OPCIONES: ";
         cin >> op;
+        op=toupper(op); //Funcion de cstdlib, que transforma un input minuscula en mayuscula. Es incluido por conveniencia.
         system("cls");
         switch (op) {
-        case 1:
+        case 'A':
             AltaDirector();
             break;
-        case 2:
+        case 'B':
             BajaDirector();
             break;
-        case 3:
+        case 'C':
             ModificarDirector();
             break;
-        case 4:
+        case 'D':
             ListarDirector();
             break;
-        case 5:
+        case 'E':
             MostrarTodoDirector();
             break;
-        case 0:
+        case 'X':
             correrMenu = false;
             break;
         default:
-            cout << "POR FAVOR, INGRESAR UNA OPCION CORRECTA" << endl;
-            rlutil::msleep(2000);
+            gotoxy(10,10);
+            rlutil::anykey("POR FAVOR, INGRESAR UNA OPCION CORRECTA (PRESIONE BOTON PARA CONTINUAR)");
             system("cls");
             break;
         }
@@ -75,6 +76,7 @@ bool AltaDirector() {
         system("pause");
         return false;
     }
+    return false;
 }
 
 // Realiza la baja de un director por ID, cambiando su estado a inactivo en el archivo "Directores.dat".
@@ -82,6 +84,9 @@ bool BajaDirector() {
     int ID;
     Director temp;
     ArchivoDirectores archivo("Directores.dat");
+
+    cout << "SUS OPCIONES SON: "<<endl;
+    archivo.listarRegistros();
     cout << "INGRESAR ID A BORRAR: ";
     cin >> ID;
     system("cls");
@@ -114,7 +119,10 @@ bool ModificarDirector() {
     Director temp;
     ArchivoDirectores archivo("Directores.dat");
     char nombreTemp[30];
-    cout << "INGRESAR ID CUYO NOMBRE MODIFICAR: ";
+
+    cout << "SUS OPCIONES SON: "<<endl;
+    archivo.listarRegistros();
+    cout << "INGRESAR ID DIRECTOR CUYO NOMBRE MODIFICAR: ";
     cin >> ID;
     system("cls");
     int pos = archivo.buscarRegistro(ID);

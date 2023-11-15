@@ -16,45 +16,46 @@ bool MostrarTodaResenia();
 
 
 void MenuResenias() {
-    int op;
+    char op;
     bool correrMenu = true;
     while(correrMenu) {
         system("cls");
         cout << endl;
         cout << "           MENU RESENIAS         " << endl;
         cout << "---------------------------------" << endl;
-        cout << " 1 - ALTA DE UNA RESENIA         " << endl;
-        cout << " 2 - BAJA DE UNA RESENIA         " << endl;
-        cout << " 3 - MODIFICAR TEXTO RESENIA     " << endl;
-        cout << " 4 - MOSTRAR RESENIA POR ID      " << endl;
-        cout << " 5 - MOSTRAR TODOS LAS RESENIAS  " << endl;
+        cout << " A - ALTA DE UNA RESENIA         " << endl;
+        cout << " B - BAJA DE UNA RESENIA         " << endl;
+        cout << " C - MODIFICAR TEXTO RESENIA     " << endl;
+        cout << " D - MOSTRAR RESENIA POR ID      " << endl;
+        cout << " E - MOSTRAR TODOS LAS RESENIAS  " << endl;
         cout << "---------------------------------" << endl;
-        cout << " 0 - VOLVER AL MENU PRINCIPAL    " << endl;
+        cout << " X - VOLVER AL MENU PRINCIPAL    " << endl;
         cout << " SELECCIONE UNA DE LAS OPCIONES: ";
         cin >> op;
+        op=toupper(op); //Funcion de cstdlib, que transforma un input minuscula en mayuscula. Es incluido por conveniencia.
         system("cls");
         switch (op) {
-        case 1:
+        case 'A':
             AltaResenia();
             break;
-        case 2:
+        case 'B':
             BajaResenia();
             break;
-        case 3:
+        case 'C':
             ModificarResenia();
             break;
-        case 4:
+        case 'D':
             ListarResenia();
             break;
-        case 5:
+        case 'E':
             MostrarTodaResenia();
             break;
-        case 0:
+        case 'X':
             correrMenu = false;
             break;
         default:
-            cout << "POR FAVOR, INGRESAR UNA OPCION CORRECTA" << endl;
-            rlutil::msleep(2000);
+            gotoxy(10,10);
+            rlutil::anykey("POR FAVOR, INGRESAR UNA OPCION CORRECTA (PRESIONE BOTON PARA CONTINUAR)");
             system("cls");
             break;
         }
@@ -67,16 +68,18 @@ void MenuResenias() {
 bool AltaResenia() {
     Resenia temp;
     ArchivoResenias archivo("Resenias.dat");
-    temp.Cargar();
-    if (archivo.agregarRegistro(temp)) {
-        cout << "REGISTRO AGREGADO" << endl;
-        system("pause");
-        return true;
-    } else {
-        cout << "NO SE AGREGO" << endl;
-        system("pause");
-        return false;
+    if(temp.Cargar()) {
+        if (archivo.agregarRegistro(temp)) {
+            cout << "REGISTRO AGREGADO" << endl;
+            system("pause");
+            return true;
+        } else {
+            cout << "NO SE AGREGO" << endl;
+            system("pause");
+            return false;
+        }
     }
+    return false;
 }
 
 // Realiza la baja de una reseña por ID, cambiando su estado a inactivo en el archivo "Resenias.dat".
@@ -84,6 +87,9 @@ bool BajaResenia() {
     int ID;
     Resenia temp;
     ArchivoResenias archivo("Resenias.dat");
+
+    cout << "SUS OPCIONES SON: "<<endl;
+    archivo.listarRegistros();
     cout << "INGRESAR ID A BORRAR: ";
     cin >> ID;
     system("cls");
@@ -116,7 +122,10 @@ bool ModificarResenia() {
     Resenia temp;
     ArchivoResenias archivo("Resenias.dat");
     char textoTemp[200];
-    cout << "INGRESAR ID CUYO TEXTO MODIFICAR: ";
+
+    cout << "SUS OPCIONES SON: "<<endl;
+    archivo.listarRegistros();
+    cout << "INGRESAR ID RESENIA CUYO TEXTO MODIFICAR: ";
     cin >> ID;
     system("cls");
     int pos = archivo.buscarRegistro(ID);

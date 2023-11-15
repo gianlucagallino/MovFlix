@@ -102,7 +102,7 @@
 
 1698767472 c:\users\user\documents\github\movflix\menu_autores.h
 
-1699497883 c:\users\user\documents\github\movflix\reportes.h
+1699500311 c:\users\user\documents\github\movflix\reportes.h
 
 1699476095 c:\users\user\documents\github\movflix\menu_administracion.h
 
@@ -338,4 +338,235 @@
 1699475855 c:\users\user\documents\github\movflix\funcion_verificarexistenciareseniadepelicula.h
 	"clase_Resenia.h"
 	"clase_ArchivoResenias.h"
+
+1699504191 source:c:\users\admin\desktop\movflix\main.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<ctime>
+	"rlutil.h"
+	"funcion_cargarCadena.h"
+	"funcion_pantallaIntroductoria.h"
+	"funcion_determinarPosicionAutonumerica.h"
+	"clase_Fecha.h"
+	"clase_Genero.h"
+	"clase_ArchivoGeneros.h"
+	"funcion_VerificarExistenciaGenero.h"
+	"funcion_VerificarExistenciaUsuario.h"
+	"clase_Director.h"
+	"clase_ArchivoDirectores.h"
+	"funcion_VerificarExistenciaDirector.h"
+	"clase_Pelicula.h"
+	"clase_ArchivoPeliculas.h"
+	"funcion_VerificarExistenciaPelicula.h"
+	"clase_Usuario.h"
+	"clase_ArchivoUsuarios.h"
+	"funcion_VerificarExistenciaReseniaDePelicula.h"
+	"clase_Resenia.h"
+	"clase_ArchivoResenias.h"
+	"menu_usuarios.h"
+	"menu_peliculas.h"
+	"menu_resenias.h"
+	"menu_generos.h"
+	"menu_directores.h"
+	"Reportes.h"
+	"menu_administracion.h"
+
+1699500556 c:\users\admin\desktop\movflix\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1699500556 c:\users\admin\desktop\movflix\funcion_cargarcadena.h
+
+1699500556 c:\users\admin\desktop\movflix\funcion_pantallaintroductoria.h
+
+1699500556 c:\users\admin\desktop\movflix\funcion_determinarposicionautonumerica.h
+
+1699500556 c:\users\admin\desktop\movflix\clase_fecha.h
+
+1699502841 c:\users\admin\desktop\movflix\clase_genero.h
+
+1699501792 c:\users\admin\desktop\movflix\clase_archivogeneros.h
+	"clase_Genero.h"
+
+1699500556 c:\users\admin\desktop\movflix\funcion_verificarexistenciagenero.h
+	"clase_Genero.h"
+	"clase_ArchivoGeneros.h"
+
+1699500556 c:\users\admin\desktop\movflix\funcion_verificarexistenciausuario.h
+	"clase_Usuario.h"
+	"clase_ArchivoUsuarios.h"
+
+1699500692 c:\users\admin\desktop\movflix\clase_usuario.h
+
+1699501792 c:\users\admin\desktop\movflix\clase_archivousuarios.h
+	"clase_Usuario.h"
+
+1699500960 c:\users\admin\desktop\movflix\clase_director.h
+
+1699501792 c:\users\admin\desktop\movflix\clase_archivodirectores.h
+	"clase_Director.h"
+
+1699500556 c:\users\admin\desktop\movflix\funcion_verificarexistenciadirector.h
+	"clase_Director.h"
+	"clase_ArchivoDirectores.h"
+
+1699501421 c:\users\admin\desktop\movflix\clase_pelicula.h
+
+1699501742 c:\users\admin\desktop\movflix\clase_archivopeliculas.h
+	"clase_Pelicula.h"
+
+1699500556 c:\users\admin\desktop\movflix\funcion_verificarexistenciapelicula.h
+	"clase_Pelicula.h"
+	"clase_ArchivoPeliculas.h"
+
+1699500556 c:\users\admin\desktop\movflix\funcion_verificarexistenciareseniadepelicula.h
+	"clase_Resenia.h"
+	"clase_ArchivoResenias.h"
+
+1699501561 c:\users\admin\desktop\movflix\clase_resenia.h
+
+1699501792 c:\users\admin\desktop\movflix\clase_archivoresenias.h
+	"clase_Resenia.h"
+
+1699500556 c:\users\admin\desktop\movflix\menu_usuarios.h
+
+1699500556 c:\users\admin\desktop\movflix\menu_peliculas.h
+
+1699500556 c:\users\admin\desktop\movflix\menu_resenias.h
+
+1699500556 c:\users\admin\desktop\movflix\menu_generos.h
+
+1699500556 c:\users\admin\desktop\movflix\menu_directores.h
+
+1699504832 c:\users\admin\desktop\movflix\reportes.h
+
+1699500556 c:\users\admin\desktop\movflix\menu_administracion.h
+
+1700070452 source:c:\users\user\desktop\movflix\main.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<ctime>
+	"rlutil.h"
+	"funcion_cargarCadena.h"
+	"funcion_pantallaIntroductoria.h"
+	"funcion_determinarPosicionAutonumerica.h"
+	"clase_Fecha.h"
+	"clase_Genero.h"
+	"clase_ArchivoGeneros.h"
+	"funcion_VerificarExistenciaGenero.h"
+	"funcion_VerificarExistenciaUsuario.h"
+	"clase_Director.h"
+	"clase_ArchivoDirectores.h"
+	"funcion_VerificarExistenciaDirector.h"
+	"clase_Pelicula.h"
+	"clase_ArchivoPeliculas.h"
+	"funcion_VerificarExistenciaPelicula.h"
+	"clase_Usuario.h"
+	"clase_ArchivoUsuarios.h"
+	"funcion_VerificarExistenciaReseniaDePelicula.h"
+	"clase_Resenia.h"
+	"clase_ArchivoResenias.h"
+	"menu_usuarios.h"
+	"menu_peliculas.h"
+	"menu_resenias.h"
+	"menu_generos.h"
+	"menu_directores.h"
+	"Reportes.h"
+	"menu_administracion.h"
+	"funcion_MostrarEquivalencias.h"
+
+1699500556 c:\users\user\desktop\movflix\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1699500556 c:\users\user\desktop\movflix\funcion_cargarcadena.h
+
+1700062141 c:\users\user\desktop\movflix\funcion_pantallaintroductoria.h
+
+1700015537 c:\users\user\desktop\movflix\funcion_determinarposicionautonumerica.h
+
+1699500556 c:\users\user\desktop\movflix\clase_fecha.h
+
+1700068249 c:\users\user\desktop\movflix\clase_genero.h
+
+1700018680 c:\users\user\desktop\movflix\clase_archivogeneros.h
+	"clase_Genero.h"
+
+1700068920 c:\users\user\desktop\movflix\funcion_verificarexistenciagenero.h
+	"clase_Genero.h"
+	"clase_ArchivoGeneros.h"
+
+1700068920 c:\users\user\desktop\movflix\funcion_verificarexistenciausuario.h
+	"clase_Usuario.h"
+	"clase_ArchivoUsuarios.h"
+
+1700068920 c:\users\user\desktop\movflix\clase_usuario.h
+
+1700060223 c:\users\user\desktop\movflix\clase_archivousuarios.h
+	"clase_Usuario.h"
+
+1700068249 c:\users\user\desktop\movflix\clase_director.h
+
+1700018710 c:\users\user\desktop\movflix\clase_archivodirectores.h
+	"clase_Director.h"
+
+1700068920 c:\users\user\desktop\movflix\funcion_verificarexistenciadirector.h
+	"clase_Director.h"
+	"clase_ArchivoDirectores.h"
+
+1700068249 c:\users\user\desktop\movflix\clase_pelicula.h
+
+1700018739 c:\users\user\desktop\movflix\clase_archivopeliculas.h
+	"clase_Pelicula.h"
+
+1700068920 c:\users\user\desktop\movflix\funcion_verificarexistenciapelicula.h
+	"clase_Pelicula.h"
+	"clase_ArchivoPeliculas.h"
+
+1700065871 c:\users\user\desktop\movflix\funcion_verificarexistenciareseniadepelicula.h
+	"clase_Resenia.h"
+	"clase_ArchivoResenias.h"
+
+1700063858 c:\users\user\desktop\movflix\clase_resenia.h
+
+1700018821 c:\users\user\desktop\movflix\clase_archivoresenias.h
+	"clase_Resenia.h"
+
+1700070440 c:\users\user\desktop\movflix\menu_usuarios.h
+
+1700070440 c:\users\user\desktop\movflix\menu_peliculas.h
+
+1700070440 c:\users\user\desktop\movflix\menu_resenias.h
+
+1700070440 c:\users\user\desktop\movflix\menu_generos.h
+
+1700070440 c:\users\user\desktop\movflix\menu_directores.h
+
+1700068920 c:\users\user\desktop\movflix\reportes.h
+
+1700060223 c:\users\user\desktop\movflix\menu_administracion.h
+
+1700060223 c:\users\user\desktop\movflix\funcion_mostrarequivalencias.h
 

@@ -24,6 +24,7 @@ class ArchivoUsuarios {
     // Lista los registros de usuarios activos en el archivo
     bool listarRegistros() {
         Usuario reg; // Objeto de la clase Usuario
+        int cont = 0;
         FILE *p = fopen(_nombre, "rb");
         if (p == NULL) {
             cout << "ERROR DE ARCHIVO" << endl;
@@ -34,6 +35,11 @@ class ArchivoUsuarios {
         while (fread(&reg, sizeof reg, 1, p) == 1) {
             if (reg.getEstado() == true)
                 reg.Mostrar(); // Muestra el registro del usuario
+            cout << endl;
+            cont++;
+        }
+        if (cont == 0) {
+            cout<<"NO HAY REGISTROS EN EL ARCHIVO"<<endl;
         }
         fclose(p);
         return true;

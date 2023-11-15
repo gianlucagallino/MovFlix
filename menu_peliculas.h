@@ -15,22 +15,23 @@ bool ListarPelicula();
 bool MostrarTodaPelicula();
 
 void MenuPeliculas() {
-    int op;
+    char op;
     bool correrMenu = true;
     while(correrMenu) {
         system("cls");
         cout << endl;
         cout << "          MENU PELICULAS         " << endl;
         cout << "---------------------------------" << endl;
-        cout << " 1 - ALTA DE UNA PELICULA        " << endl;
-        cout << " 2 - BAJA DE UNA PELICULA        " << endl;
-        cout << " 3 - MODIFICAR DESCRIPCION       " << endl;
-        cout << " 4 - LISTAR PELICULA POR ID      " << endl;
-        cout << " 5 - MOSTRAR TODAS LAS PELICULAS " << endl;
+        cout << " A - ALTA DE UNA PELICULA        " << endl;
+        cout << " B - BAJA DE UNA PELICULA        " << endl;
+        cout << " C - MODIFICAR DESCRIPCION       " << endl;
+        cout << " D - LISTAR PELICULA POR ID      " << endl;
+        cout << " E - MOSTRAR TODAS LAS PELICULAS " << endl;
         cout << "---------------------------------" << endl;
-        cout << " 0 - VOLVER AL MENU PRINCIPAL    " << endl;
+        cout << " X - VOLVER AL MENU PRINCIPAL    " << endl;
         cout << " SELECCIONE UNA DE LAS OPCIONES: ";
         cin >> op;
+        op=toupper(op); //Funcion de cstdlib, que transforma un input minuscula en mayuscula. Es incluido por conveniencia.
         system("cls");
         switch (op) {
         case 1:
@@ -52,8 +53,8 @@ void MenuPeliculas() {
             correrMenu = false;
             break;
         default:
-            cout << "POR FAVOR, INGRESAR UNA OPCION CORRECTA" << endl;
-            rlutil::msleep(2000);
+            gotoxy(10,10);
+            rlutil::anykey("POR FAVOR, INGRESAR UNA OPCION CORRECTA (PRESIONE BOTON PARA CONTINUAR)");
             system("cls");
             break;
         }
@@ -77,6 +78,7 @@ bool AltaPelicula() {
         system("pause");
         return false;
     }
+    return false;
 }
 
 // Realiza la baja de una película por ID, cambiando su estado a inactivo en el archivo "Peliculas.dat".
@@ -84,6 +86,9 @@ bool BajaPelicula() {
     int ID;
     Pelicula temp;
     ArchivoPeliculas archivo("Peliculas.dat");
+
+    cout << "SUS OPCIONES SON: "<<endl;
+    archivo.listarRegistros();
     cout << "INGRESAR ID A BORRAR: ";
     cin >> ID;
     system("cls");
@@ -116,7 +121,10 @@ bool ModificarPelicula() {
     Pelicula temp;
     char descripcionTemp[200];
     ArchivoPeliculas archivo("Peliculas.dat");
-    cout << "INGRESAR ID CUYA DESCRIPCION MODIFICAR: ";
+
+    cout << "SUS OPCIONES SON: "<<endl;
+    archivo.listarRegistros();
+    cout << "INGRESAR ID PELICULA CUYA DESCRIPCION MODIFICAR: ";
     cin >> ID;
     system("cls");
     int pos = archivo.buscarRegistro(ID);

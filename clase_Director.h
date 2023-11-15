@@ -11,7 +11,8 @@
 //Los registros son AUTONUMERICOS.
 
 // Declaración de la función para verificar la existencia de un director por nombre
-bool VerificarExistenciaDirector(const char *primdirector);
+bool VerificarExistenciaNDirector(int primdirector);
+bool VerificarExistenciaNomDirector(const char *primdirector);
 
 // Definición de la clase Director
 class Director {
@@ -59,21 +60,14 @@ class Director {
         _idDirector = DeterminarPosicionAutonumerica("Directores.dat", sizeof(Director));
 
         cout << "NOMBRE: ";
-
-        bool flag_repeticion = false;
-
-        while (flag_repeticion != true) {
+        cargarCadena(nombreTemporal, 30);
+        while(nombreTemporal[0]=='\0'||VerificarExistenciaNomDirector(nombreTemporal)) {
+            cout<<"INPUT VACIO O REGISTRO YA EXISTENTE"<<endl;
+            system ("pause");
+            system ("cls");
+            cout << "NOMBRE: ";
             cargarCadena(nombreTemporal, 30);
-
-            // Verifica si el director ya existe
-            if (VerificarExistenciaDirector(nombreTemporal) == true) {
-                cout << "EL DIRECTOR YA EXISTE." << endl;
-            } else {
-                cout << "REGISTRADO." << endl;
-                flag_repeticion = true;
-            }
         }
-
         setNombreDirector(nombreTemporal);
         setEstado(true);
     }
