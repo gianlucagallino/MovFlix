@@ -3,7 +3,6 @@
 
 #include "clase_Pelicula.h"
 
-
 class ArchivoPeliculas {
   private:
     char _nombre[30]; // Nombre del archivo de películas

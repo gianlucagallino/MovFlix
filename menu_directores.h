@@ -1,12 +1,7 @@
 #ifndef MENU_DIRECTORES_H_INCLUDED
 #define MENU_DIRECTORES_H_INCLUDED
 
-/*
-  AUTORES:
-  -Arias, Natalia (Virtual)
-  -Gallino, Gianluca (Virtual)
-  -Parra, Juan (Presencial)
-*/
+//En este archivo se encuentra el menu, y sus funciones.
 
 bool AltaDirector();
 bool BajaDirector();
@@ -31,7 +26,7 @@ void MenuDirectores() {
         cout << " X - VOLVER AL MENU PRINCIPAL    " << endl;
         cout << " SELECCIONE UNA DE LAS OPCIONES: ";
         cin >> op;
-        op=toupper(op); //Funcion de cstdlib, que transforma un input minuscula en mayuscula. Es incluido por conveniencia.
+        op = toupper(op);
         system("cls");
         switch (op) {
         case 'A':
@@ -87,7 +82,7 @@ bool BajaDirector() {
 
     cout << "SUS OPCIONES SON: "<<endl;
     archivo.listarRegistros();
-    cout << "INGRESAR ID A BORRAR: ";
+    cout << "INGRESAR ID (NUMERO ENTERO) A BORRAR: ";
     cin >> ID;
     system("cls");
     int pos = archivo.buscarRegistro(ID);
@@ -122,7 +117,7 @@ bool ModificarDirector() {
 
     cout << "SUS OPCIONES SON: "<<endl;
     archivo.listarRegistros();
-    cout << "INGRESAR ID DIRECTOR CUYO NOMBRE MODIFICAR: ";
+    cout << "INGRESAR ID DIRECTOR (NUMERO ENTERO) CUYO NOMBRE MODIFICAR: ";
     cin >> ID;
     system("cls");
     int pos = archivo.buscarRegistro(ID);
@@ -156,7 +151,7 @@ bool ListarDirector() {
     int ID;
     Director temp;
     ArchivoDirectores archivo("Directores.dat");
-    cout << "INGRESAR ID A BUSCAR: ";
+    cout << "INGRESAR ID (NUMERO ENTERO) A BUSCAR: ";
     cin >> ID;
     int pos = archivo.buscarRegistro(ID);
     if (pos == -1) {

@@ -1,12 +1,7 @@
 #ifndef MENU_PELICULAS_H_INCLUDED
 #define MENU_PELICULAS_H_INCLUDED
 
-/*
-  AUTORES:
-  -Arias, Natalia (Virtual)
-  -Gallino, Gianluca (Virtual)
-  -Parra, Juan (Presencial)
-*/
+//En este archivo se encuentra el menu, y sus funciones.
 
 bool AltaPelicula();
 bool BajaPelicula();
@@ -31,25 +26,25 @@ void MenuPeliculas() {
         cout << " X - VOLVER AL MENU PRINCIPAL    " << endl;
         cout << " SELECCIONE UNA DE LAS OPCIONES: ";
         cin >> op;
-        op=toupper(op); //Funcion de cstdlib, que transforma un input minuscula en mayuscula. Es incluido por conveniencia.
+        op = toupper(op);
         system("cls");
         switch (op) {
-        case 1:
+        case 'A':
             AltaPelicula();
             break;
-        case 2:
+        case 'B':
             BajaPelicula();
             break;
-        case 3:
+        case 'C':
             ModificarPelicula();
             break;
-        case 4:
+        case 'D':
             ListarPelicula();
             break;
-        case 5:
+        case 'E':
             MostrarTodaPelicula();
             break;
-        case 0:
+        case 'X':
             correrMenu = false;
             break;
         default:
@@ -89,7 +84,7 @@ bool BajaPelicula() {
 
     cout << "SUS OPCIONES SON: "<<endl;
     archivo.listarRegistros();
-    cout << "INGRESAR ID A BORRAR: ";
+    cout << "INGRESAR ID (NUMERO ENTERO) A BORRAR: ";
     cin >> ID;
     system("cls");
     int pos = archivo.buscarRegistro(ID);
@@ -124,7 +119,7 @@ bool ModificarPelicula() {
 
     cout << "SUS OPCIONES SON: "<<endl;
     archivo.listarRegistros();
-    cout << "INGRESAR ID PELICULA CUYA DESCRIPCION MODIFICAR: ";
+    cout << "INGRESAR ID PELICULA (NUMERO ENTERO) CUYA DESCRIPCION MODIFICAR: ";
     cin >> ID;
     system("cls");
     int pos = archivo.buscarRegistro(ID);
@@ -158,7 +153,7 @@ bool ListarPelicula() {
     int ID;
     Pelicula temp;
     ArchivoPeliculas archivo("Peliculas.dat");
-    cout << "INGRESAR ID A BUSCAR: ";
+    cout << "INGRESAR ID (NUMERO ENTERO) A BUSCAR: ";
     cin >> ID;
     int pos = archivo.buscarRegistro(ID);
     if (pos == -1) {

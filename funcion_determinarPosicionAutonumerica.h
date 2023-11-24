@@ -1,13 +1,6 @@
 #ifndef FUNCION_DETERMINARPOSICIONAUTONUMERICA_H_INCLUDED
 #define FUNCION_DETERMINARPOSICIONAUTONUMERICA_H_INCLUDED
 
-/*
-  AUTORES:
-  -Arias, Natalia (Virtual)
-  -Gallino, Gianluca (Virtual)
-  -Parra, Juan (Presencial)
-*/
-
 int DeterminarPosicionAutonumerica(const char *archivo, int tamanioRegistro) {
     // Abrimos el archivo en modo "append binario más" para crearlo si no existe.
     FILE *p = fopen(archivo, "ab+");

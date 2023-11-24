@@ -1,13 +1,6 @@
 #ifndef CLASE_USUARIO_H_INCLUDED
 #define CLASE_USUARIO_H_INCLUDED
 
-/*
-  AUTORES:
-  -Arias, Natalia (Virtual)
-  -Gallino, Gianluca (Virtual)
-  -Parra, Juan (Presencial)
-*/
-
 bool VerificarExistenciaUsuario(int idusuario);
 bool VerificarExistenciaNomUsuario(const char *usuario);
 void MostraEquivalenciaGeneroPorId(int id);

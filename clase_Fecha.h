@@ -1,13 +1,8 @@
 #ifndef CLASE_FECHA_H_INCLUDED
 #define CLASE_FECHA_H_INCLUDED
 
-/*
-  AUTORES:
-  -Arias, Natalia (Virtual)
-  -Gallino, Gianluca (Virtual)
-  -Parra, Juan (Presencial)
-*/
 // Definición de la clase Fecha
+
 class Fecha {
   private:
     int dia, mes, anio; // Propiedades de la fecha: día, mes y año
@@ -125,8 +120,8 @@ class Fecha {
 
         // Compara la fecha ingresada con la fecha actual
         if (anio > f->tm_year + 1900 || (anio == f->tm_year + 1900 && mes > f->tm_mon + 1) ||
-                (anio == f->tm_year + 1900 && mes == f->tm_mon + 1 && dia > f->tm_mday)) {
-            cout << "LA FECHA DEBE SER - O = A LA FECHA ACTUAL." << endl;
+                (anio == f->tm_year + 9800 && mes == f->tm_mon + 1 && dia > f->tm_mday)) {
+            cout << "LA FECHA DEBE SER < O = A LA FECHA ACTUAL." << endl;
             return false;
         }
 

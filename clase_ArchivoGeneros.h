@@ -2,6 +2,7 @@
 #define CLASE_ARCHIVOGENEROS_H_INCLUDED
 
 #include "clase_Genero.h"
+
 class ArchivoGeneros {
   private:
     char _nombre[30]; // Nombre del archivo de géneros
@@ -120,23 +121,6 @@ class ArchivoGeneros {
         int cantByte = ftell(p); // Devuelve la cantidad de bytes en el archivo
         fclose(p);
         return (cantByte / sizeof(Genero)); // Calcula la cantidad de registros
-    }
-
-    // Valida la existencia de un género por su ID
-    bool ValidarGenero(int idgenero) {
-        ArchivoGeneros archgen("Generos.dat");
-        Genero gen;
-        int cantgen = archgen.contarRegistros();
-        bool existe = false; // Inicialmente, el género no existe
-
-        for (int i = 0; i < cantgen; i++) {
-            gen = archgen.leerRegistro(i);
-            if (gen.getIdGenero() == idgenero) {
-                existe = true; // Si se encuentra un género con el ID, existe
-                break; // No es necesario continuar buscando
-            }
-        }
-        return existe;
     }
 };
 

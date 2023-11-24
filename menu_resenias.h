@@ -1,12 +1,7 @@
 #ifndef MENU_RESENIAS_H_INCLUDED
 #define MENU_RESENIAS_H_INCLUDED
 
-/*
-  AUTORES:
-  -Arias, Natalia (Virtual)
-  -Gallino, Gianluca (Virtual)
-  -Parra, Juan (Presencial)
-*/
+//En este archivo se encuentra el menu, y sus funciones.
 
 bool AltaResenia();
 bool BajaResenia();
@@ -32,7 +27,7 @@ void MenuResenias() {
         cout << " X - VOLVER AL MENU PRINCIPAL    " << endl;
         cout << " SELECCIONE UNA DE LAS OPCIONES: ";
         cin >> op;
-        op=toupper(op); //Funcion de cstdlib, que transforma un input minuscula en mayuscula. Es incluido por conveniencia.
+        op = toupper(op);
         system("cls");
         switch (op) {
         case 'A':
@@ -90,7 +85,7 @@ bool BajaResenia() {
 
     cout << "SUS OPCIONES SON: "<<endl;
     archivo.listarRegistros();
-    cout << "INGRESAR ID A BORRAR: ";
+    cout << "INGRESAR ID (NUMERO ENTERO) A BORRAR: ";
     cin >> ID;
     system("cls");
     int pos = archivo.buscarRegistro(ID);
@@ -125,7 +120,7 @@ bool ModificarResenia() {
 
     cout << "SUS OPCIONES SON: "<<endl;
     archivo.listarRegistros();
-    cout << "INGRESAR ID RESENIA CUYO TEXTO MODIFICAR: ";
+    cout << "INGRESAR ID RESENIA (NUMERO ENTERO) CUYO TEXTO MODIFICAR: ";
     cin >> ID;
     system("cls");
     int pos = archivo.buscarRegistro(ID);
@@ -159,7 +154,7 @@ bool ListarResenia() {
     int ID;
     Resenia temp;
     ArchivoResenias archivo("Resenias.dat");
-    cout << "INGRESAR ID A BUSCAR: ";
+    cout << "INGRESAR ID (NUMERO ENTERO) A BUSCAR: ";
     cin >> ID;
     int pos = archivo.buscarRegistro(ID);
     if (pos == -1) {

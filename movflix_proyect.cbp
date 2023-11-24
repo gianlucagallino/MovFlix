@@ -44,6 +44,7 @@
 		<Unit filename="clase_Pelicula.h" />
 		<Unit filename="clase_Resenia.h" />
 		<Unit filename="clase_Usuario.h" />
+		<Unit filename="funcion_MostrarEquivalencias.h" />
 		<Unit filename="funcion_VerificarExistenciaDirector.h" />
 		<Unit filename="funcion_VerificarExistenciaGenero.h" />
 		<Unit filename="funcion_VerificarExistenciaPelicula.h" />

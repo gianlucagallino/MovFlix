@@ -1,12 +1,7 @@
 #ifndef MENU_GENEROS_H_INCLUDED
 #define MENU_GENEROS_H_INCLUDED
 
-/*
-  AUTORES:
-  -Arias, Natalia (Virtual)
-  -Gallino, Gianluca (Virtual)
-  -Parra, Juan (Presencial)
-*/
+//En este archivo se encuentra el menu, y sus funciones.
 
 bool AltaGenero();
 bool BajaGenero();
@@ -31,7 +26,7 @@ void MenuGeneros() {
         cout << " X - VOLVER AL MENU PRINCIPAL    " << endl;
         cout << " SELECCIONE UNA DE LAS OPCIONES: ";
         cin >> op;
-        op=toupper(op); //Funcion de cstdlib, que transforma un input minuscula en mayuscula. Es incluido por conveniencia.
+        op = toupper(op);
         system("cls");
         switch (op) {
         case 'A':
@@ -88,7 +83,7 @@ bool BajaGenero() {
 
     cout << "SUS OPCIONES SON: "<<endl;
     archivo.listarRegistros();
-    cout << "INGRESAR ID A BORRAR: ";
+    cout << "INGRESAR ID (NUMERO ENTERO) A BORRAR: ";
     cin >> ID;
     system("cls");
     int pos = archivo.buscarRegistro(ID);
@@ -123,7 +118,7 @@ bool ModificarGenero() {
 
     cout << "SUS OPCIONES SON: "<<endl;
     archivo.listarRegistros();
-    cout << "INGRESAR ID GENERO CUYO NOMBRE MODIFICAR: ";
+    cout << "INGRESAR ID GENERO (NUMERO ENTERO) CUYO NOMBRE MODIFICAR: ";
     cin >> ID;
     system("cls");
     int pos = archivo.buscarRegistro(ID);
@@ -156,7 +151,7 @@ bool ListarGenero() {
     int ID;
     Genero temp;
     ArchivoGeneros archivo("Generos.dat");
-    cout << "INGRESAR ID A BUSCAR: ";
+    cout << "INGRESAR ID (NUMERO ENTERO) A BUSCAR: ";
     cin >> ID;
     int pos = archivo.buscarRegistro(ID);
     if (pos == -1) {

@@ -34,14 +34,6 @@ using namespace std;
 #include "menu_administracion.h"
 #include "funcion_MostrarEquivalencias.h"
 
-/*
-  AUTORES:
-  -Arias, Natalia (Virtual)
-  -GALLINO, GIANLUCA (Virtual)
-  -PARRA, Juan (PRESENCIAL)
-*/
-
-
 int main() {
     bool correrPrograma = true;
     char op;
@@ -69,7 +61,7 @@ int main() {
         cout << " X - FIN DEL PROGRAMA " << endl;
         cout << " SELECCIONE UNA DE LAS OPCIONES: ";
         cin >> op;
-        op=toupper(op); //Funcion de cstdlib, que transforma un input minuscula en mayuscula. Es incluido por conveniencia.
+        op = toupper(op);
         system("cls");
         switch (op) {
         case 'A':

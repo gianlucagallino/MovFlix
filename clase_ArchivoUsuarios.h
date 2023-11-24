@@ -2,6 +2,7 @@
 #define CLASE_ARCHIVOUSUARIOS_H_INCLUDED
 
 #include "clase_Usuario.h"
+
 class ArchivoUsuarios {
   private:
     char _nombre[30]; // Nombre del archivo de usuarios

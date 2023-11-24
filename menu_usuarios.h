@@ -1,13 +1,6 @@
 #ifndef MENU_USUARIOS_H_INCLUDED
 #define MENU_USUARIOS_H_INCLUDED
 
-/*
-  AUTORES:
-  -Arias, Natalia (Virtual)
-  -Gallino, Gianluca (Virtual)
-  -Parra, Juan (Presencial)
-*/
-
 //Este archivo contiene el menu de usuarios, y sus funciones de ABML.
 
 bool AltaUsuario();
@@ -24,16 +17,16 @@ void MenuUsuarios() {
         cout << endl;
         cout << "           MENU USUARIOS         " << endl;
         cout << "---------------------------------" << endl;
-        cout << " 1 - ALTA DE UN USUARIO          " << endl;
-        cout << " 2 - BAJA DE UN USUARIO          " << endl;
-        cout << " 3 - MODIFICAR NOMBRE USUARIO    " << endl;
-        cout << " 4 - LISAR USUARIO POR ID        " << endl;
-        cout << " 5 - MOSTRAR TODOS LOS USUARIOS  " << endl;
+        cout << " A - ALTA DE UN USUARIO          " << endl;
+        cout << " B - BAJA DE UN USUARIO          " << endl;
+        cout << " C - MODIFICAR NOMBRE USUARIO    " << endl;
+        cout << " D - LISTAR USUARIO POR ID        " << endl;
+        cout << " E - MOSTRAR TODOS LOS USUARIOS  " << endl;
         cout << "---------------------------------" << endl;
-        cout << " 0 - VOLVER AL MENU PRINCIPAL    " << endl;
+        cout << " X - VOLVER AL MENU PRINCIPAL    " << endl;
         cout << " SELECCIONE UNA DE LAS OPCIONES: ";
         cin >> op;
-        op=toupper(op); //Funcion de cstdlib, que transforma un input minuscula en mayuscula. Es incluido por conveniencia.
+        op = toupper(op);
         system("cls");
         switch (op) {
         case 'A':
@@ -88,7 +81,7 @@ bool BajaUsuario() {
     ArchivoUsuarios archivo("Usuarios.dat");
     cout << "SUS OPCIONES SON: "<<endl;
     archivo.listarRegistros();
-    cout << "INGRESAR ID A BORRAR: ";
+    cout << "INGRESAR ID (NUMERO ENTERO) A BORRAR: ";
     cin >> ID;
     system("cls");
     int pos = archivo.buscarRegistro(ID);
@@ -122,7 +115,7 @@ bool ModificarUsuario() {
     ArchivoUsuarios archivo("Usuarios.dat");
     cout << "SUS OPCIONES SON: "<<endl;
     archivo.listarRegistros();
-    cout << "INGRESAR ID USUARIO CUYO NOMBRE MODIFICAR: ";
+    cout << "INGRESAR ID USUARIO (NUMERO ENTERO) CUYO NOMBRE MODIFICAR: ";
     cin >> ID;
     system("cls");
     int pos = archivo.buscarRegistro(ID);
@@ -156,7 +149,7 @@ bool ListarUsuario() {
     int ID;
     Usuario temp;
     ArchivoUsuarios archivo("Usuarios.dat");
-    cout << "INGRESAR ID A BUSCAR: ";
+    cout << "INGRESAR ID (NUMERO ENTERO) A BUSCAR: ";
     cin >> ID;
     int pos = archivo.buscarRegistro(ID);
     if (pos == -1) {

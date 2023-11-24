@@ -1,12 +1,7 @@
 #ifndef MENU_ADMINISTRACION_H_INCLUDED
 #define MENU_ADMINISTRACION_H_INCLUDED
 
-/*
-  AUTORES:
-  -Arias, Natalia (Virtual)
-  -Gallino, Gianluca (Virtual)
-  -Parra, Juan (Presencial)
-*/
+//En este archivo se encuentra el menu, y sus funciones.
 
 bool LimpiarArchivo(const char *n);
 void BackupGeneros();
@@ -39,14 +34,14 @@ void MenuAdministracion() {
         cout << " G - RESTAURAR ARCHIVOS DIRECTORES  " << endl;
         cout << " H - RESTAURAR ARCHIVOS PELICULAS   " << endl;
         cout << " I - RESTAURAR ARCHIVOS USUARIOS    " << endl;
-        cout << " J - RESTAURAR ARCHIVOS RESENIAS   " << endl;
-        cout << " K - BACKUP ENTERO                 " << endl;
-        cout << " L - RESTAURACION ENTERA           " << endl;
+        cout << " J - RESTAURAR ARCHIVOS RESENIAS    " << endl;
+        cout << " K - BACKUP ENTERO                  " << endl;
+        cout << " L - RESTAURACION ENTERA            " << endl;
         cout << "------------------------------------" << endl;
         cout << "    X - VOLVER AL MENU PRINCIPAL    " << endl;
         cout << " SELECCIONE UNA DE LAS OPCIONES: ";
         cin >> op;
-        op=toupper(op); //Funcion de cstdlib, que transforma un input minuscula en mayuscula. Es incluido por conveniencia.
+        op = toupper(op);
         system("cls");
         switch (op) {
         case 'A':
@@ -133,7 +128,7 @@ void BackupGeneros() {
             reg = arc.leerRegistro(i);
             arcBackup.agregarRegistro(reg);
         }
-        cout << "BACKUP REALIZADO." << endl;
+        cout << "BACKUP GENEROS REALIZADO." << endl;
     }
 }
 
@@ -147,7 +142,7 @@ void BackupDirectores() {
             reg = arc.leerRegistro(i);
             arcBackup.agregarRegistro(reg);
         }
-        cout << "BACKUP REALIZADO." << endl;
+        cout << "BACKUP DIRECTORES REALIZADO." << endl;
     }
 }
 
@@ -161,7 +156,7 @@ void BackupPeliculas() {
             reg = arc.leerRegistro(i);
             arcBackup.agregarRegistro(reg);
         }
-        cout << "BACKUP REALIZADO." << endl;
+        cout << "BACKUP PELICULAS REALIZADO." << endl;
     }
 }
 
@@ -175,7 +170,7 @@ void BackupUsuarios() {
             reg = arc.leerRegistro(i);
             arcBackup.agregarRegistro(reg);
         }
-        cout << "BACKUP REALIZADO." << endl;
+        cout << "BACKUP USUARIOS REALIZADO." << endl;
     }
 }
 
@@ -189,7 +184,7 @@ void BackupResenias() {
             reg = arc.leerRegistro(i);
             arcBackup.agregarRegistro(reg);
         }
-        cout << "BACKUP REALIZADO." << endl;
+        cout << "BACKUP RESENIAS REALIZADO." << endl;
     }
 }
 
@@ -203,7 +198,7 @@ void RestaurarGeneros() {
             reg = arcBackup.leerRegistro(i);
             arc.agregarRegistro(reg);
         }
-        cout << "BACKUP RESTAURADO." << endl;
+        cout << "BACKUP GENEROS RESTAURADO." << endl;
     }
 }
 
@@ -217,7 +212,7 @@ void RestaurarDirectores() {
             reg = arcBackup.leerRegistro(i);
             arc.agregarRegistro(reg);
         }
-        cout << "BACKUP RESTAURADO." << endl;
+        cout << "BACKUP DIRECTORES RESTAURADO." << endl;
     }
 }
 
@@ -231,7 +226,7 @@ void RestaurarPeliculas() {
             reg = arcBackup.leerRegistro(i);
             arc.agregarRegistro(reg);
         }
-        cout << "BACKUP RESTAURADO." << endl;
+        cout << "BACKUP PELICULAS RESTAURADO." << endl;
     }
 }
 
@@ -245,7 +240,7 @@ void RestaurarUsuarios() {
             reg = arcBackup.leerRegistro(i);
             arc.agregarRegistro(reg);
         }
-        cout << "BACKUP RESTAURADO." << endl;
+        cout << "BACKUP USUARIOS RESTAURADO." << endl;
     }
 }
 
@@ -259,7 +254,7 @@ void RestaurarResenias() {
             reg = arcBackup.leerRegistro(i);
             arc.agregarRegistro(reg);
         }
-        cout << "BACKUP RESTAURADO." << endl;
+        cout << "BACKUP RESENIAS RESTAURADO." << endl;
     }
 }
 

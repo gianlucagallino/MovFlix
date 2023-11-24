@@ -1,12 +1,7 @@
 #ifndef REPORTES_H_INCLUDED
 #define REPORTES_H_INCLUDED
 
-/*
-  AUTORES:
-  -Arias, Natalia (Virtual)
-  -Gallino, Gianluca (Virtual)
-  -Parra, Juan (Presencial)
-*/
+//En este archivo se encuentra el menu, y sus funciones.
 
 void reseniaMejorPuntaje();
 void peliculaMejorPuntaje();
@@ -15,7 +10,7 @@ void GeneroFavoritoMayoria();
 void CorrerTodoReporte();
 
 void MenuReportes() {
-    int op;
+    char op;
     bool correrMenu = true;
     system("cls");
     while(correrMenu) {
@@ -23,38 +18,38 @@ void MenuReportes() {
         cout << endl;
         cout << "                    MENU REPORTES                  " << endl;
         cout << "---------------------------------------------------" << endl;
-        cout << " 1 - MOSTRAR RESENIA DE MAYOR PUNTAJE              " << endl;
-        cout << " 2 - MOSTRAR PELICULA CON MAYOR PROMEDIO PUNTAJES  " << endl;
-        cout << " 3 - MOSTRAR USUARIO QUE ESCRIBIO MAS RESENIAS     " << endl;
-        cout << " 4 - MOSTRAR GENERO FAVORITO DE LA MAYORIA         " << endl;
-        cout << " 5 - TODOS LOS REPORTES!                           " << endl;
+        cout << " A - MOSTRAR RESENIA DE MAYOR PUNTAJE              " << endl;
+        cout << " B - MOSTRAR PELICULA CON MAYOR PROMEDIO PUNTAJES  " << endl;
+        cout << " C - MOSTRAR USUARIO QUE ESCRIBIO MAS RESENIAS     " << endl;
+        cout << " D - MOSTRAR GENERO FAVORITO DE LA MAYORIA         " << endl;
+        cout << " E - TODOS LOS REPORTES!                           " << endl;
         cout << "---------------------------------------------------" << endl;
-        cout << " 0 - VOLVER AL MENU PRINCIPAL                      " << endl;
+        cout << " X - VOLVER AL MENU PRINCIPAL                      " << endl;
         cout << " SELECCIONE UNA DE LAS OPCIONES: ";
         cin >> op;
         system("cls");
         switch (op) {
-        case 1:
+        case 'A':
             reseniaMejorPuntaje();
             break;
-        case 2:
+        case 'B':
             peliculaMejorPuntaje();
             break;
-        case 3:
+        case 'C':
             UsuariomasActivo();
             break;
-        case 4:
+        case 'D':
             GeneroFavoritoMayoria();
             break;
-        case 5:
+        case 'E':
             CorrerTodoReporte();
             break;
-        case 0:
+        case 'X':
             correrMenu = false;
             break;
         default:
-            cout << "POR FAVOR, INGRESAR UNA OPCION CORRECTA" << endl;
-            rlutil::msleep(2000);
+            gotoxy(10,10);
+            rlutil::anykey("POR FAVOR, INGRESAR UNA OPCION CORRECTA (PRESIONE BOTON PARA CONTINUAR)");
             system("cls");
             break;
         }
@@ -95,7 +90,7 @@ void mostrarMayorRes(Resenia *v, int tamanio) {
 
     // Muestra la mejor resenia o un mensaje si no hay resenias activas con un puntaje valido
     if (maxPuntaje == 0) {
-        cout << "NO EXISTEN RESE�AS ACTIVAS CON UN PUNTAJE VALIDO" << endl;
+        cout << "NO EXISTEN RESENIAS ACTIVAS CON UN PUNTAJE VALIDO" << endl;
         system("pause");
     } else {
         cout << "LA RESENIA CON LA MEJOR PUNTUACION ES: " << endl;
@@ -155,7 +150,7 @@ float PromediarResenias(Pelicula input) {
 
     cantReg = arch.contarRegistros();  // Obtiene la cantidad de resenias en el archivo
 
-    // Recorre las rese�as en el archivo y calcula el promedio de puntajes para la pelicula dada
+    // Recorre las resenias en el archivo y calcula el promedio de puntajes para la pelicula dada
     for (int i = 0; i < cantReg; i++) {
         reg = arch.leerRegistro(i);
         if (reg.getidPeliculaResenia()== input.getIdPelicula()) {
@@ -195,7 +190,7 @@ void peliculaMejorPuntaje() {
 
     // Verifica si existen peliculas en el archivo
     if (cantidadRegistros == 0) {
-        cout << "NO HAY PEL�CULAS DISPONIBLES" << endl;
+        cout << "NO HAY PELICULAS DISPONIBLES" << endl;
         system("pause");
         return;
     }

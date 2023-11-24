@@ -2,6 +2,7 @@
 #define CLASE_ARCHIVODIRECTORES_H_INCLUDED
 
 #include "clase_Director.h"
+
 class ArchivoDirectores {
   private:
     char _nombre[30]; // Nombre del archivo de directores
